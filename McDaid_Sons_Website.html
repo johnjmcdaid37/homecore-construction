@@ -425,52 +425,85 @@
       </div>
     </div>
 
-    <div class="contact-form">
+    <form id="estimateForm" class="contact-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeZHtwRil0sh1NVFl8FMkrFlnIuzUBiZ2va32zYE9dotc-sNQ/formResponse"
+          method="POST" target="hidden_iframe">
       <h3>Request Your Free Estimate</h3>
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" placeholder="John" required />
+          <input type="text" id="fname" name="entry.968387680" placeholder="John" required />
         </div>
         <div class="form-group">
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" placeholder="Smith" required />
+          <input type="text" id="lname" name="entry.744186066" placeholder="Smith" required />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" placeholder="(516) 555-0000" required />
+          <input type="tel" id="phone" name="entry.396376988" placeholder="(516) 555-0000" required />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="john@email.com" />
+          <input type="email" id="email" name="entry.1851889384" placeholder="john@email.com" />
         </div>
       </div>
       <div class="form-group">
         <label for="address">Property Address</label>
-        <input type="text" id="address" placeholder="123 Main St, Smithtown, NY" required />
+        <input type="text" id="address" name="entry.915395456" placeholder="123 Main St" required />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="entry.741631393" placeholder="Smithtown" required />
       </div>
       <div class="form-group">
         <label for="service">Service Needed</label>
-        <select id="service" required>
+        <select id="service" name="entry.854865033" required>
           <option value="" disabled selected>Select a service…</option>
-          <option>Roofing</option>
-          <option>Windows</option>
-          <option>Siding</option>
-          <option>Roofing + Siding</option>
-          <option>Roofing + Windows</option>
-          <option>Siding + Windows</option>
-          <option>Roofing + Siding + Windows</option>
-          <option>Not Sure — Need Assessment</option>
+          <option value="Roofing">Roofing</option>
+          <option value="Windows">Windows</option>
+          <option value="Siding">Siding</option>
+          <option value="Roofing + Siding">Roofing + Siding</option>
+          <option value="Roofing + Windows">Roofing + Windows</option>
+          <option value="Siding + Windows">Siding + Windows</option>
+          <option value="All Three">Roofing + Windows + Siding</option>
+          <option value="Not Sure">Not Sure — Need Assessment</option>
         </select>
       </div>
       <div class="form-group">
+        <label for="hear">How did you hear about us?</label>
+        <select id="hear" name="entry.436099668">
+          <option value="" disabled selected>Select one…</option>
+          <option value="Referral">Referral</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Yard Sign">Yard Sign</option>
+          <option value="Flyer">Flyer</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="referrer">If referred, who referred you?</label>
+        <input type="text" id="referrer" name="entry.1116969682" placeholder="Optional" />
+      </div>
+      <div class="form-group">
         <label for="notes">Anything else we should know?</label>
-        <textarea id="notes" placeholder="Describe the issue, timeline, or any other details…"></textarea>
+        <textarea id="notes" name="entry.1420769183" placeholder="Describe the issue, timeline, or any other details…"></textarea>
       </div>
       <button type="submit" class="form-submit">Request My Free Estimate</button>
       <p class="form-note">We'll call you within 1 business day to schedule your appointment.</p>
+    </form>
+
+    <div id="formThankYou" class="contact-form" style="display:none; text-align:center;">
+      <h3 style="margin-bottom:14px;">Thank You! ✓</h3>
+      <p style="color:var(--gray); line-height:1.75; font-size:0.95rem;">
+        We received your request and will call you within <strong>1 business day</strong>
+        to schedule your free, no-obligation estimate.
+      </p>
+      <p style="color:var(--gray); line-height:1.75; font-size:0.95rem; margin-top:14px;">
+        Need us sooner? Call <strong><a href="tel:5165093289" style="color:var(--navy);">(516) 509-3289</a></strong>.
+      </p>
     </div>
   </div>
 </section>
@@ -480,6 +513,25 @@
   <p><strong>McDaid & Sons Construction</strong> &nbsp;&mdash;&nbsp; Long Island, NY &nbsp;&mdash;&nbsp; <a href="tel:5165093289">(516) 509-3289</a></p>
   <p style="margin-top:6px">&copy; 2026 McDaid & Sons Construction. All rights reserved.</p>
 </footer>
+
+<!-- Hidden iframe receives the Google Form response so the visitor stays on this page -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<script>
+  (function () {
+    var submitted = false;
+    var form = document.getElementById('estimateForm');
+    var iframe = document.getElementById('hidden_iframe');
+    if (!form || !iframe) return;
+    form.addEventListener('submit', function () { submitted = true; });
+    iframe.addEventListener('load', function () {
+      if (!submitted) return; // ignore the iframe's initial load
+      form.style.display = 'none';
+      var thanks = document.getElementById('formThankYou');
+      thanks.style.display = 'block';
+      thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  })();
+</script>
 
 </body>
 </html>
