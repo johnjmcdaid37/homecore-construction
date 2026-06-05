@@ -289,7 +289,13 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
-      nav { padding: 0 24px; }
+      nav {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 14px 24px;
+        gap: 12px;
+      }
       .nav-links { display: none; }
       section { padding: 64px 24px; }
       .hero { padding: 80px 24px 72px; }
