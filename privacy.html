@@ -37,6 +37,16 @@
     }
     .nav-logo { color: var(--white); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; }
     .nav-logo span { color: var(--white); font-weight: 700; }
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); }
     .nav-cta {
       background: var(--white);
       color: var(--navy);
@@ -97,7 +107,8 @@
     .footer-links a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 
     @media (max-width: 720px) {
-      nav { padding: 14px 24px; height: auto; }
+      nav { flex-direction: column; justify-content: center; padding: 14px 24px; height: auto; gap: 12px; }
+      .nav-links { display: none; }
       .page-head { padding: 56px 24px 48px; }
       .legal { padding: 56px 24px; }
       footer { padding: 28px 24px; }
@@ -109,6 +120,13 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">McDaid <span>&</span> Sons Construction</a>
+  <div class="nav-links">
+    <a href="/#services">Services</a>
+    <a href="/#why-us">Why Us</a>
+    <a href="/#our-work">Our Work</a>
+    <a href="/#about">Our Story</a>
+    <a href="/privacy" class="active">Privacy Policy</a>
+  </div>
   <a href="/#contact" class="nav-cta">Contact Us</a>
 </nav>
 
