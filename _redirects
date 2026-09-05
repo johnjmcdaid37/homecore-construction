@@ -1,2 +1,11 @@
+# Retire homecore-construction.com — send everything to the new domain.
+# The trailing "!" forces the redirect even though a real file exists at
+# that path; without it Netlify serves the file and never redirects.
+https://homecore-construction.com/*      https://homecoregc.com/:splat  301!
+http://homecore-construction.com/*       https://homecoregc.com/:splat  301!
+https://www.homecore-construction.com/*  https://homecoregc.com/:splat  301!
+http://www.homecore-construction.com/*   https://homecoregc.com/:splat  301!
+
+# Legacy paths
 /McDaid_Sons_Website.html    /    301
 /projects/all-past-projects    /projects/past-projects    301
