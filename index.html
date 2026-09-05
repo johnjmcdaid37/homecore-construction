@@ -1,105 +1,821 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>HomeCore Construction</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22205%20210%20670%20660%22%3E%3Cpath%20d%3D%22M835.74%2C817.06c-31.94-9.64-55.1-40.71-55.1-75.76v-105.79l72.88%2C11.5-72.88-47.86-44.9-29.47-61.57-40.42-92.67-60.83-41.51-27.25-41.51%2C27.25-92.67%2C60.83-61.57%2C40.42-44.89%2C29.47-72.89%2C47.86%2C72.89-11.5.28-.04v109.91c0%2C34.28-22.22%2C63.35-53.05%2C73.61-.89.3-1.5%2C1.11-1.5%2C2.05%2C0%2C1.3%2C1.13%2C2.31%2C2.42%2C2.17l52.12-5.83%2C64.91-7.26%2C35.17-21.24%2C36.99-22.31v-203.09l103.28-67.8%2C134.18%2C88.1v178.6l61.57%2C26.67%2C33.9%2C12.34%2C10.99%2C4.01%2C53.55%2C16.75c1.74.54%2C3.5-.78%2C3.46-2.6-.02-1.16-.81-2.15-1.91-2.48%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M647.51%2C310.18c.07.02.16.02.23.02%2C12.92%2C2.27%2C22.96%2C13.06%2C25.72%2C25.76.44%2C1.97.67%2C3.99.72%2C6.07.02.25.02.53.02.81s0%2C.56-.02.83v167.98l61.57%2C40.42%2C44.9%2C29.47v-252.56c0-20.99%2C8.44-40%2C22.12-53.82%2C6.08-6.19%2C13.22-11.34%2C21.15-15.14.6-.25%2C1.04-.86%2C1.04-1.57%2C0-.12-.02-.24-.02-.35-.16-.79-.86-1.35-1.69-1.35-.12%2C0-.23%2C0-.35.02t-.02%2C0c-.09.02-.19.04-.28.09l-41.95%2C12.1-9.28%2C2.69-12.11%2C3.5-23.51%2C6.8-61.57%2C17.83-16.67%2C5.06-9.99%2C3.01c-.07.02-.14.04-.21.07-.42.19-.72.6-.72%2C1.09%2C0%2C.56.42%2C1.02.93%2C1.14%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M248.61%2C278.64c28.45%2C5.03%2C50.18%2C29.52%2C50.99%2C59.2l.04.02v243.51l64.91-42.6%2C35.18-23.1v-182.55c0-17.26%2C7.75-33.87%2C21.66-44.09.73-.53%2C1.47-1.05%2C2.23-1.55%2C4.03-2.67%2C8.44-4.82%2C13.1-6.38%2C3.08-1.04%2C6.31-1.81%2C9.63-2.27.9-.14%2C1.6-.91%2C1.6-1.81%2C0-1.02-.83-1.85-1.85-1.85h-197.18c-.93%2C0-1.67.7-1.76%2C1.6-.07.9.55%2C1.69%2C1.46%2C1.85%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M837.65%2C819.54h0c.04%2C1.82-1.72%2C3.14-3.46%2C2.6l-53.55-16.75-10.99-4.01c-20.36-7.4-33.9-26.76-33.9-48.4v-124.55l8.49%2C1.32%2C36.41%2C5.75v105.79c0%2C35.05%2C23.16%2C66.12%2C55.1%2C75.76%2C1.11.34%2C1.89%2C1.33%2C1.91%2C2.48%22%20fill%3D%22%230d2340%22%2F%3E%3Cpolygon%20points%3D%22853.52%20647.01%20780.64%20635.51%20744.23%20629.76%20735.74%20624.19%20674.17%20583.77%20540%20495.67%20540%20441.18%20581.51%20468.43%20674.17%20529.25%20735.74%20569.67%20780.64%20599.15%20853.52%20647.01%22%20fill%3D%22%231c5593%22%2F%3E%3Cpolygon%20points%3D%22540%20441.18%20540%20495.67%20436.71%20563.48%20399.73%20587.78%20364.55%20610.88%20335.77%20629.76%20299.64%20635.46%20299.37%20635.51%20226.48%20647.01%20299.37%20599.14%20344.26%20569.67%20405.83%20529.25%20498.49%20468.43%20540%20441.18%22%20fill%3D%22%2316579e%22%2F%3E%3Cpath%20d%3D%22M735.75%2C333.77v218.33l-61.57-40.42v-167.98c.02-.27.02-.55.02-.83s0-.56-.02-.81c-.04-2.08-.28-4.1-.72-6.07-2.76-12.71-12.8-23.49-25.72-25.76-.07%2C0-.16%2C0-.23-.02-.51-.12-.93-.58-.93-1.14%2C0-.48.3-.9.72-1.09.07-.02.14-.05.21-.07l9.99-3.02%2C78.24%2C28.9Z%22%20fill%3D%22%230d2340%22%2F%3E%3Cpolygon%20points%3D%22436.71%20563.48%20436.71%20766.57%20399.73%20788.88%20364.55%20810.12%20364.55%20610.88%20399.73%20587.78%20436.71%20563.48%22%20fill%3D%22%2316579e%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Cpath%20d%3D%22M447.94%2C277.04c0%2C.9-.7%2C1.67-1.6%2C1.81-3.32.47-6.54%2C1.23-9.63%2C2.27-4.66%2C1.55-9.07%2C3.71-13.1%2C6.38l-23.88%2C15.67-35.18%2C23.1v212.51l-64.91%2C42.6v-243.51l-.04-.02c-.81-29.68-22.54-54.17-50.99-59.2-.91-.17-1.53-.96-1.46-1.86.09-.91.83-1.6%2C1.76-1.6h197.18c1.02%2C0%2C1.86.83%2C1.86%2C1.85%22%20fill%3D%22%230d2340%22%2F%3E%3Cpath%20d%3D%22M423.62%2C287.5c-.76.5-1.5%2C1.02-2.23%2C1.55-13.91%2C10.21-21.66%2C26.83-21.66%2C44.09v182.54l-35.18%2C23.1v-212.51l35.18-23.09%2C23.89-15.68Z%22%20fill%3D%22%2316579e%22%2F%3E%3Cpath%20d%3D%22M364.55%2C610.88v199.24l-64.91%2C7.26-52.11%2C5.83c-1.29.15-2.43-.87-2.43-2.17%2C0-.94.61-1.76%2C1.5-2.05%2C30.83-10.26%2C53.05-39.33%2C53.05-73.61v-109.92l36.13-5.7%2C28.78-18.88Z%22%20fill%3D%22%230d2340%22%2F%3E%3Cpolygon%20points%3D%22735.75%20281.98%20735.75%20333.77%20657.51%20304.87%20674.18%20299.82%20735.75%20281.98%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M824.96%2C258.47c0%2C.72-.44%2C1.32-1.04%2C1.58-7.93%2C3.8-15.07%2C8.95-21.15%2C15.14-13.68%2C13.82-22.12%2C32.84-22.12%2C53.82v252.55l-44.9-29.47v-270.11l23.51-6.79%2C12.11-3.5%2C9.28-2.69%2C41.95-12.1c.09-.04.19-.07.28-.09t.02%2C0c.12-.02.23-.02.35-.02.83%2C0%2C1.53.55%2C1.69%2C1.34%2C0%2C.12.02.23.02.35%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M769.65%2C801.38l-33.9-12.34-61.57-26.67v-178.6l61.57%2C40.42%2C8.49%2C5.56-8.49-1.32v124.55c0%2C21.64%2C13.55%2C41%2C33.9%2C48.4%22%20fill%3D%22%23102d4c%22%2F%3E%3C%2Fsvg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeCore Construction | Home Remodeling, Renovations & Custom Homes | Long Island, NY</title>
+  <meta name="description" content="HomeCore Construction is Long Island's full-service home remodeling and construction company: interior and exterior renovations, kitchens and baths, roofing, siding and windows, additions, structural work, and custom and spec home building." />
+  <link rel="canonical" href="https://homecore-construction.com/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HomeCore Construction" />
+  <meta property="og:url" content="https://homecore-construction.com/" />
+  <meta property="og:title" content="HomeCore Construction | Long Island Home Remodeling, Renovations &amp; Custom Homes" />
+  <meta property="og:description" content="Long Island's full-service remodeling and construction company. Kitchens, baths, interiors, roofing, siding, windows, additions, and custom homes. Estimates are always free and always honest." />
+  <meta property="og:image" content="https://homecore-construction.com/images/og-homecore.png" />
+  <meta property="og:image:alt" content="HomeCore Construction" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HomeCore Construction | Long Island Home Remodeling, Renovations &amp; Custom Homes" />
+  <meta name="twitter:description" content="Long Island's full-service remodeling and construction company. Estimates are always free and always honest." />
+  <meta name="twitter:image" content="https://homecore-construction.com/images/og-homecore.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     :root {
-      --navy: #0D2340;
-      --navy-soft: #16579E;
-      --gray-light: #8FB3D9;
-      --white: #FFFFFF;
-      --rule: rgba(255,255,255,0.14);
+      --navy:      #0d2340;
+      --deep-navy: #102D4C;
+      --slate:     #8fb3d9;
+      --white:     #ffffff;
+      --light:     #e6e8eb;
+      --gray:      #3a3f44;
+      --rule:      #d8dce2;
+      --accent:    #16579e;
+      --display:   'Cinzel', Georgia, serif;
+      --body:      'Lato', Arial, sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Lato', Arial, sans-serif;
+
+    body { font-family: var(--body); color: var(--gray); background: var(--white); }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
       background: var(--navy);
-      color: var(--white);
-      min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
-    .wrap { max-width: 560px; }
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 36px;
-    }
-    .logo span.wordmark {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: 23px;
+    .nav-logo {
+      color: var(--white);
+      font-family: var(--display);
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      color: var(--white);
     }
-    .eyebrow {
-      font-size: 12px;
+    .nav-logo span { color: var(--white); font-weight: 700; }
+    .nav-menu { display: flex; align-items: center; gap: 34px; }
+    .nav-menu a:not(.nav-cta) {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+    }
+    .nav-menu a:not(.nav-cta):hover { color: var(--white); }
+    .nav-cta {
+      background: var(--white);
+      color: var(--navy);
+      padding: 9px 22px;
+      border-radius: 3px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 2px;
+      width: 24px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 72px 52px 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .hero-logo {
+      display: block;
+      width: clamp(230px, 32vw, 320px);
+      height: auto;
+      margin: 0 auto 36px;
+    }
+    .hero h1 {
+      font-family: var(--body);
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .hero .hero-tagline {
+      font-family: var(--body);
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
       font-weight: 600;
+      color: var(--slate);
+      letter-spacing: 1.5px;
+      max-width: 640px;
+      margin: 0 auto 18px;
+      line-height: 1.5;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 580px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+    }
+    .hero-cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--white);
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.85);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+    .btn-solid {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-solid:hover { background: var(--deep-navy); }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--deep-navy);
+      display: flex;
+      justify-content: center;
+      gap: 56px;
+      padding: 22px 52px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .trust-item {
+      color: var(--slate);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-align: center;
       text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--gray-light);
+    }
+    .trust-item strong { display: block; color: rgba(255,255,255,0.85); font-size: 0.85rem; letter-spacing: 0; text-transform: none; margin-bottom: 2px; }
+
+    /* SECTION COMMONS */
+    section { padding: 88px 52px; }
+    .section-head { max-width: 640px; margin: 0 auto 56px; text-align: center; }
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--body);
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 14px;
+      position: relative;
+      padding-bottom: 14px;
+    }
+    .section-eyebrow::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+    h2 {
+      font-family: var(--body);
+      text-align: center;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--gray);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    /* SERVICES */
+    .services { background: var(--light); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1020px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 44px 36px;
+      border-top: 3px solid var(--accent);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .service-card h3 { font-family: var(--body); color: var(--navy); font-size: 1.1rem; margin-bottom: 14px; font-weight: 700; }
+    .service-card p { color: var(--gray); line-height: 1.75; font-size: 0.95rem; }
+
+    /* WHY US */
+    .why { background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .why-item { border-left: 2px solid var(--accent); padding-left: 24px; }
+    .why-item h4 { font-family: var(--body); color: var(--navy); font-size: 1rem; margin-bottom: 10px; font-weight: 700; }
+    .why-item p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
+
+    /* OUR WORK */
+    .work { background: var(--white); }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1020px;
+      margin: 0 auto 48px;
+    }
+    .work-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .work-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .work-card h3 {
+      font-family: var(--body);
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 22px 28px;
+      border-top: 3px solid var(--accent);
+    }
+    .work-social { text-align: center; }
+    .work-social-label {
+      font-family: var(--body);
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-weight: 600;
       margin-bottom: 18px;
     }
-    h1 {
-      font-family: 'Lato', Arial, sans-serif;
-      font-size: clamp(30px, 5vw, 42px);
+    .social-links { display: flex; justify-content: center; gap: 16px; }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .social-link:hover { background: var(--accent); transform: translateY(-2px); }
+    .social-link svg { width: 20px; height: 20px; fill: currentColor; }
+
+    /* ABOUT */
+    .about { background: var(--navy); }
+    .about h2 { color: var(--white); }
+    .about .section-eyebrow { color: rgba(255,255,255,0.9); }
+    .about .section-eyebrow::after { background: rgba(255,255,255,0.9); }
+    .about-content {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.85;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .about-content strong { color: rgba(255,255,255,0.95); }
+
+    /* CONTACT */
+    .contact { background: var(--light); }
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 940px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .contact-detail { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+    .contact-detail-icon { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 2px; color: var(--accent); }
+    .contact-detail-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; display: block; }
+    .contact-detail-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray); font-weight: 600; display: block; margin-bottom: 4px; }
+    .contact-detail p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+    .contact-detail strong { color: var(--navy); font-size: 1rem; }
+
+    .contact-form { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 1px 12px rgba(0,0,0,0.07); }
+    .contact-form h3 { font-family: var(--body); color: var(--navy); margin-bottom: 28px; font-size: 1.2rem; font-weight: 700; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--navy); margin-bottom: 7px; letter-spacing: 0.3px; text-transform: uppercase; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--rule);
+      border-radius: 3px;
+      font-size: 0.92rem;
+      font-family: inherit;
+      color: var(--gray);
+      transition: border-color 0.2s;
+      background: var(--white);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      font-family: var(--body);
+      width: 100%;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 3px;
+      font-size: 0.95rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      line-height: 1.25;
-      margin-bottom: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+      letter-spacing: 0.3px;
     }
-    p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.72);
-    }
-    .divider {
-      width: 56px;
-      height: 3px;
-      background: var(--navy-soft);
-      margin: 28px auto 0;
-      border-radius: 2px;
-    }
-    .tagline {
-      font-family: 'Lato', Arial, sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      color: var(--gray-light);
-      margin-top: 26px;
-    }
+    .form-submit:hover { background: var(--deep-navy); }
+    .form-note { font-size: 0.78rem; color: var(--gray); text-align: center; margin-top: 12px; }
+
+    /* FOOTER */
     footer {
-      margin-top: 44px;
-      padding-top: 20px;
-      border-top: 1px solid var(--rule);
-      font-size: 12px;
-      color: var(--gray-light);
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 32px 52px;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+    footer strong { color: rgba(255,255,255,0.7); }
+    footer a { color: rgba(255,255,255,0.65); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px 24px;
+      }
+      .nav-toggle { display: flex; }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        margin-top: 14px;
+      }
+      .nav-menu.open { display: flex; }
+      .nav-menu a:not(.nav-cta) {
+        padding: 14px 4px;
+        font-size: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav-cta {
+        margin-top: 14px;
+        text-align: center;
+        padding: 14px;
+        font-size: 1rem;
+      }
+      section { padding: 64px 24px; }
+      .hero { padding: 52px 24px 64px; }
+      .trust-bar { gap: 28px; padding: 20px 24px; }
+      .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22205%20210%20670%20660%22%3E%3Cpath%20d%3D%22M835.74%2C817.06c-31.94-9.64-55.1-40.71-55.1-75.76v-105.79l72.88%2C11.5-72.88-47.86-44.9-29.47-61.57-40.42-92.67-60.83-41.51-27.25-41.51%2C27.25-92.67%2C60.83-61.57%2C40.42-44.89%2C29.47-72.89%2C47.86%2C72.89-11.5.28-.04v109.91c0%2C34.28-22.22%2C63.35-53.05%2C73.61-.89.3-1.5%2C1.11-1.5%2C2.05%2C0%2C1.3%2C1.13%2C2.31%2C2.42%2C2.17l52.12-5.83%2C64.91-7.26%2C35.17-21.24%2C36.99-22.31v-203.09l103.28-67.8%2C134.18%2C88.1v178.6l61.57%2C26.67%2C33.9%2C12.34%2C10.99%2C4.01%2C53.55%2C16.75c1.74.54%2C3.5-.78%2C3.46-2.6-.02-1.16-.81-2.15-1.91-2.48%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M647.51%2C310.18c.07.02.16.02.23.02%2C12.92%2C2.27%2C22.96%2C13.06%2C25.72%2C25.76.44%2C1.97.67%2C3.99.72%2C6.07.02.25.02.53.02.81s0%2C.56-.02.83v167.98l61.57%2C40.42%2C44.9%2C29.47v-252.56c0-20.99%2C8.44-40%2C22.12-53.82%2C6.08-6.19%2C13.22-11.34%2C21.15-15.14.6-.25%2C1.04-.86%2C1.04-1.57%2C0-.12-.02-.24-.02-.35-.16-.79-.86-1.35-1.69-1.35-.12%2C0-.23%2C0-.35.02t-.02%2C0c-.09.02-.19.04-.28.09l-41.95%2C12.1-9.28%2C2.69-12.11%2C3.5-23.51%2C6.8-61.57%2C17.83-16.67%2C5.06-9.99%2C3.01c-.07.02-.14.04-.21.07-.42.19-.72.6-.72%2C1.09%2C0%2C.56.42%2C1.02.93%2C1.14%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M248.61%2C278.64c28.45%2C5.03%2C50.18%2C29.52%2C50.99%2C59.2l.04.02v243.51l64.91-42.6%2C35.18-23.1v-182.55c0-17.26%2C7.75-33.87%2C21.66-44.09.73-.53%2C1.47-1.05%2C2.23-1.55%2C4.03-2.67%2C8.44-4.82%2C13.1-6.38%2C3.08-1.04%2C6.31-1.81%2C9.63-2.27.9-.14%2C1.6-.91%2C1.6-1.81%2C0-1.02-.83-1.85-1.85-1.85h-197.18c-.93%2C0-1.67.7-1.76%2C1.6-.07.9.55%2C1.69%2C1.46%2C1.85%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M837.65%2C819.54h0c.04%2C1.82-1.72%2C3.14-3.46%2C2.6l-53.55-16.75-10.99-4.01c-20.36-7.4-33.9-26.76-33.9-48.4v-124.55l8.49%2C1.32%2C36.41%2C5.75v105.79c0%2C35.05%2C23.16%2C66.12%2C55.1%2C75.76%2C1.11.34%2C1.89%2C1.33%2C1.91%2C2.48%22%20fill%3D%22%230d2340%22%2F%3E%3Cpolygon%20points%3D%22853.52%20647.01%20780.64%20635.51%20744.23%20629.76%20735.74%20624.19%20674.17%20583.77%20540%20495.67%20540%20441.18%20581.51%20468.43%20674.17%20529.25%20735.74%20569.67%20780.64%20599.15%20853.52%20647.01%22%20fill%3D%22%231c5593%22%2F%3E%3Cpolygon%20points%3D%22540%20441.18%20540%20495.67%20436.71%20563.48%20399.73%20587.78%20364.55%20610.88%20335.77%20629.76%20299.64%20635.46%20299.37%20635.51%20226.48%20647.01%20299.37%20599.14%20344.26%20569.67%20405.83%20529.25%20498.49%20468.43%20540%20441.18%22%20fill%3D%22%2316579e%22%2F%3E%3Cpath%20d%3D%22M735.75%2C333.77v218.33l-61.57-40.42v-167.98c.02-.27.02-.55.02-.83s0-.56-.02-.81c-.04-2.08-.28-4.1-.72-6.07-2.76-12.71-12.8-23.49-25.72-25.76-.07%2C0-.16%2C0-.23-.02-.51-.12-.93-.58-.93-1.14%2C0-.48.3-.9.72-1.09.07-.02.14-.05.21-.07l9.99-3.02%2C78.24%2C28.9Z%22%20fill%3D%22%230d2340%22%2F%3E%3Cpolygon%20points%3D%22436.71%20563.48%20436.71%20766.57%20399.73%20788.88%20364.55%20810.12%20364.55%20610.88%20399.73%20587.78%20436.71%20563.48%22%20fill%3D%22%2316579e%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22577.86%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Crect%20x%3D%22501.32%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Crect%20x%3D%22550.15%22%20y%3D%22626.69%22%20width%3D%2235.31%22%20height%3D%2235.31%22%20fill%3D%22%230d2340%22%2F%3E%3Cpath%20d%3D%22M447.94%2C277.04c0%2C.9-.7%2C1.67-1.6%2C1.81-3.32.47-6.54%2C1.23-9.63%2C2.27-4.66%2C1.55-9.07%2C3.71-13.1%2C6.38l-23.88%2C15.67-35.18%2C23.1v212.51l-64.91%2C42.6v-243.51l-.04-.02c-.81-29.68-22.54-54.17-50.99-59.2-.91-.17-1.53-.96-1.46-1.86.09-.91.83-1.6%2C1.76-1.6h197.18c1.02%2C0%2C1.86.83%2C1.86%2C1.85%22%20fill%3D%22%230d2340%22%2F%3E%3Cpath%20d%3D%22M423.62%2C287.5c-.76.5-1.5%2C1.02-2.23%2C1.55-13.91%2C10.21-21.66%2C26.83-21.66%2C44.09v182.54l-35.18%2C23.1v-212.51l35.18-23.09%2C23.89-15.68Z%22%20fill%3D%22%2316579e%22%2F%3E%3Cpath%20d%3D%22M364.55%2C610.88v199.24l-64.91%2C7.26-52.11%2C5.83c-1.29.15-2.43-.87-2.43-2.17%2C0-.94.61-1.76%2C1.5-2.05%2C30.83-10.26%2C53.05-39.33%2C53.05-73.61v-109.92l36.13-5.7%2C28.78-18.88Z%22%20fill%3D%22%230d2340%22%2F%3E%3Cpolygon%20points%3D%22735.75%20281.98%20735.75%20333.77%20657.51%20304.87%20674.18%20299.82%20735.75%20281.98%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M824.96%2C258.47c0%2C.72-.44%2C1.32-1.04%2C1.58-7.93%2C3.8-15.07%2C8.95-21.15%2C15.14-13.68%2C13.82-22.12%2C32.84-22.12%2C53.82v252.55l-44.9-29.47v-270.11l23.51-6.79%2C12.11-3.5%2C9.28-2.69%2C41.95-12.1c.09-.04.19-.07.28-.09t.02%2C0c.12-.02.23-.02.35-.02.83%2C0%2C1.53.55%2C1.69%2C1.34%2C0%2C.12.02.23.02.35%22%20fill%3D%22%23102d4c%22%2F%3E%3Cpath%20d%3D%22M769.65%2C801.38l-33.9-12.34-61.57-26.67v-178.6l61.57%2C40.42%2C8.49%2C5.56-8.49-1.32v124.55c0%2C21.64%2C13.55%2C41%2C33.9%2C48.4%22%20fill%3D%22%23102d4c%22%2F%3E%3C%2Fsvg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "HomeCore Construction",
+    "description": "Full-service home remodeling and construction on Long Island: kitchens and baths, interior renovations, roofing, siding and windows, additions and structural work, and custom and spec home building.",
+    "url": "https://homecore-construction.com/",
+    "logo": "https://homecore-construction.com/images/og-homecore.png",
+    "telephone": "+1-516-509-3289",
+    "email": "contact@homecore-construction.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Long Island, New York"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61590580745683",
+      "https://www.instagram.com/homecoreconstruction/",
+      "https://www.linkedin.com/company/homecore-construction/"
+    ],
+    "knowsAbout": [
+      "Kitchen remodeling",
+      "Bathroom remodeling",
+      "Interior renovation",
+      "Roofing",
+      "Siding",
+      "Window replacement",
+      "Home additions",
+      "Structural work",
+      "Custom home building"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main class="wrap">
-    <div class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="205 210 670 660" width="52" height="52" fill="#ffffff" aria-hidden="true"><path d="M835.74,817.06c-31.94-9.64-55.1-40.71-55.1-75.76v-105.79l72.88,11.5-72.88-47.86-44.9-29.47-61.57-40.42-92.67-60.83-41.51-27.25-41.51,27.25-92.67,60.83-61.57,40.42-44.89,29.47-72.89,47.86,72.89-11.5.28-.04v109.91c0,34.28-22.22,63.35-53.05,73.61-.89.3-1.5,1.11-1.5,2.05,0,1.3,1.13,2.31,2.42,2.17l52.12-5.83,64.91-7.26,35.17-21.24,36.99-22.31v-203.09l103.28-67.8,134.18,88.1v178.6l61.57,26.67,33.9,12.34,10.99,4.01,53.55,16.75c1.74.54,3.5-.78,3.46-2.6-.02-1.16-.81-2.15-1.91-2.48"/><path d="M647.51,310.18c.07.02.16.02.23.02,12.92,2.27,22.96,13.06,25.72,25.76.44,1.97.67,3.99.72,6.07.02.25.02.53.02.81s0,.56-.02.83v167.98l61.57,40.42,44.9,29.47v-252.56c0-20.99,8.44-40,22.12-53.82,6.08-6.19,13.22-11.34,21.15-15.14.6-.25,1.04-.86,1.04-1.57,0-.12-.02-.24-.02-.35-.16-.79-.86-1.35-1.69-1.35-.12,0-.23,0-.35.02t-.02,0c-.09.02-.19.04-.28.09l-41.95,12.1-9.28,2.69-12.11,3.5-23.51,6.8-61.57,17.83-16.67,5.06-9.99,3.01c-.07.02-.14.04-.21.07-.42.19-.72.6-.72,1.09,0,.56.42,1.02.93,1.14"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M248.61,278.64c28.45,5.03,50.18,29.52,50.99,59.2l.04.02v243.51l64.91-42.6,35.18-23.1v-182.55c0-17.26,7.75-33.87,21.66-44.09.73-.53,1.47-1.05,2.23-1.55,4.03-2.67,8.44-4.82,13.1-6.38,3.08-1.04,6.31-1.81,9.63-2.27.9-.14,1.6-.91,1.6-1.81,0-1.02-.83-1.85-1.85-1.85h-197.18c-.93,0-1.67.7-1.76,1.6-.07.9.55,1.69,1.46,1.85"/><path d="M837.65,819.54h0c.04,1.82-1.72,3.14-3.46,2.6l-53.55-16.75-10.99-4.01c-20.36-7.4-33.9-26.76-33.9-48.4v-124.55l8.49,1.32,36.41,5.75v105.79c0,35.05,23.16,66.12,55.1,75.76,1.11.34,1.89,1.33,1.91,2.48"/><polygon points="853.52 647.01 780.64 635.51 744.23 629.76 735.74 624.19 674.17 583.77 540 495.67 540 441.18 581.51 468.43 674.17 529.25 735.74 569.67 780.64 599.15 853.52 647.01"/><polygon points="540 441.18 540 495.67 436.71 563.48 399.73 587.78 364.55 610.88 335.77 629.76 299.64 635.46 299.37 635.51 226.48 647.01 299.37 599.14 344.26 569.67 405.83 529.25 498.49 468.43 540 441.18"/><path d="M735.75,333.77v218.33l-61.57-40.42v-167.98c.02-.27.02-.55.02-.83s0-.56-.02-.81c-.04-2.08-.28-4.1-.72-6.07-2.76-12.71-12.8-23.49-25.72-25.76-.07,0-.16,0-.23-.02-.51-.12-.93-.58-.93-1.14,0-.48.3-.9.72-1.09.07-.02.14-.05.21-.07l9.99-3.02,78.24,28.9Z"/><polygon points="436.71 563.48 436.71 766.57 399.73 788.88 364.55 810.12 364.55 610.88 399.73 587.78 436.71 563.48"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M447.94,277.04c0,.9-.7,1.67-1.6,1.81-3.32.47-6.54,1.23-9.63,2.27-4.66,1.55-9.07,3.71-13.1,6.38l-23.88,15.67-35.18,23.1v212.51l-64.91,42.6v-243.51l-.04-.02c-.81-29.68-22.54-54.17-50.99-59.2-.91-.17-1.53-.96-1.46-1.86.09-.91.83-1.6,1.76-1.6h197.18c1.02,0,1.86.83,1.86,1.85"/><path d="M423.62,287.5c-.76.5-1.5,1.02-2.23,1.55-13.91,10.21-21.66,26.83-21.66,44.09v182.54l-35.18,23.1v-212.51l35.18-23.09,23.89-15.68Z"/><path d="M364.55,610.88v199.24l-64.91,7.26-52.11,5.83c-1.29.15-2.43-.87-2.43-2.17,0-.94.61-1.76,1.5-2.05,30.83-10.26,53.05-39.33,53.05-73.61v-109.92l36.13-5.7,28.78-18.88Z"/><polygon points="735.75 281.98 735.75 333.77 657.51 304.87 674.18 299.82 735.75 281.98"/><path d="M824.96,258.47c0,.72-.44,1.32-1.04,1.58-7.93,3.8-15.07,8.95-21.15,15.14-13.68,13.82-22.12,32.84-22.12,53.82v252.55l-44.9-29.47v-270.11l23.51-6.79,12.11-3.5,9.28-2.69,41.95-12.1c.09-.04.19-.07.28-.09t.02,0c.12-.02.23-.02.35-.02.83,0,1.53.55,1.69,1.34,0,.12.02.23.02.35"/><path d="M769.65,801.38l-33.9-12.34-61.57-26.67v-178.6l61.57,40.42,8.49,5.56-8.49-1.32v124.55c0,21.64,13.55,41,33.9,48.4"/></svg>
-      <span class="wordmark">HomeCore <span style="font-family:'Lato', Arial, sans-serif;color:#8FB3D9;">Construction</span></span>
+
+<!-- NAV -->
+<nav id="top">
+  <a href="#top" class="nav-logo" aria-label="HomeCore Construction, back to top" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="205 210 670 660" width="30" height="30" fill="#ffffff" aria-hidden="true"><path d="M835.74,817.06c-31.94-9.64-55.1-40.71-55.1-75.76v-105.79l72.88,11.5-72.88-47.86-44.9-29.47-61.57-40.42-92.67-60.83-41.51-27.25-41.51,27.25-92.67,60.83-61.57,40.42-44.89,29.47-72.89,47.86,72.89-11.5.28-.04v109.91c0,34.28-22.22,63.35-53.05,73.61-.89.3-1.5,1.11-1.5,2.05,0,1.3,1.13,2.31,2.42,2.17l52.12-5.83,64.91-7.26,35.17-21.24,36.99-22.31v-203.09l103.28-67.8,134.18,88.1v178.6l61.57,26.67,33.9,12.34,10.99,4.01,53.55,16.75c1.74.54,3.5-.78,3.46-2.6-.02-1.16-.81-2.15-1.91-2.48"/><path d="M647.51,310.18c.07.02.16.02.23.02,12.92,2.27,22.96,13.06,25.72,25.76.44,1.97.67,3.99.72,6.07.02.25.02.53.02.81s0,.56-.02.83v167.98l61.57,40.42,44.9,29.47v-252.56c0-20.99,8.44-40,22.12-53.82,6.08-6.19,13.22-11.34,21.15-15.14.6-.25,1.04-.86,1.04-1.57,0-.12-.02-.24-.02-.35-.16-.79-.86-1.35-1.69-1.35-.12,0-.23,0-.35.02t-.02,0c-.09.02-.19.04-.28.09l-41.95,12.1-9.28,2.69-12.11,3.5-23.51,6.8-61.57,17.83-16.67,5.06-9.99,3.01c-.07.02-.14.04-.21.07-.42.19-.72.6-.72,1.09,0,.56.42,1.02.93,1.14"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M248.61,278.64c28.45,5.03,50.18,29.52,50.99,59.2l.04.02v243.51l64.91-42.6,35.18-23.1v-182.55c0-17.26,7.75-33.87,21.66-44.09.73-.53,1.47-1.05,2.23-1.55,4.03-2.67,8.44-4.82,13.1-6.38,3.08-1.04,6.31-1.81,9.63-2.27.9-.14,1.6-.91,1.6-1.81,0-1.02-.83-1.85-1.85-1.85h-197.18c-.93,0-1.67.7-1.76,1.6-.07.9.55,1.69,1.46,1.85"/><path d="M837.65,819.54h0c.04,1.82-1.72,3.14-3.46,2.6l-53.55-16.75-10.99-4.01c-20.36-7.4-33.9-26.76-33.9-48.4v-124.55l8.49,1.32,36.41,5.75v105.79c0,35.05,23.16,66.12,55.1,75.76,1.11.34,1.89,1.33,1.91,2.48"/><polygon points="853.52 647.01 780.64 635.51 744.23 629.76 735.74 624.19 674.17 583.77 540 495.67 540 441.18 581.51 468.43 674.17 529.25 735.74 569.67 780.64 599.15 853.52 647.01"/><polygon points="540 441.18 540 495.67 436.71 563.48 399.73 587.78 364.55 610.88 335.77 629.76 299.64 635.46 299.37 635.51 226.48 647.01 299.37 599.14 344.26 569.67 405.83 529.25 498.49 468.43 540 441.18"/><path d="M735.75,333.77v218.33l-61.57-40.42v-167.98c.02-.27.02-.55.02-.83s0-.56-.02-.81c-.04-2.08-.28-4.1-.72-6.07-2.76-12.71-12.8-23.49-25.72-25.76-.07,0-.16,0-.23-.02-.51-.12-.93-.58-.93-1.14,0-.48.3-.9.72-1.09.07-.02.14-.05.21-.07l9.99-3.02,78.24,28.9Z"/><polygon points="436.71 563.48 436.71 766.57 399.73 788.88 364.55 810.12 364.55 610.88 399.73 587.78 436.71 563.48"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M447.94,277.04c0,.9-.7,1.67-1.6,1.81-3.32.47-6.54,1.23-9.63,2.27-4.66,1.55-9.07,3.71-13.1,6.38l-23.88,15.67-35.18,23.1v212.51l-64.91,42.6v-243.51l-.04-.02c-.81-29.68-22.54-54.17-50.99-59.2-.91-.17-1.53-.96-1.46-1.86.09-.91.83-1.6,1.76-1.6h197.18c1.02,0,1.86.83,1.86,1.85"/><path d="M423.62,287.5c-.76.5-1.5,1.02-2.23,1.55-13.91,10.21-21.66,26.83-21.66,44.09v182.54l-35.18,23.1v-212.51l35.18-23.09,23.89-15.68Z"/><path d="M364.55,610.88v199.24l-64.91,7.26-52.11,5.83c-1.29.15-2.43-.87-2.43-2.17,0-.94.61-1.76,1.5-2.05,30.83-10.26,53.05-39.33,53.05-73.61v-109.92l36.13-5.7,28.78-18.88Z"/><polygon points="735.75 281.98 735.75 333.77 657.51 304.87 674.18 299.82 735.75 281.98"/><path d="M824.96,258.47c0,.72-.44,1.32-1.04,1.58-7.93,3.8-15.07,8.95-21.15,15.14-13.68,13.82-22.12,32.84-22.12,53.82v252.55l-44.9-29.47v-270.11l23.51-6.79,12.11-3.5,9.28-2.69,41.95-12.1c.09-.04.19-.07.28-.09t.02,0c.12-.02.23-.02.35-.02.83,0,1.53.55,1.69,1.34,0,.12.02.23.02.35"/><path d="M769.65,801.38l-33.9-12.34-61.57-26.67v-178.6l61.57,40.42,8.49,5.56-8.49-1.32v124.55c0,21.64,13.55,41,33.9,48.4"/></svg><span>HomeCore Construction</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <a href="#our-work">Our Work</a>
+    <a href="#services">Services</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#about">Our Story</a>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="160 288 760 504" class="hero-logo" role="img" aria-label="HomeCore Construction, Long Island NY" fill="#ffffff"><path d="M678.31,555.94c-14.94-4.51-25.77-19.04-25.77-35.43v-49.48l34.09,5.38-34.09-22.38-21-13.78-28.79-18.9-43.34-28.45-19.41-12.74-19.41,12.74-43.34,28.45-28.79,18.9-21,13.78-34.09,22.38,34.09-5.38.13-.02v51.41c0,16.03-10.39,29.63-24.81,34.43-.42.14-.7.52-.7.96,0,.61.53,1.08,1.14,1.01l24.37-2.72,30.36-3.39,16.45-9.93,17.3-10.43v-94.98l48.3-31.71,62.75,41.2v83.53l28.79,12.47,15.86,5.77,5.14,1.88,25.05,7.83c.81.26,1.64-.36,1.62-1.22-.01-.54-.38-1-.89-1.16"/><path d="M590.28,318.88s.08,0,.11,0c6.04,1.06,10.74,6.11,12.03,12.05.2.92.31,1.87.33,2.84.01.12.01.25.01.38s0,.26-.01.39v78.56l28.79,18.9,21,13.78v-118.12c0-9.82,3.95-18.71,10.35-25.17,2.84-2.9,6.18-5.3,9.89-7.08.28-.12.49-.4.49-.74,0-.05-.01-.11-.01-.16-.08-.37-.4-.63-.79-.63-.05,0-.11,0-.16.01t-.01,0s-.09.02-.13.04l-19.62,5.66-4.34,1.26-5.66,1.64-11,3.18-28.79,8.34-7.8,2.36-4.67,1.41s-.06.02-.1.03c-.19.09-.34.28-.34.51,0,.26.2.48.43.53"/><rect x="521.91" y="444.07" width="16.51" height="16.51"/><rect x="544.75" y="444.07" width="16.51" height="16.51"/><rect x="521.91" y="466.91" width="16.51" height="16.51"/><rect x="544.75" y="466.91" width="16.51" height="16.51"/><path d="M403.72,304.13c13.31,2.35,23.47,13.81,23.85,27.69h.02v113.9l30.36-19.92,16.45-10.8v-85.37c0-8.07,3.62-15.84,10.13-20.62.34-.25.69-.49,1.04-.73,1.89-1.25,3.95-2.25,6.13-2.98,1.44-.49,2.95-.85,4.5-1.06.42-.06.75-.42.75-.84,0-.48-.39-.87-.87-.87h-92.22c-.43,0-.78.33-.82.75-.03.42.26.79.68.87"/><path d="M240.05,625.97c.37,0,.74-.25.74-.87v-2.6c0-18.81,0-22.28-.25-26.23-.25-4.21-1.24-6.19-5.32-7.06-.99-.25-3.09-.37-4.83-.37-1.36,0-2.1-.25-2.1-1.11s.86-1.11,2.6-1.11c6.68,0,14.48.37,17.82.37,2.97,0,10.77-.37,15.59-.37,1.73,0,2.6.25,2.6,1.11s-.74,1.11-2.23,1.11c-.99,0-2.1.12-3.59.37-3.34.62-4.33,2.72-4.58,7.06-.25,3.96-.25,7.42-.25,26.23v21.78c0,11.38,0,21.16.62,26.48.37,3.47,1.11,6.19,4.83,6.68,1.73.25,4.46.49,6.31.49,1.36,0,1.98.37,1.98.99,0,.87-.99,1.24-2.48,1.24-8.05,0-15.84-.37-19.31-.37-2.85,0-10.64.37-15.47.37-1.73,0-2.6-.37-2.6-1.24,0-.62.49-.99,1.98-.99,1.86,0,3.34-.25,4.46-.49,2.48-.49,3.09-3.22,3.59-6.81.62-5.2.62-14.97.62-26.36v-10.89c0-.5-.37-.74-.74-.74h-47.27c-.37,0-.74.12-.74.74v10.89c0,11.38,0,21.16.62,26.48.37,3.47,1.11,6.19,4.83,6.68,1.73.25,4.46.49,6.31.49,1.36,0,1.98.37,1.98.99,0,.87-.99,1.24-2.48,1.24-8.04,0-15.84-.37-19.31-.37-2.85,0-10.64.37-15.59.37-1.61,0-2.48-.37-2.48-1.24,0-.62.49-.99,1.98-.99,1.86,0,3.34-.25,4.45-.49,2.48-.49,3.09-3.22,3.59-6.81.62-5.2.62-14.97.62-26.36v-21.78c0-18.81,0-22.28-.25-26.23-.25-4.21-1.24-6.19-5.32-7.06-.99-.25-3.09-.37-4.83-.37-1.36,0-2.1-.25-2.1-1.11s.86-1.11,2.6-1.11c6.68,0,14.48.37,17.82.37,2.97,0,10.77-.37,15.59-.37,1.73,0,2.6.25,2.6,1.11s-.74,1.11-2.23,1.11c-.99,0-2.1.12-3.59.37-3.34.62-4.33,2.72-4.58,7.06-.25,3.96-.25,7.42-.25,26.23v2.6c0,.62.37.87.74.87h47.27Z"/><path d="M277.88,640.32c0-17.94,12.62-41.21,45.66-41.21,27.47,0,44.55,15.22,44.55,39.35s-17.57,43.07-45.66,43.07c-31.68,0-44.55-22.53-44.55-41.21M351.88,642.3c0-23.26-13.98-37.62-31.56-37.62-12.13,0-26.36,6.44-26.36,32.42,0,21.66,12.37,38.73,32.92,38.73,7.67,0,25-3.59,25-33.54"/><path d="M394.09,600.97c.25-1.73,1.24-2.72,2.1-2.72,1.11,0,1.86.49,3.34,3.34l29.2,58.66,29.2-59.4c.87-1.73,1.86-2.6,2.85-2.6.86,0,2.1,1.11,2.47,3.34l9.9,64.97c.99,6.56,1.98,9.4,5.32,10.39,3.09.87,4.83.99,6.19.99.99,0,1.73.37,1.73.99,0,.87-1.24,1.24-2.85,1.24-2.72,0-18.19-.49-22.52-.74-2.6-.12-3.22-.62-3.22-1.24,0-.49.49-.87,1.24-1.11.62-.25.87-1.49.49-4.46l-6.06-45.54h-.37l-23.39,47.02c-2.48,4.95-3.09,5.94-4.33,5.94-1.36,0-2.6-2.11-4.33-5.32-2.6-4.83-11.26-20.91-12.5-23.88-.86-1.98-7.3-15.22-10.89-22.52h-.37l-5.2,41.08c-.25,1.86-.37,3.22-.37,4.95,0,1.98,1.48,2.72,3.34,3.09,1.86.37,2.85.49,3.84.49s1.73.5,1.73.99c0,.99-.99,1.24-2.6,1.24-4.58,0-9.53-.37-11.51-.37-2.1,0-7.3.37-10.77.37-1.11,0-1.98-.25-1.98-1.24,0-.49.62-.99,1.73-.99.86,0,1.61,0,3.34-.25,2.97-.37,3.96-4.58,4.46-8.04l10.77-68.68Z"/><path d="M507.34,631.04c0-15.96,0-18.93-.12-22.28-.25-3.59-1.24-4.7-4.7-5.69-.87-.25-2.72-.37-4.33-.37-1.11,0-1.86-.37-1.86-1.11s.87-.99,2.48-.99c5.69,0,12.62.25,15.72.25,3.46,0,27.6.12,29.7,0,1.98-.12,3.71-.49,4.58-.62.62-.12,1.24-.49,1.73-.49.62,0,.74.49.74.99,0,.74-.62,1.98-.87,6.81-.12,1.11-.37,5.69-.62,6.93-.12.49-.37,1.73-1.24,1.73-.74,0-.87-.49-.87-1.36,0-.74-.12-2.6-.74-3.84-.87-1.86-1.73-3.34-7.18-3.84-1.86-.25-14.85-.49-17.08-.49-.49,0-.74.37-.74.99v25.99c0,.62.12,1.11.74,1.11,2.48,0,16.58,0,19.06-.25,2.6-.25,4.21-.49,5.2-1.61.86-.74,1.24-1.36,1.73-1.36s.87.49.87,1.11-.25,2.35-.87,7.67c-.25,2.1-.49,6.31-.49,7.05,0,.87-.12,2.35-1.11,2.35-.74,0-.99-.37-.99-.87-.12-1.11-.12-2.48-.37-3.84-.62-2.1-1.98-3.71-6.06-4.08-1.98-.25-14.35-.49-17.08-.49-.49,0-.62.49-.62,1.11v8.42c0,3.59-.12,12.5,0,15.59.25,7.18,3.59,8.79,14.73,8.79,2.85,0,7.43-.12,10.27-1.36,2.72-1.24,3.96-3.46,4.7-7.8.25-1.11.49-1.61,1.24-1.61.87,0,.99,1.36.99,2.48,0,2.35-.87,9.53-1.48,11.63-.74,2.72-1.73,2.72-5.82,2.72-8.17,0-14.73-.12-20.05-.37-5.32-.12-9.4-.25-12.62-.25-1.24,0-3.59.12-6.19.12-2.6.12-5.32.25-7.55.25-1.36,0-2.1-.37-2.1-1.11,0-.49.37-1.11,1.73-1.11,1.61,0,2.85-.12,3.84-.37,2.23-.49,2.85-2.48,3.22-5.57.49-4.46.49-12.75.49-22.4v-18.56Z"/><path d="M583,668.41c-12.13-10.64-15.35-24.5-15.35-36.51,0-8.41,2.6-23.02,14.48-33.91,8.91-8.17,20.67-13.12,39.11-13.12,7.67,0,12.25.49,17.94,1.24,4.7.62,8.66,1.73,12.37,2.1,1.36.12,1.86.74,1.86,1.49,0,.99-.37,2.48-.62,6.81-.25,4.08-.12,10.89-.37,13.36-.12,1.86-.37,2.85-1.48,2.85-.99,0-1.24-.99-1.24-2.72-.12-3.84-1.73-8.17-4.83-11.38-4.08-4.33-13.74-7.67-25.12-7.67-10.77,0-17.82,2.72-23.26,7.67-9.03,8.29-11.39,20.05-11.39,32.05,0,29.45,22.4,44.06,38.98,44.06,11.01,0,17.7-1.24,22.65-6.93,2.1-2.35,3.71-5.94,4.21-8.17.37-1.98.62-2.47,1.61-2.47.87,0,1.11.87,1.11,1.86,0,1.48-1.48,12.25-2.72,16.46-.62,2.1-1.11,2.72-3.22,3.59-4.95,1.98-14.35,2.85-22.28,2.85-16.95,0-31.18-3.71-42.45-13.49"/><path d="M665.22,640.32c0-17.94,12.62-41.21,45.66-41.21,27.47,0,44.55,15.22,44.55,39.35s-17.57,43.07-45.66,43.07c-31.68,0-44.55-22.53-44.55-41.21M739.23,642.3c0-23.26-13.98-37.62-31.56-37.62-12.13,0-26.36,6.44-26.36,32.42,0,21.66,12.37,38.73,32.92,38.73,7.67,0,25-3.59,25-33.54"/><path d="M776.56,631.04c0-15.96,0-18.93-.12-22.27-.25-3.59-1.24-4.7-4.7-5.69-.87-.25-2.72-.37-4.33-.37-1.11,0-1.86-.37-1.86-1.11s.86-.99,2.48-.99c5.69,0,12.62.25,14.85.25,3.71,0,13.61-.25,16.95-.25,6.93,0,14.85.62,20.67,4.45,3.09,2.1,7.67,7.43,7.67,14.48,0,7.8-4.45,14.73-15.1,23.26,9.65,11.88,17.33,21.41,23.88,27.97,6.06,6.06,9.9,6.56,11.63,6.93,1.11.25,1.73.25,2.6.25s1.36.62,1.36,1.11c0,.87-.74,1.11-2.11,1.11h-10.39c-6.06,0-9.03-.62-11.88-2.11-4.7-2.35-8.79-7.3-14.85-15.47-4.33-5.69-8.91-12.75-10.27-14.36-.62-.62-1.24-.74-1.98-.74l-9.78-.25c-.49,0-.87.25-.87.87v1.49c0,9.78.12,17.94.62,22.4.37,3.09.86,5.07,4.21,5.57,1.61.25,3.96.37,5.32.37.87,0,1.36.62,1.36,1.11,0,.74-.86,1.11-2.23,1.11-6.31,0-15.34-.37-16.95-.37-2.1,0-9.03.37-13.36.37-1.36,0-2.11-.37-2.11-1.11,0-.49.37-1.11,1.73-1.11,1.61,0,2.85-.12,3.84-.37,2.23-.49,2.85-2.48,3.22-5.57.49-4.46.49-12.75.49-22.4v-18.56ZM790.42,639.21c0,1.11.25,1.48.99,1.86,2.35.74,5.57.99,8.29.99,4.33,0,5.82-.37,7.67-1.73,3.34-2.35,7.05-6.93,7.05-15.59,0-14.85-10.15-18.69-16.58-18.69-2.72,0-5.32.12-6.44.37-.74.25-.99.62-.99,1.49v31.31Z"/><path d="M869.4,631.04c0-15.96,0-18.93-.12-22.28-.25-3.59-1.24-4.7-4.7-5.69-.87-.25-2.72-.37-4.33-.37-1.12,0-1.86-.37-1.86-1.11s.87-.99,2.48-.99c5.69,0,12.62.25,15.72.25,3.46,0,27.6.12,29.7,0,1.98-.12,3.71-.49,4.58-.62.62-.12,1.24-.49,1.73-.49.62,0,.74.49.74.99,0,.74-.62,1.98-.86,6.81-.12,1.11-.37,5.69-.62,6.93-.12.49-.37,1.73-1.24,1.73-.74,0-.86-.49-.86-1.36,0-.74-.12-2.6-.74-3.84-.87-1.86-1.73-3.34-7.18-3.84-1.86-.25-14.85-.49-17.08-.49-.49,0-.74.37-.74.99v25.99c0,.62.12,1.11.74,1.11,2.48,0,16.58,0,19.06-.25,2.6-.25,4.21-.49,5.2-1.61.86-.74,1.24-1.36,1.73-1.36s.87.49.87,1.11-.25,2.35-.87,7.67c-.25,2.1-.49,6.31-.49,7.05,0,.87-.12,2.35-1.11,2.35-.74,0-.99-.37-.99-.87-.12-1.11-.12-2.48-.37-3.84-.62-2.1-1.98-3.71-6.06-4.08-1.98-.25-14.36-.49-17.08-.49-.49,0-.62.49-.62,1.11v8.42c0,3.59-.12,12.5,0,15.59.25,7.18,3.59,8.79,14.73,8.79,2.85,0,7.43-.12,10.27-1.36,2.72-1.24,3.96-3.46,4.7-7.8.25-1.11.49-1.61,1.24-1.61.86,0,.99,1.36.99,2.48,0,2.35-.87,9.53-1.48,11.63-.74,2.72-1.73,2.72-5.82,2.72-8.17,0-14.73-.12-20.05-.37-5.32-.12-9.4-.25-12.62-.25-1.24,0-3.59.12-6.19.12-2.6.12-5.32.25-7.55.25-1.36,0-2.11-.37-2.11-1.11,0-.49.37-1.11,1.73-1.11,1.61,0,2.85-.12,3.83-.37,2.23-.49,2.85-2.48,3.22-5.57.5-4.46.5-12.75.5-22.4v-18.56Z"/><path d="M280.18,729.97c-.2-.27-.46-.4-.75-.4-.18,0-.37.07-.6.21-.97.72-1.97,1.27-2.98,1.63-1.01.36-2.11.54-3.26.54-1.78,0-3.44-.45-4.95-1.34-1.51-.89-2.72-2.12-3.61-3.66-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.11-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34,1.13,0,2.24.18,3.28.55,1.05.37,2.04.88,2.93,1.52.21.17.43.25.64.25.26,0,.49-.13.72-.4l1.06-1.39c.16-.24.24-.45.24-.63,0-.26-.13-.49-.4-.71-1.16-.91-2.48-1.62-3.9-2.12-1.43-.49-2.97-.74-4.57-.74-2.51,0-4.85.62-6.95,1.83-2.1,1.21-3.78,2.89-4.99,5-1.21,2.11-1.83,4.45-1.83,6.98s.62,4.87,1.83,6.98c1.21,2.11,2.89,3.79,4.99,5.01,2.1,1.22,4.44,1.84,6.95,1.84,1.6,0,3.15-.27,4.59-.79,1.44-.52,2.77-1.26,3.96-2.2.23-.18.34-.4.34-.64,0-.2-.08-.41-.25-.66l-1.05-1.39Z"/><path d="M328.24,709.84c-2.1-1.21-4.44-1.83-6.97-1.83s-4.85.62-6.95,1.83c-2.1,1.21-3.78,2.9-4.99,5-1.21,2.1-1.83,4.45-1.83,6.98s.62,4.87,1.83,6.98c1.21,2.1,2.89,3.79,4.99,5.01,2.1,1.22,4.43,1.84,6.95,1.84s4.87-.62,6.97-1.84c2.1-1.22,3.78-2.9,4.99-5.01,1.21-2.1,1.83-4.45,1.83-6.98s-.62-4.87-1.83-6.98c-1.21-2.1-2.89-3.79-4.99-5M321.27,731.94c-1.78,0-3.44-.45-4.95-1.34s-2.72-2.12-3.61-3.66c-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.1-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34s3.46.45,4.97,1.34c1.51.89,2.72,2.12,3.61,3.67.89,1.55,1.34,3.28,1.34,5.14s-.45,3.59-1.34,5.12c-.89,1.53-2.11,2.76-3.61,3.65-1.51.89-3.18,1.34-4.97,1.34"/><path d="M385.74,708.44h-1.87c-.62,0-.97.34-.97.97v19.39l-14.6-19.83c-.14-.19-.3-.33-.47-.41-.17-.08-.37-.13-.6-.13h-2.16c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.88c.62,0,.97-.34.97-.97v-19.62l14.79,20.05c.14.19.3.33.47.41.17.08.37.12.6.12h1.97c.62,0,.97-.34.97-.97v-24.83c0-.63-.34-.97-.97-.97"/><path d="M430.87,721.48c-1.22-.56-2.8-1.13-4.7-1.69-1.55-.42-2.74-.79-3.55-1.1-.78-.3-1.45-.71-1.97-1.23-.5-.5-.75-1.13-.75-1.94s.24-1.46.71-2.01c.49-.57,1.16-1.01,2-1.3.86-.3,1.82-.46,2.86-.46s2.17.18,3.24.55c1.07.37,2.02.88,2.83,1.52.21.17.43.25.64.25.27,0,.51-.13.71-.38l1.05-1.31c.18-.21.28-.44.28-.66,0-.27-.13-.51-.38-.69-1.14-.94-2.46-1.67-3.94-2.18-1.47-.51-3.01-.77-4.58-.77-1.81,0-3.43.32-4.82.94-1.4.63-2.49,1.5-3.26,2.61-.77,1.11-1.15,2.38-1.15,3.8,0,1.57.41,2.87,1.23,3.88.8.99,1.81,1.76,2.98,2.28,1.15.51,2.55.98,4.16,1.4,1.65.44,2.96.85,3.89,1.21.9.35,1.62.81,2.16,1.38.52.55.78,1.27.78,2.15s-.25,1.66-.73,2.28c-.49.63-1.18,1.1-2.04,1.42-.88.32-1.89.48-3.03.48-1.38,0-2.74-.26-4.05-.79-1.31-.52-2.46-1.28-3.42-2.23-.22-.23-.45-.35-.7-.35-.24,0-.46.11-.66.31l-1.14,1.19c-.23.23-.34.47-.34.72,0,.2.09.42.28.63,1.24,1.36,2.76,2.4,4.52,3.12,1.75.71,3.62,1.08,5.53,1.08,1.8,0,3.44-.31,4.88-.93,1.45-.62,2.62-1.54,3.47-2.74.85-1.2,1.28-2.64,1.28-4.27,0-1.53-.41-2.81-1.21-3.81-.79-.99-1.82-1.77-3.06-2.34"/><path d="M480.39,708.44h-18.7c-.62,0-.97.34-.97.97v1.59c0,.63.34.97.97.97h7.45v22.27c0,.62.34.97.97.97h1.87c.62,0,.97-.34.97-.97v-22.27h7.45c.62,0,.97-.34.97-.97v-1.59c0-.63-.34-.97-.97-.97"/><path d="M527.8,721.93c.85-1.3,1.28-2.91,1.28-4.77,0-1.73-.38-3.27-1.13-4.58-.75-1.31-1.82-2.34-3.18-3.06-1.36-.72-2.95-1.09-4.74-1.09h-9.6c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.87c.63,0,.97-.34.97-.97v-8.35h5.91c.49,0,1.02-.03,1.59-.08l3.98,8.71c.21.45.58.69,1.08.69h2.21c.25,0,.46-.06.61-.19.17-.13.26-.32.26-.54,0-.13-.04-.28-.11-.47l-4.37-9.19c1.41-.67,2.54-1.65,3.35-2.89M513.28,711.97h6.47c1.08,0,2.06.21,2.89.62.82.41,1.47,1.01,1.92,1.79.45.78.68,1.72.68,2.79s-.23,1.97-.68,2.75c-.45.78-1.1,1.39-1.92,1.81-.83.43-1.81.64-2.92.64h-6.45v-10.4Z"/><path d="M578.17,708.42h-1.88c-.62,0-.97.34-.97.97v14.23c0,1.66-.28,3.15-.84,4.42-.55,1.26-1.38,2.25-2.46,2.95-1.08.7-2.41,1.05-3.94,1.05s-2.86-.36-3.95-1.06c-1.08-.7-1.91-1.7-2.47-2.95-.56-1.26-.84-2.75-.84-4.41v-14.23c0-.62-.34-.97-.97-.97h-1.88c-.62,0-.97.34-.97.97v14.54c0,2.27.44,4.32,1.3,6.08.86,1.77,2.14,3.18,3.8,4.19,1.66,1,3.67,1.51,5.97,1.51s4.29-.51,5.95-1.51c1.66-1.01,2.94-2.41,3.8-4.19.86-1.76,1.3-3.81,1.3-6.08v-14.54c0-.62-.34-.97-.97-.97"/><path d="M628.81,729.97c-.21-.27-.46-.4-.75-.4-.18,0-.37.07-.6.21-.96.72-1.97,1.27-2.98,1.63-1.01.36-2.11.54-3.26.54-1.78,0-3.44-.45-4.95-1.34-1.51-.89-2.72-2.12-3.61-3.66-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.11-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34,1.13,0,2.24.18,3.28.55,1.05.37,2.04.88,2.93,1.52.21.17.43.25.64.25.26,0,.49-.13.72-.4l1.06-1.39c.16-.24.25-.44.25-.63,0-.25-.14-.49-.4-.71-1.16-.91-2.48-1.62-3.9-2.12-1.43-.49-2.97-.74-4.57-.74-2.51,0-4.85.62-6.95,1.83-2.1,1.21-3.78,2.9-4.99,5-1.22,2.1-1.83,4.45-1.83,6.98s.62,4.87,1.83,6.98c1.21,2.1,2.89,3.79,4.99,5.01,2.1,1.22,4.44,1.84,6.95,1.84,1.6,0,3.15-.27,4.59-.79,1.44-.52,2.77-1.26,3.96-2.2.23-.18.34-.4.34-.64,0-.2-.08-.41-.25-.66l-1.05-1.39Z"/><path d="M675.71,708.44h-18.7c-.62,0-.97.34-.97.97v1.59c0,.63.34.97.97.97h7.45v22.27c0,.62.34.97.97.97h1.87c.63,0,.97-.34.97-.97v-22.27h7.45c.62,0,.97-.34.97-.97v-1.59c0-.63-.34-.97-.97-.97"/><path d="M707.64,708.44h-1.88c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.88c.62,0,.97-.34.97-.97v-24.83c0-.63-.34-.97-.97-.97"/><path d="M758.38,709.84c-2.1-1.21-4.44-1.83-6.97-1.83s-4.85.62-6.95,1.83c-2.1,1.21-3.77,2.9-4.99,5s-1.83,4.45-1.83,6.98.62,4.87,1.83,6.98c1.21,2.1,2.89,3.79,4.99,5.01,2.1,1.22,4.44,1.84,6.95,1.84s4.87-.62,6.97-1.84c2.1-1.22,3.78-2.9,4.99-5.01,1.21-2.1,1.83-4.45,1.83-6.98s-.62-4.87-1.83-6.98c-1.21-2.1-2.89-3.79-4.99-5M751.41,731.94c-1.78,0-3.44-.45-4.95-1.34-1.51-.89-2.72-2.12-3.61-3.66-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.1-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34s3.46.45,4.97,1.34c1.51.89,2.72,2.12,3.61,3.67.89,1.55,1.34,3.28,1.34,5.14s-.45,3.58-1.34,5.12c-.89,1.53-2.11,2.76-3.61,3.65-1.51.89-3.18,1.34-4.97,1.34"/><path d="M815.88,708.44h-1.88c-.62,0-.97.34-.97.97v19.39l-14.6-19.83c-.14-.19-.3-.33-.47-.41-.17-.08-.37-.13-.6-.13h-2.16c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.88c.62,0,.97-.34.97-.97v-19.62l14.79,20.05c.14.19.3.33.47.41s.37.12.6.12h1.97c.62,0,.97-.34.97-.97v-24.83c0-.63-.34-.97-.97-.97"/><rect x="164.07" y="720.78" width="62.41" height="2.17"/><rect x="853.52" y="720.78" width="62.41" height="2.17"/><path d="M367.54,783.44h-8.58c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v13.16h7.04c.29,0,.44.15.44.44v.99c0,.29-.15.44-.44.44"/><path d="M385.32,782.63c-1.22-.71-2.18-1.67-2.88-2.9s-1.06-2.57-1.06-4.04.35-2.81,1.06-4.04c.7-1.22,1.67-2.19,2.88-2.89,1.22-.71,2.56-1.06,4.02-1.06s2.81.35,4.03,1.06c1.22.7,2.18,1.67,2.89,2.89.7,1.22,1.06,2.57,1.06,4.04s-.35,2.81-1.06,4.04c-.7,1.22-1.67,2.19-2.89,2.9-1.22.71-2.56,1.06-4.03,1.06s-2.8-.35-4.02-1.06M392.33,780.97c.91-.54,1.63-1.27,2.17-2.19.54-.93.8-1.95.8-3.07s-.27-2.15-.8-3.08c-.54-.93-1.26-1.67-2.17-2.2-.91-.54-1.9-.8-2.98-.8s-2.06.27-2.97.8c-.91.54-1.63,1.27-2.17,2.2-.54.93-.8,1.96-.8,3.08s.27,2.14.8,3.07c.54.93,1.26,1.66,2.17,2.2.91.54,1.9.8,2.97.8s2.07-.27,2.98-.8"/><path d="M414.54,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.27c.12,0,.22.02.3.06.08.04.16.11.23.2l8.81,11.96v-11.78c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44h-1.16c-.12,0-.22-.02-.3-.06-.08-.04-.16-.11-.23-.2l-8.92-12.09v11.91c0,.29-.15.44-.44.44"/><path d="M453.43,776.46h1.09c.29,0,.44.15.44.44v4.72c0,.23-.09.4-.26.53-.69.49-1.48.87-2.37,1.14-.89.27-1.78.41-2.66.41-1.46,0-2.8-.36-4.02-1.08-1.22-.71-2.18-1.68-2.89-2.91-.7-1.22-1.06-2.57-1.06-4.04s.35-2.8,1.06-4.03c.7-1.22,1.67-2.19,2.89-2.9,1.22-.71,2.56-1.06,4.02-1.06.9,0,1.76.15,2.59.44.83.29,1.59.7,2.26,1.22.12.1.19.21.19.32,0,.1-.04.19-.12.3l-.64.83c-.1.12-.21.19-.33.19-.1,0-.19-.03-.29-.11-.52-.4-1.09-.71-1.72-.93-.63-.22-1.28-.34-1.94-.34-1.07,0-2.06.27-2.98.81-.91.54-1.64,1.27-2.18,2.2-.54.93-.8,1.95-.8,3.07s.27,2.15.8,3.09c.54.94,1.26,1.68,2.18,2.23.91.55,1.91.82,2.98.82.55,0,1.12-.08,1.71-.23.59-.15,1.13-.37,1.62-.64v-4.06c0-.29.15-.44.44-.44"/><path d="M490.78,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44"/><path d="M509.32,783.03c-1.02-.41-1.89-1.01-2.61-1.8-.09-.1-.13-.2-.13-.28,0-.11.05-.22.17-.33l.67-.71c.1-.1.19-.14.3-.14.11,0,.22.06.32.17.58.58,1.26,1.03,2.05,1.34.79.32,1.6.48,2.43.48.68,0,1.29-.1,1.82-.29.53-.19.95-.48,1.26-.87.3-.39.46-.86.46-1.42s-.16-1-.49-1.35c-.33-.35-.77-.63-1.32-.84-.55-.21-1.31-.45-2.3-.72-.95-.24-1.75-.51-2.43-.81-.67-.3-1.24-.74-1.7-1.31-.46-.57-.69-1.3-.69-2.2,0-.81.22-1.52.65-2.16.44-.63,1.06-1.13,1.86-1.49.8-.36,1.73-.54,2.78-.54.91,0,1.79.15,2.65.45.86.3,1.61.72,2.27,1.26.12.09.18.19.18.31,0,.1-.04.2-.13.31l-.62.77c-.1.12-.2.18-.32.18-.1,0-.19-.04-.3-.12-.49-.39-1.06-.69-1.7-.91-.64-.22-1.29-.33-1.94-.33s-1.21.09-1.72.27c-.52.18-.93.45-1.23.8-.3.35-.45.78-.45,1.27s.16.92.48,1.23c.32.32.72.56,1.2.75.48.18,1.18.4,2.1.65,1.12.33,2.03.66,2.74.99s1.3.77,1.75,1.34.68,1.29.68,2.16c0,.94-.24,1.75-.73,2.44-.48.69-1.15,1.21-1.98,1.56-.84.36-1.78.54-2.82.54-1.12,0-2.18-.21-3.2-.62"/><path d="M542.63,783.44h-8.58c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v13.16h7.03c.29,0,.44.15.44.44v.99c0,.29-.15.44-.44.44"/><path d="M570.63,783.14c0,.1-.03.17-.1.22-.07.05-.16.08-.29.08h-1.13c-.25,0-.42-.11-.51-.34l-1.22-3.14h-7.38l-1.21,3.14c-.09.23-.26.34-.51.34h-1.13c-.12,0-.22-.03-.29-.08-.07-.05-.1-.13-.1-.22,0-.06,0-.13.03-.2l5.86-14.63c.09-.23.26-.34.52-.34h1.04c.26,0,.43.12.52.34l5.85,14.63c.03.06.04.13.04.21M566.69,778.14l-2.9-7.5-.1-.31-.1.31-2.91,7.5h6Z"/><path d="M587.11,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.27c.12,0,.22.02.3.06.08.04.16.11.23.2l8.81,11.96v-11.78c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44h-1.16c-.12,0-.22-.02-.3-.06-.08-.04-.16-.11-.23-.2l-8.92-12.09v11.91c0,.29-.15.44-.44.44"/><path d="M615.34,783v-14.59c0-.29.15-.44.44-.44h4.9c1.47,0,2.81.34,4.04,1.02,1.22.68,2.19,1.62,2.9,2.8.71,1.19,1.06,2.49,1.06,3.93s-.35,2.72-1.06,3.9c-.71,1.18-1.67,2.11-2.88,2.79-1.22.68-2.56,1.02-4.02,1.02h-4.93c-.29,0-.44-.15-.44-.44M623.74,780.79c.9-.52,1.61-1.22,2.13-2.11.52-.89.78-1.88.78-2.96s-.26-2.08-.79-2.98c-.52-.9-1.24-1.61-2.15-2.13-.91-.52-1.91-.78-3-.78h-3.4v11.73h3.45c1.09,0,2.08-.26,2.98-.78"/><path d="M644.1,786.09c-.1,0-.2-.04-.31-.13l-.14-.13c-.1-.1-.15-.2-.15-.31,0-.1.05-.2.15-.32.3-.32.53-.63.69-.94s.24-.56.24-.76v-.07h-.46c-.29,0-.44-.15-.44-.44v-1.32c0-.29.15-.44.44-.44h1.32c.29,0,.44.15.44.44v1.19c0,.56-.13,1.09-.4,1.6-.26.51-.62,1-1.06,1.48-.1.1-.21.15-.32.15"/><path d="M681.38,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.27c.12,0,.22.02.3.06.08.04.16.11.23.2l8.81,11.96v-11.78c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44h-1.16c-.12,0-.22-.02-.3-.06-.08-.04-.16-.11-.23-.2l-8.92-12.09v11.91c0,.29-.15.44-.44.44"/><path d="M714.42,783.44h-1.1c-.29,0-.44-.15-.44-.44v-6.07l-5.01-8.43c-.05-.08-.08-.17-.08-.25,0-.08.03-.15.1-.2.07-.05.16-.08.27-.08h1.34c.24,0,.41.1.53.31l3.84,6.77,3.81-6.77c.11-.21.29-.31.53-.31h1.35c.12,0,.21.03.27.08.07.05.1.12.1.2,0,.07-.03.16-.08.25l-5.01,8.42v6.08c0,.29-.15.44-.44.44"/><rect x="772.01" y="776.36" width="87.65" height="1.08"/><rect x="220.34" y="776.36" width="87.65" height="1.08"/><path d="M679.21,557.1h0c.02.85-.8,1.47-1.62,1.22l-25.05-7.83-5.14-1.88c-9.52-3.46-15.86-12.51-15.86-22.63v-58.25l3.97.62,17.03,2.69v49.47c0,16.39,10.83,30.92,25.77,35.43.52.16.88.62.89,1.16"/><polygon points="686.63 476.41 652.54 471.03 635.51 468.34 631.54 465.74 602.75 446.84 540 405.63 540 380.15 559.41 392.89 602.75 421.34 631.54 440.24 652.54 454.03 686.63 476.41"/><polygon points="540 380.15 540 405.63 491.7 437.35 474.4 448.71 457.94 459.51 444.49 468.34 427.59 471.01 427.46 471.03 393.37 476.41 427.46 454.03 448.46 440.24 477.25 421.34 520.59 392.89 540 380.15"/><path d="M631.55,329.91v102.11l-28.79-18.9v-78.56c0-.13,0-.26,0-.39s0-.26,0-.38c-.02-.98-.13-1.92-.34-2.84-1.29-5.94-5.99-10.99-12.03-12.05-.03,0-.08,0-.11-.01-.24-.05-.43-.27-.43-.53,0-.23.14-.42.34-.51.03-.01.06-.02.1-.03l4.67-1.41,36.59,13.51Z"/><polygon points="491.7 437.35 491.7 532.33 474.4 542.76 457.95 552.7 457.95 459.51 474.4 448.71 491.7 437.35"/><rect x="521.91" y="444.07" width="16.51" height="16.51"/><rect x="544.74" y="444.07" width="16.51" height="16.51"/><rect x="521.91" y="466.91" width="16.51" height="16.51"/><rect x="544.74" y="466.91" width="16.51" height="16.51"/><path d="M496.95,303.38c0,.42-.33.78-.75.85-1.55.22-3.06.57-4.5,1.06-2.18.73-4.24,1.74-6.13,2.98l-11.17,7.33-16.45,10.8v99.38l-30.36,19.92v-113.89h-.02c-.38-13.89-10.54-25.35-23.85-27.7-.42-.07-.71-.44-.68-.87.04-.42.39-.75.82-.75h92.22c.48,0,.87.39.87.87"/><path d="M485.57,308.28c-.35.23-.7.48-1.04.73-6.5,4.78-10.13,12.55-10.13,20.62v85.37l-16.45,10.8v-99.39l16.45-10.8,11.17-7.33Z"/><path d="M457.94,459.51v93.18l-30.36,3.39-24.37,2.73c-.61.07-1.14-.41-1.14-1.01,0-.44.28-.82.7-.96,14.42-4.8,24.81-18.39,24.81-34.43v-51.41l16.9-2.67,13.46-8.83Z"/><polygon points="631.55 305.7 631.55 329.91 594.96 316.4 602.75 314.04 631.55 305.7"/><path d="M673.27,294.7c0,.34-.21.62-.49.74-3.71,1.78-7.05,4.19-9.89,7.08-6.4,6.46-10.35,15.36-10.35,25.17v118.12l-21-13.78v-126.32l11-3.18,5.66-1.64,4.34-1.26,19.62-5.66s.09-.04.13-.04t0,0c.05,0,.11,0,.16,0,.39,0,.71.26.79.63,0,.05.01.11.01.16"/><path d="M647.4,548.61l-15.86-5.77-28.79-12.47v-83.53l28.79,18.9,3.97,2.6-3.97-.62v58.25c0,10.12,6.34,19.17,15.86,22.63"/></svg>
+  <h1>Long Island's Full-Service Residential<br>Renovations &amp; New-Build Construction</h1>
+  <p class="hero-tagline">Quality Built by Skilled Hands. Led by Experience.</p>
+  <p>From kitchens and baths to roofing, siding, and full custom homes, HomeCore Construction handles every interior and exterior project under one trusted roof. Built on word-of-mouth referrals and a commitment to doing the job right the first time.</p>
+  <div class="hero-cta-group">
+    <a href="#contact" class="btn-primary">Contact Us</a>
+    <a href="tel:5165093289" class="btn-outline">Call (516) 509-3289</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><strong>Interior &amp; Exterior</strong>One Team, Every Project</div>
+  <div class="trust-item"><strong>Custom Homes &amp; Additions</strong>Built From the Ground Up</div>
+  <div class="trust-item"><strong>Free In-Home Estimates</strong>No Pressure, No Obligation</div>
+  <div class="trust-item"><strong>Built on Word of Mouth</strong>Quality You Can Trust</div>
+</div>
+
+<!-- OUR WORK -->
+<section class="work" id="our-work">
+  <div class="section-head">
+    <p class="section-eyebrow">Our Work</p>
+    <h2>See Our Craftsmanship</h2>
+    <p class="section-sub">We let our work speak for itself. Click into a project to see the full story, from demo day to the finished space.</p>
+  </div>
+  <div class="work-grid">
+    <a class="work-card" href="/projects/nonnas-dream-kitchen" aria-label="View project: Nonna's Dream Kitchen">
+      <img src="/images/projects/nonnas-dream-kitchen/after.jpg" alt="Nonna's Dream Kitchen, a full kitchen remodel on Long Island" class="work-img">
+      <h3>Nonna's Dream Kitchen</h3>
+    </a>
+    <a class="work-card" href="/projects/past-projects" aria-label="View past projects">
+        <img class="work-img" src="/images/projects/all-past-projects/build-blue-home-exterior.jpg" alt="Finished blue sided home at dusk, from our past Long Island projects">
+        <h3>Past Projects</h3>
+      </a>
+      <a class="work-card" href="/projects/projects-in-progress" aria-label="View projects in progress">
+      <img class="work-img" src="/images/projects/all-past-projects/build-framing-02.jpg" alt="Two-story home under construction with the roof shingled and the front porch framed">
+      <h3>Projects in Progress</h3>
+    </a>
+  </div>
+  <div style="text-align:center;margin-bottom:48px;">
+    <a href="/projects/" class="btn-solid">View All Recent Projects</a>
+  </div>
+  <div class="work-social">
+    <p class="work-social-label">Follow our latest projects</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61590580745683" class="social-link" aria-label="HomeCore Construction on Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/homecoreconstruction/" class="social-link" aria-label="HomeCore Construction on Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.62c-3.15 0-3.52.01-4.76.07-.99.04-1.53.21-1.89.35-.47.18-.81.4-1.17.76-.36.36-.58.7-.76 1.17-.14.36-.31.9-.35 1.89-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.04.99.21 1.53.35 1.89.18.47.4.81.76 1.17.36.36.7.58 1.17.76.36.14.9.31 1.89.35 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.99-.04 1.53-.21 1.89-.35.47-.18.81-.4 1.17-.76.36-.36.58-.7.76-1.17.14-.36.31-.9.35-1.89.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.99-.21-1.53-.35-1.89a3.15 3.15 0 0 0-.76-1.17 3.15 3.15 0 0 0-1.17-.76c-.36-.14-.9-.31-1.89-.35-1.24-.06-1.61-.07-4.76-.07Zm0 2.76a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6Zm0 1.62a3.68 3.68 0 1 0 0 7.36 3.68 3.68 0 0 0 0-7.36Zm5.5-2.9a1.24 1.24 0 1 1 0 2.48 1.24 1.24 0 0 1 0-2.48Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/homecore-construction/" class="social-link" aria-label="HomeCore Construction on LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.71h.05a4.17 4.17 0 0 1 3.75-2.06c4.01 0 4.75 2.64 4.75 6.07V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4V9Z"/></svg>
+      </a>
     </div>
-    <div class="eyebrow">Long Island, New York</div>
-    <h1>Something solid is taking shape.</h1>
-    <p>Our new website is under construction, and we're building it the same way we build everything: carefully, and done right the first time. Check back soon.</p>
-    <div class="divider"></div>
-    <p class="tagline">Quality Built by Skilled Hands. Led by Experience.</p>
-    <footer>&copy; 2026 HomeCore Construction. All rights reserved.</footer>
-  </main>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-head">
+    <p class="section-eyebrow">What We Do</p>
+    <h2>Whole-Home Remodeling &amp; Construction</h2>
+    <p class="section-sub">Interior or exterior, a single room or an entire home; one trusted team handles your project from first sketch to final walkthrough.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Kitchens &amp; Bathrooms</h3>
+      <p>Full kitchen and bath remodels: cabinetry, counters, tile, plumbing, and lighting. We modernize the rooms you use most with craftsmanship that lasts and finishes you'll love.</p>
+    </div>
+    <div class="service-card">
+      <h3>Interior Renovations</h3>
+      <p>Bedrooms, living spaces, basements, and full interior makeovers. From flooring and trim to walls and layouts, we transform how your home looks, feels, and functions.</p>
+    </div>
+    <div class="service-card">
+      <h3>Roofing, Siding &amp; Windows</h3>
+      <p>The exterior essentials that protect and beautify your home. Full roof replacements, new siding from vinyl to fiber cement, and energy-efficient windows, installed clean and built to last.</p>
+    </div>
+    <div class="service-card">
+      <h3>Additions &amp; Structural</h3>
+      <p>Room additions, dormers, and load-bearing changes. We handle both structural and non-structural work, opening up your floor plan or adding the square footage your family needs.</p>
+    </div>
+    <div class="service-card">
+      <h3>Custom Homes</h3>
+      <p>Building from the ground up. We partner with you from plans through finishes to deliver a one-of-a-kind custom home built to your vision, your budget, and the highest standard of quality.</p>
+    </div>
+    <div class="service-card">
+      <h3>Spec &amp; New Construction</h3>
+      <p>Spec homes and new residential builds for homeowners and investors. Sound construction, smart layouts, and finishes that sell, delivered on schedule and on budget.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why-us">
+  <div class="section-head">
+    <p class="section-eyebrow">Why HomeCore</p>
+    <h2>The Way We Work</h2>
+    <p class="section-sub">We built this company on hard work and a relentless commitment to getting it right on every project, big or small.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <h4>One Team, Every Project</h4>
+      <p>Interior, exterior, additions, or a brand-new home: you work with a single accountable team from start to finish. No juggling contractors, no finger-pointing, no gaps between trades.</p>
+    </div>
+    <div class="why-item">
+      <h4>High-Quality Craftsmanship</h4>
+      <p>We use premium materials and hold ourselves to a high standard in every home we work in. When we're done, it's done right, the kind of work you're proud to show the neighbors.</p>
+    </div>
+    <div class="why-item">
+      <h4>Exceptional Service</h4>
+      <p>We answer the phone. We show up when we say we will. We keep you in the loop throughout the project and don't consider the work complete until you're fully satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-head">
+    <p class="section-eyebrow">Our Story</p>
+    <h2>HomeCore Construction</h2>
+  </div>
+  <div class="about-content">
+    <p>HomeCore Construction is a full-service home remodeling and construction company serving Long Island homeowners. From interior renovations like kitchens, baths, and basements to exterior work like roofing, siding, and windows, plus additions, structural work, and custom and spec home building, we take on projects of every size and see them through start to finish.</p>
+    <br>
+    <p>Our business is built entirely through <strong>word of mouth referrals</strong>, which tells you everything about how we operate. We believe that doing exceptional work and treating every customer with respect is the only marketing strategy that matters.</p>
+    <br>
+    <p>Whether you're updating a single room, reimagining your whole home, or building a new one from the ground up, we'd love to come take a look. <strong>Estimates are always free and always honest.</strong></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-head">
+    <p class="section-eyebrow">Get Started</p>
+    <h2>Contact Us</h2>
+    <p class="section-sub">Fill out the form and we'll call you to schedule your appointment. No pressure, no obligation, ever.</p>
+  </div>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <div class="contact-detail">
+        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 3 5.1 1 1 0 0 1 4 4z"/></svg></span>
+        <div>
+          <span class="contact-detail-label">Phone</span>
+          <p><strong><a href="tel:5165093289">(516) 509-3289</a></strong></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <div>
+          <span class="contact-detail-label">Email</span>
+          <p><strong><a href="mailto:contact@homecore-construction.com">contact@homecore-construction.com</a></strong></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <div>
+          <span class="contact-detail-label">Service Area</span>
+          <p><strong>Long Island, New York</strong></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+        <div>
+          <span class="contact-detail-label">Hours</span>
+          <p><strong>Monday – Saturday, 8am – 6pm</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <form id="estimateForm" class="contact-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSdoXGSav1ASbBWrYu-qW9dwlUQilg2X8RRuIfe2GfrDxivaxg/formResponse"
+          method="POST" target="hidden_iframe">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="entry.1097474285" placeholder="John" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="entry.516540207" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="entry.1037513235" placeholder="(516) 555-0000" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="entry.349721742" placeholder="john@email.com" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Property Address</label>
+        <input type="text" id="address" name="entry.1932427099" placeholder="123 Main St" required />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="entry.796476088" placeholder="Smithtown" required />
+      </div>
+      <div class="form-group">
+        <label for="service">Project Type</label>
+        <select id="service" name="entry.659984111" required>
+          <option value="" disabled selected>Select a project type…</option>
+          <option value="Kitchen / Bathroom Remodel">Kitchen / Bathroom Remodel</option>
+          <option value="Interior Renovation">Interior Renovation</option>
+          <option value="Roofing">Roofing</option>
+          <option value="Siding">Siding</option>
+          <option value="Windows">Windows</option>
+          <option value="Roofing / Siding / Windows">Roofing / Siding / Windows</option>
+          <option value="Addition / Structural Work">Addition / Structural Work</option>
+          <option value="Custom Home Build">Custom Home Build</option>
+          <option value="Spec / New Construction">Spec / New Construction</option>
+          <option value="Other / Multiple Projects">Other / Multiple Projects</option>
+          <option value="Not Sure / Need Assessment">Not Sure / Need Assessment</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="hear">How did you hear about us?</label>
+        <select id="hear" name="entry.1850244632">
+          <option value="" disabled selected>Select one…</option>
+          <option value="Referral">Referral</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Yard Sign">Yard Sign</option>
+          <option value="Flyer">Flyer</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="referrer">If referred, who referred you?</label>
+        <input type="text" id="referrer" name="entry.959680976" placeholder="Optional" />
+      </div>
+      <div class="form-group">
+        <label for="notes">Anything else we should know?</label>
+        <textarea id="notes" name="entry.1250583015" placeholder="Describe your project, timeline, or any other details…"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit</button>
+      <p class="form-note">We'll call you within 1 business day to schedule your appointment.</p>
+    </form>
+
+    <div id="formThankYou" class="contact-form" style="display:none; text-align:center;">
+      <h3 style="margin-bottom:14px;">Thank You! ✓</h3>
+      <p style="color:var(--gray); line-height:1.75; font-size:0.95rem;">
+        We received your request and will call you within <strong>1 business day</strong>
+        to schedule your free, no-obligation estimate.
+      </p>
+      <p style="color:var(--gray); line-height:1.75; font-size:0.95rem; margin-top:14px;">
+        Need us sooner? Call <strong><a href="tel:5165093289" style="color:var(--navy);">(516) 509-3289</a></strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>HomeCore Construction</strong> &nbsp;&middot;&nbsp; Long Island, NY &nbsp;&middot;&nbsp; <a href="tel:5165093289">(516) 509-3289</a> &nbsp;&middot;&nbsp; <a href="mailto:contact@homecore-construction.com">contact@homecore-construction.com</a></p>
+  <p style="margin-top:6px">&copy; 2026 HomeCore Construction. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="/privacy" style="color:rgba(255,255,255,0.65);text-decoration:underline;">Privacy Policy</a></p>
+</footer>
+
+<!-- Hidden iframe receives the Google Form response so the visitor stays on this page -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<script>
+  (function () {
+    var submitted = false;
+    var form = document.getElementById('estimateForm');
+    var iframe = document.getElementById('hidden_iframe');
+    if (form && iframe) {
+      form.addEventListener('submit', function () { submitted = true; });
+      iframe.addEventListener('load', function () {
+        if (!submitted) return;
+        form.style.display = 'none';
+        var thanks = document.getElementById('formThankYou');
+        thanks.style.display = 'block';
+        thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMenu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
