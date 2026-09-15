@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HomeCore Construction | Home Remodeling, Renovations & Custom Homes | Long Island, NY</title>
-  <meta name="description" content="HomeCore Construction is Long Island's full-service home remodeling and construction company: interior and exterior renovations, kitchens and baths, roofing, siding and windows, additions, structural work, and custom and spec home building." />
+  <meta name="description" content="HomeCore Construction is a father-and-son remodeling and construction company on Long Island with over 40 years of experience: custom homes, additions, kitchens and baths, and custom millwork and cabinetry built in-house." />
   <link rel="canonical" href="https://homecoregc.com/" />
 
   <!-- Open Graph / social sharing -->
@@ -26,6 +26,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 70px; }
+    section + section { border-top: 1px solid var(--rule); }
 
     :root {
       --navy:      #0d2340;
@@ -84,6 +86,20 @@
     }
     .nav-cta:hover { opacity: 0.88; }
 
+    /* services dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; color: rgba(255,255,255,0.65); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.2px; transition: color 0.2s; }
+    .nav-dropdown-toggle svg { width: 10px; height: 7px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-toggle, .nav-dropdown.open .nav-dropdown-toggle { color: var(--white); }
+    .nav-dropdown:hover .nav-dropdown-toggle svg, .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; margin-top: 25px; width: 560px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 14px; background: var(--white); border-top: 3px solid var(--accent); border-radius: 0 0 6px 6px; box-shadow: 0 18px 48px rgba(13,35,64,0.22); opacity: 0; visibility: hidden; transform: translate(-50%, 8px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -28px; height: 28px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+    .nav-menu .nav-dropdown-menu a { display: block; padding: 12px 14px; border-radius: 4px; color: var(--gray); font-size: 0.8rem; line-height: 1.45; transition: background 0.15s; }
+    .nav-menu .nav-dropdown-menu a:hover { background: var(--light); color: var(--gray); }
+    .nav-dropdown-menu strong { display: block; color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+    .nav-menu .nav-dropdown-menu a.nav-dropdown-all { grid-column: 1 / -1; text-align: center; margin-top: 4px; padding-top: 14px; border-top: 1px solid var(--rule); border-radius: 0; color: var(--accent); font-size: 0.85rem; font-weight: 700; }
+
     /* hamburger */
     .nav-toggle {
       display: none;
@@ -111,7 +127,7 @@
 
     /* HERO */
     .hero {
-      background: var(--navy);
+      background: var(--white);
       padding: 72px 52px 88px;
       position: relative;
     }
@@ -123,51 +139,55 @@
       margin: 0 auto;
       align-items: center;
     }
+    .hero-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .hero-title { line-height: 0; margin-bottom: 34px; }
     .hero-logo {
       display: block;
-      width: clamp(240px, 30vw, 380px);
+      width: clamp(260px, 30vw, 400px);
       height: auto;
     }
     .hero-bar {
       display: grid;
-      grid-template-columns: repeat(3, auto);
-      justify-content: start;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
       max-width: 580px;
-      background: var(--deep-navy);
-      border-left: 3px solid var(--slate);
-      padding: 14px 4px;
-      margin-bottom: 28px;
-      color: rgba(255,255,255,0.9);
+      background: var(--navy);
+      border-bottom: 3px solid var(--accent);
+      border-radius: 3px;
+      padding: 16px 4px;
+      margin-bottom: 26px;
+      color: var(--white);
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 1px;
       line-height: 1.5;
       text-transform: uppercase;
     }
-    .hero-bar span { padding: 2px 16px; text-wrap: balance; }
-    .hero-bar span + span { border-left: 1px solid rgba(255,255,255,0.18); }
-    .hero-cred {
+    .hero-bar span { display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px 14px; text-wrap: balance; }
+    .hero-bar span + span { border-left: 1px solid rgba(255,255,255,0.2); }
+    .hero-cred { margin-bottom: 22px; }
+    .hero-cred-title { color: var(--navy); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; margin-bottom: 12px; }
+    .hero-cred-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; }
+    .hero-cred-list li { display: inline-flex; align-items: center; gap: 8px; color: var(--gray); font-size: 0.92rem; font-weight: 700; }
+    .hero-cred-list li::before { content: ''; flex: 0 0 auto; width: 18px; height: 18px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 11px no-repeat; }
+    .hero-reviews {
       display: inline-flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      border: 1px solid rgba(255,255,255,0.2);
+      gap: 10px;
+      padding: 9px 18px;
+      border: 1px solid var(--rule);
       border-radius: 999px;
-      padding: 11px 24px;
-      color: rgba(255,255,255,0.8);
-      font-size: 0.95rem;
+      background: var(--white);
+      color: var(--gray);
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .hero-cred strong { color: var(--white); font-weight: 700; }
-    .hero-cred-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.25); }
-    .quote-form { box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
-    .quote-form h2 {
-      font-size: 1.05rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .quote-form p { color: var(--gray); line-height: 1.75; font-size: 0.95rem; }
+    .hero-reviews:hover { border-color: var(--accent); box-shadow: 0 6px 18px rgba(13,35,64,0.1); }
+    .hero-reviews-g { display: block; width: 18px; height: 18px; }
+    .hero-reviews-stars { display: inline-flex; gap: 2px; }
+    .hero-reviews-stars svg { display: block; width: 15px; height: 15px; fill: #fbbc05; }
+    .hero-reviews strong { color: var(--navy); font-size: 0.95rem; }
+    .hero-reviews-divider { width: 1px; height: 16px; background: var(--rule); }
     .btn-solid {
       display: inline-block;
       background: var(--accent);
@@ -179,6 +199,17 @@
       transition: background 0.2s;
     }
     .btn-solid:hover { background: var(--deep-navy); }
+    .btn-outline-navy {
+      display: inline-block;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      padding: 13px 30px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
 
     /* SECTION COMMONS */
     section { padding: 88px 52px; }
@@ -271,47 +302,104 @@
       color: var(--white);
       transition: background 0.2s, transform 0.2s;
     }
-    .social-link:hover { background: var(--accent); transform: translateY(-2px); }
+    .social-link:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .social-facebook { background: #1877f2; }
+    .social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+    .social-linkedin { background: #0a66c2; }
     .social-link svg { width: 20px; height: 20px; fill: currentColor; }
 
+    /* ABOUT */
+    .about { background: var(--white); }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1020px;
+      margin: 0 auto 48px;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .about-stat { text-align: center; padding: 28px 16px; }
+    .about-stat + .about-stat { border-left: 1px solid var(--rule); }
+    .about-stat strong { display: block; color: var(--navy); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
+    .about-stat span { color: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+    .team { max-width: 1080px; margin: 0 auto; }
+    .team-head { text-align: center; margin-bottom: 28px; }
+    .team-head h3 { color: var(--navy); font-size: 1.35rem; font-weight: 700; margin-bottom: 8px; }
+    .team-head p { color: var(--gray); font-size: 0.98rem; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .team-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--navy); border-bottom: 3px solid var(--accent); border-radius: 4px; padding: 32px 28px; }
+    .team-icon { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: var(--white); margin-bottom: 18px; }
+    .team-icon svg { display: block; width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .team-card h4 { color: var(--white); font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+    .team-card p { color: rgba(255,255,255,0.78); font-size: 0.95rem; line-height: 1.75; }
+    .team-card .team-role { color: var(--slate); font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+
     /* CONTACT */
-    .contact { background: var(--light); }
+    .contact { background: var(--white); }
     .contact-wrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
       gap: 64px;
-      max-width: 940px;
+      max-width: 1080px;
       margin: 0 auto;
-      align-items: start;
+      align-items: center;
     }
-    .contact-detail { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
-    .contact-detail-icon { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 2px; color: var(--accent); }
-    .contact-detail-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; display: block; }
-    .contact-detail-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray); font-weight: 600; display: block; margin-bottom: 4px; }
-    .contact-detail p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
-    .contact-detail strong { color: var(--navy); font-size: 1rem; }
+    .contact-logo { display: block; width: clamp(240px, 26vw, 340px); height: auto; margin-bottom: 30px; }
+    .contact-intro h2 { text-align: left; margin-bottom: 14px; }
+    .contact-intro p { color: var(--gray); font-size: 1rem; line-height: 1.75; margin-bottom: 26px; max-width: 460px; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
+    .contact-intro .contact-license { font-size: 0.8rem; letter-spacing: 0.3px; margin-bottom: 0; }
+    .contact-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .contact-card {
+      display: block;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 26px 24px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    a.contact-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(13,35,64,0.12); }
+    .contact-card-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--white); margin-bottom: 16px; }
+    .contact-card-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; display: block; }
+    .contact-card-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .contact-card strong { display: block; color: var(--navy); font-size: 1.02rem; line-height: 1.4; }
+    .contact-card small { display: block; color: var(--gray); font-size: 0.85rem; margin-top: 4px; }
 
-    .contact-form { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 1px 12px rgba(0,0,0,0.07); }
-    .contact-form h3 { font-family: var(--body); color: var(--navy); margin-bottom: 28px; font-size: 1.2rem; font-weight: 700; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    /* QUOTE FORM */
+    .quote-form {
+      background: var(--navy);
+      padding: 40px;
+      border-radius: 4px;
+      border-top: 4px solid var(--accent);
+      box-shadow: 0 18px 48px rgba(13,35,64,0.28);
+    }
+    .quote-form h2 {
+      color: var(--white);
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .quote-form p { color: rgba(255,255,255,0.75); line-height: 1.75; font-size: 0.95rem; }
+    .quote-form p strong, .quote-form p a { color: var(--white); }
     .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--navy); margin-bottom: 7px; letter-spacing: 0.3px; text-transform: uppercase; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 7px; letter-spacing: 0.5px; text-transform: uppercase; }
     .form-group input,
-    .form-group select,
     .form-group textarea {
       width: 100%;
       padding: 11px 14px;
-      border: 1.5px solid var(--rule);
+      border: 1.5px solid var(--white);
       border-radius: 3px;
       font-size: 0.92rem;
       font-family: inherit;
       color: var(--gray);
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
       background: var(--white);
     }
     .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(143,179,217,0.45); }
     .form-group textarea { resize: vertical; min-height: 90px; }
     .form-submit {
       font-family: var(--body);
@@ -324,12 +412,12 @@
       font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
       margin-top: 6px;
       letter-spacing: 0.3px;
     }
-    .form-submit:hover { background: var(--deep-navy); }
-    .form-note { font-size: 0.78rem; color: var(--gray); text-align: center; margin-top: 12px; }
+    .form-submit:hover { background: var(--white); color: var(--navy); }
+    .quote-form .form-note { font-size: 0.85rem; line-height: 1.5; text-align: center; margin-top: 14px; }
 
     /* FOOTER */
     footer {
@@ -371,22 +459,36 @@
         padding: 14px;
         font-size: 1rem;
       }
+      .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: 14px 4px; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-dropdown-menu { position: static; display: none; width: auto; margin: 0 0 8px; padding: 6px; grid-template-columns: 1fr; background: rgba(255,255,255,0.04); border-top: none; border-radius: 4px; box-shadow: none; opacity: 1; visibility: visible; transform: none; transition: none; }
+      .nav-dropdown-menu::before { display: none; }
+      .nav-dropdown:hover .nav-dropdown-menu { transform: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: grid; transform: none; }
+      .nav-menu .nav-dropdown-menu a { padding: 10px 12px; border-top: none; color: rgba(255,255,255,0.65); font-size: 0.85rem; }
+      .nav-menu .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+      .nav-dropdown-menu strong { color: var(--white); font-size: 0.95rem; }
+      .nav-menu .nav-dropdown-menu a.nav-dropdown-all { color: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); }
       section { padding: 64px 24px; }
       .hero { padding: 52px 24px 64px; }
       .hero-inner { grid-template-columns: 1fr; gap: 44px; }
-      .hero-left { text-align: center; }
-      .hero-logo { margin: 0 auto; }
-      .hero-bar { justify-content: center; margin-left: auto; margin-right: auto; border-left: none; border-top: 3px solid var(--slate); }
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+      .about-stat:nth-child(3) { border-left: none; }
+      .about-stat:nth-child(n+3) { border-top: 1px solid var(--rule); }
+      .team-grid { grid-template-columns: 1fr; }
+      .contact-wrapper { grid-template-columns: 1fr; gap: 44px; }
+      .contact-intro { text-align: center; }
+      .contact-intro h2 { text-align: center; }
+      .contact-logo, .contact-intro p { margin-left: auto; margin-right: auto; }
+      .contact-actions { justify-content: center; }
     }
     @media (max-width: 560px) {
       .hero-bar { grid-template-columns: 1fr; padding: 6px 0; }
       .hero-bar span { padding: 9px 16px; }
-      .hero-bar span + span { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); }
-      .hero-cred { flex-direction: column; gap: 2px; border-radius: 12px; padding: 12px 20px; }
-      .hero-cred-divider { display: none; }
+      .hero-bar span + span { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); }
+      .hero-cred-list { flex-direction: column; align-items: center; gap: 8px; }
       .quote-form { padding: 30px 22px; }
-      .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
-      .form-row { grid-template-columns: 1fr; }
+      .team-card { padding: 28px 22px; }
+      .contact-cards { grid-template-columns: 1fr; }
     }
   </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -413,7 +515,7 @@
     },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "08:00",
       "closes": "18:00"
     }],
@@ -423,6 +525,8 @@
       "https://www.linkedin.com/company/homecore-construction/"
     ],
     "knowsAbout": [
+      "Custom millwork",
+      "Custom cabinetry",
       "Kitchen remodeling",
       "Bathroom remodeling",
       "Interior renovation",
@@ -445,8 +549,21 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-menu" id="navMenu">
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">Services<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>
+      <div class="nav-dropdown-menu" id="servicesMenu">
+        <a href="/services#custom-millwork"><strong>Custom Millwork &amp; Cabinetry</strong><span>Cabinetry, doors and vanities built in-house</span></a>
+        <a href="/services#kitchens-baths"><strong>Kitchens &amp; Baths</strong><span>Full remodels of the rooms you use most</span></a>
+        <a href="/services#interiors"><strong>Interior Renovations</strong><span>Living spaces, basements and full interiors</span></a>
+        <a href="/services#additions"><strong>Additions &amp; Extensions</strong><span>More space, structural work and dormers</span></a>
+        <a href="/services#custom-homes"><strong>Custom Homes &amp; New Construction</strong><span>Ground-up custom and spec homes</span></a>
+        <a href="/services#exteriors"><strong>Roofing, Siding &amp; Windows</strong><span>Exterior essentials, installed clean</span></a>
+        <a href="/services" class="nav-dropdown-all">View all services &rarr;</a>
+      </div>
+    </div>
     <a href="#our-work">Our Work</a>
-    <a href="#contact" class="nav-cta">Contact Us</a>
+    <a href="#about">About</a>
+    <a href="#quote" class="nav-cta">Contact Us</a>
   </div>
 </nav>
 
@@ -454,13 +571,28 @@
 <section class="hero" id="quote">
   <div class="hero-inner">
     <div class="hero-left">
-      <h1 class="hero-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="160 288 760 504" class="hero-logo" role="img" aria-label="HomeCore Construction, Long Island NY" fill="#ffffff"><path d="M678.31,555.94c-14.94-4.51-25.77-19.04-25.77-35.43v-49.48l34.09,5.38-34.09-22.38-21-13.78-28.79-18.9-43.34-28.45-19.41-12.74-19.41,12.74-43.34,28.45-28.79,18.9-21,13.78-34.09,22.38,34.09-5.38.13-.02v51.41c0,16.03-10.39,29.63-24.81,34.43-.42.14-.7.52-.7.96,0,.61.53,1.08,1.14,1.01l24.37-2.72,30.36-3.39,16.45-9.93,17.3-10.43v-94.98l48.3-31.71,62.75,41.2v83.53l28.79,12.47,15.86,5.77,5.14,1.88,25.05,7.83c.81.26,1.64-.36,1.62-1.22-.01-.54-.38-1-.89-1.16"/><path d="M590.28,318.88s.08,0,.11,0c6.04,1.06,10.74,6.11,12.03,12.05.2.92.31,1.87.33,2.84.01.12.01.25.01.38s0,.26-.01.39v78.56l28.79,18.9,21,13.78v-118.12c0-9.82,3.95-18.71,10.35-25.17,2.84-2.9,6.18-5.3,9.89-7.08.28-.12.49-.4.49-.74,0-.05-.01-.11-.01-.16-.08-.37-.4-.63-.79-.63-.05,0-.11,0-.16.01t-.01,0s-.09.02-.13.04l-19.62,5.66-4.34,1.26-5.66,1.64-11,3.18-28.79,8.34-7.8,2.36-4.67,1.41s-.06.02-.1.03c-.19.09-.34.28-.34.51,0,.26.2.48.43.53"/><rect x="521.91" y="444.07" width="16.51" height="16.51"/><rect x="544.75" y="444.07" width="16.51" height="16.51"/><rect x="521.91" y="466.91" width="16.51" height="16.51"/><rect x="544.75" y="466.91" width="16.51" height="16.51"/><path d="M403.72,304.13c13.31,2.35,23.47,13.81,23.85,27.69h.02v113.9l30.36-19.92,16.45-10.8v-85.37c0-8.07,3.62-15.84,10.13-20.62.34-.25.69-.49,1.04-.73,1.89-1.25,3.95-2.25,6.13-2.98,1.44-.49,2.95-.85,4.5-1.06.42-.06.75-.42.75-.84,0-.48-.39-.87-.87-.87h-92.22c-.43,0-.78.33-.82.75-.03.42.26.79.68.87"/><path d="M240.05,625.97c.37,0,.74-.25.74-.87v-2.6c0-18.81,0-22.28-.25-26.23-.25-4.21-1.24-6.19-5.32-7.06-.99-.25-3.09-.37-4.83-.37-1.36,0-2.1-.25-2.1-1.11s.86-1.11,2.6-1.11c6.68,0,14.48.37,17.82.37,2.97,0,10.77-.37,15.59-.37,1.73,0,2.6.25,2.6,1.11s-.74,1.11-2.23,1.11c-.99,0-2.1.12-3.59.37-3.34.62-4.33,2.72-4.58,7.06-.25,3.96-.25,7.42-.25,26.23v21.78c0,11.38,0,21.16.62,26.48.37,3.47,1.11,6.19,4.83,6.68,1.73.25,4.46.49,6.31.49,1.36,0,1.98.37,1.98.99,0,.87-.99,1.24-2.48,1.24-8.05,0-15.84-.37-19.31-.37-2.85,0-10.64.37-15.47.37-1.73,0-2.6-.37-2.6-1.24,0-.62.49-.99,1.98-.99,1.86,0,3.34-.25,4.46-.49,2.48-.49,3.09-3.22,3.59-6.81.62-5.2.62-14.97.62-26.36v-10.89c0-.5-.37-.74-.74-.74h-47.27c-.37,0-.74.12-.74.74v10.89c0,11.38,0,21.16.62,26.48.37,3.47,1.11,6.19,4.83,6.68,1.73.25,4.46.49,6.31.49,1.36,0,1.98.37,1.98.99,0,.87-.99,1.24-2.48,1.24-8.04,0-15.84-.37-19.31-.37-2.85,0-10.64.37-15.59.37-1.61,0-2.48-.37-2.48-1.24,0-.62.49-.99,1.98-.99,1.86,0,3.34-.25,4.45-.49,2.48-.49,3.09-3.22,3.59-6.81.62-5.2.62-14.97.62-26.36v-21.78c0-18.81,0-22.28-.25-26.23-.25-4.21-1.24-6.19-5.32-7.06-.99-.25-3.09-.37-4.83-.37-1.36,0-2.1-.25-2.1-1.11s.86-1.11,2.6-1.11c6.68,0,14.48.37,17.82.37,2.97,0,10.77-.37,15.59-.37,1.73,0,2.6.25,2.6,1.11s-.74,1.11-2.23,1.11c-.99,0-2.1.12-3.59.37-3.34.62-4.33,2.72-4.58,7.06-.25,3.96-.25,7.42-.25,26.23v2.6c0,.62.37.87.74.87h47.27Z"/><path d="M277.88,640.32c0-17.94,12.62-41.21,45.66-41.21,27.47,0,44.55,15.22,44.55,39.35s-17.57,43.07-45.66,43.07c-31.68,0-44.55-22.53-44.55-41.21M351.88,642.3c0-23.26-13.98-37.62-31.56-37.62-12.13,0-26.36,6.44-26.36,32.42,0,21.66,12.37,38.73,32.92,38.73,7.67,0,25-3.59,25-33.54"/><path d="M394.09,600.97c.25-1.73,1.24-2.72,2.1-2.72,1.11,0,1.86.49,3.34,3.34l29.2,58.66,29.2-59.4c.87-1.73,1.86-2.6,2.85-2.6.86,0,2.1,1.11,2.47,3.34l9.9,64.97c.99,6.56,1.98,9.4,5.32,10.39,3.09.87,4.83.99,6.19.99.99,0,1.73.37,1.73.99,0,.87-1.24,1.24-2.85,1.24-2.72,0-18.19-.49-22.52-.74-2.6-.12-3.22-.62-3.22-1.24,0-.49.49-.87,1.24-1.11.62-.25.87-1.49.49-4.46l-6.06-45.54h-.37l-23.39,47.02c-2.48,4.95-3.09,5.94-4.33,5.94-1.36,0-2.6-2.11-4.33-5.32-2.6-4.83-11.26-20.91-12.5-23.88-.86-1.98-7.3-15.22-10.89-22.52h-.37l-5.2,41.08c-.25,1.86-.37,3.22-.37,4.95,0,1.98,1.48,2.72,3.34,3.09,1.86.37,2.85.49,3.84.49s1.73.5,1.73.99c0,.99-.99,1.24-2.6,1.24-4.58,0-9.53-.37-11.51-.37-2.1,0-7.3.37-10.77.37-1.11,0-1.98-.25-1.98-1.24,0-.49.62-.99,1.73-.99.86,0,1.61,0,3.34-.25,2.97-.37,3.96-4.58,4.46-8.04l10.77-68.68Z"/><path d="M507.34,631.04c0-15.96,0-18.93-.12-22.28-.25-3.59-1.24-4.7-4.7-5.69-.87-.25-2.72-.37-4.33-.37-1.11,0-1.86-.37-1.86-1.11s.87-.99,2.48-.99c5.69,0,12.62.25,15.72.25,3.46,0,27.6.12,29.7,0,1.98-.12,3.71-.49,4.58-.62.62-.12,1.24-.49,1.73-.49.62,0,.74.49.74.99,0,.74-.62,1.98-.87,6.81-.12,1.11-.37,5.69-.62,6.93-.12.49-.37,1.73-1.24,1.73-.74,0-.87-.49-.87-1.36,0-.74-.12-2.6-.74-3.84-.87-1.86-1.73-3.34-7.18-3.84-1.86-.25-14.85-.49-17.08-.49-.49,0-.74.37-.74.99v25.99c0,.62.12,1.11.74,1.11,2.48,0,16.58,0,19.06-.25,2.6-.25,4.21-.49,5.2-1.61.86-.74,1.24-1.36,1.73-1.36s.87.49.87,1.11-.25,2.35-.87,7.67c-.25,2.1-.49,6.31-.49,7.05,0,.87-.12,2.35-1.11,2.35-.74,0-.99-.37-.99-.87-.12-1.11-.12-2.48-.37-3.84-.62-2.1-1.98-3.71-6.06-4.08-1.98-.25-14.35-.49-17.08-.49-.49,0-.62.49-.62,1.11v8.42c0,3.59-.12,12.5,0,15.59.25,7.18,3.59,8.79,14.73,8.79,2.85,0,7.43-.12,10.27-1.36,2.72-1.24,3.96-3.46,4.7-7.8.25-1.11.49-1.61,1.24-1.61.87,0,.99,1.36.99,2.48,0,2.35-.87,9.53-1.48,11.63-.74,2.72-1.73,2.72-5.82,2.72-8.17,0-14.73-.12-20.05-.37-5.32-.12-9.4-.25-12.62-.25-1.24,0-3.59.12-6.19.12-2.6.12-5.32.25-7.55.25-1.36,0-2.1-.37-2.1-1.11,0-.49.37-1.11,1.73-1.11,1.61,0,2.85-.12,3.84-.37,2.23-.49,2.85-2.48,3.22-5.57.49-4.46.49-12.75.49-22.4v-18.56Z"/><path d="M583,668.41c-12.13-10.64-15.35-24.5-15.35-36.51,0-8.41,2.6-23.02,14.48-33.91,8.91-8.17,20.67-13.12,39.11-13.12,7.67,0,12.25.49,17.94,1.24,4.7.62,8.66,1.73,12.37,2.1,1.36.12,1.86.74,1.86,1.49,0,.99-.37,2.48-.62,6.81-.25,4.08-.12,10.89-.37,13.36-.12,1.86-.37,2.85-1.48,2.85-.99,0-1.24-.99-1.24-2.72-.12-3.84-1.73-8.17-4.83-11.38-4.08-4.33-13.74-7.67-25.12-7.67-10.77,0-17.82,2.72-23.26,7.67-9.03,8.29-11.39,20.05-11.39,32.05,0,29.45,22.4,44.06,38.98,44.06,11.01,0,17.7-1.24,22.65-6.93,2.1-2.35,3.71-5.94,4.21-8.17.37-1.98.62-2.47,1.61-2.47.87,0,1.11.87,1.11,1.86,0,1.48-1.48,12.25-2.72,16.46-.62,2.1-1.11,2.72-3.22,3.59-4.95,1.98-14.35,2.85-22.28,2.85-16.95,0-31.18-3.71-42.45-13.49"/><path d="M665.22,640.32c0-17.94,12.62-41.21,45.66-41.21,27.47,0,44.55,15.22,44.55,39.35s-17.57,43.07-45.66,43.07c-31.68,0-44.55-22.53-44.55-41.21M739.23,642.3c0-23.26-13.98-37.62-31.56-37.62-12.13,0-26.36,6.44-26.36,32.42,0,21.66,12.37,38.73,32.92,38.73,7.67,0,25-3.59,25-33.54"/><path d="M776.56,631.04c0-15.96,0-18.93-.12-22.27-.25-3.59-1.24-4.7-4.7-5.69-.87-.25-2.72-.37-4.33-.37-1.11,0-1.86-.37-1.86-1.11s.86-.99,2.48-.99c5.69,0,12.62.25,14.85.25,3.71,0,13.61-.25,16.95-.25,6.93,0,14.85.62,20.67,4.45,3.09,2.1,7.67,7.43,7.67,14.48,0,7.8-4.45,14.73-15.1,23.26,9.65,11.88,17.33,21.41,23.88,27.97,6.06,6.06,9.9,6.56,11.63,6.93,1.11.25,1.73.25,2.6.25s1.36.62,1.36,1.11c0,.87-.74,1.11-2.11,1.11h-10.39c-6.06,0-9.03-.62-11.88-2.11-4.7-2.35-8.79-7.3-14.85-15.47-4.33-5.69-8.91-12.75-10.27-14.36-.62-.62-1.24-.74-1.98-.74l-9.78-.25c-.49,0-.87.25-.87.87v1.49c0,9.78.12,17.94.62,22.4.37,3.09.86,5.07,4.21,5.57,1.61.25,3.96.37,5.32.37.87,0,1.36.62,1.36,1.11,0,.74-.86,1.11-2.23,1.11-6.31,0-15.34-.37-16.95-.37-2.1,0-9.03.37-13.36.37-1.36,0-2.11-.37-2.11-1.11,0-.49.37-1.11,1.73-1.11,1.61,0,2.85-.12,3.84-.37,2.23-.49,2.85-2.48,3.22-5.57.49-4.46.49-12.75.49-22.4v-18.56ZM790.42,639.21c0,1.11.25,1.48.99,1.86,2.35.74,5.57.99,8.29.99,4.33,0,5.82-.37,7.67-1.73,3.34-2.35,7.05-6.93,7.05-15.59,0-14.85-10.15-18.69-16.58-18.69-2.72,0-5.32.12-6.44.37-.74.25-.99.62-.99,1.49v31.31Z"/><path d="M869.4,631.04c0-15.96,0-18.93-.12-22.28-.25-3.59-1.24-4.7-4.7-5.69-.87-.25-2.72-.37-4.33-.37-1.12,0-1.86-.37-1.86-1.11s.87-.99,2.48-.99c5.69,0,12.62.25,15.72.25,3.46,0,27.6.12,29.7,0,1.98-.12,3.71-.49,4.58-.62.62-.12,1.24-.49,1.73-.49.62,0,.74.49.74.99,0,.74-.62,1.98-.86,6.81-.12,1.11-.37,5.69-.62,6.93-.12.49-.37,1.73-1.24,1.73-.74,0-.86-.49-.86-1.36,0-.74-.12-2.6-.74-3.84-.87-1.86-1.73-3.34-7.18-3.84-1.86-.25-14.85-.49-17.08-.49-.49,0-.74.37-.74.99v25.99c0,.62.12,1.11.74,1.11,2.48,0,16.58,0,19.06-.25,2.6-.25,4.21-.49,5.2-1.61.86-.74,1.24-1.36,1.73-1.36s.87.49.87,1.11-.25,2.35-.87,7.67c-.25,2.1-.49,6.31-.49,7.05,0,.87-.12,2.35-1.11,2.35-.74,0-.99-.37-.99-.87-.12-1.11-.12-2.48-.37-3.84-.62-2.1-1.98-3.71-6.06-4.08-1.98-.25-14.36-.49-17.08-.49-.49,0-.62.49-.62,1.11v8.42c0,3.59-.12,12.5,0,15.59.25,7.18,3.59,8.79,14.73,8.79,2.85,0,7.43-.12,10.27-1.36,2.72-1.24,3.96-3.46,4.7-7.8.25-1.11.49-1.61,1.24-1.61.86,0,.99,1.36.99,2.48,0,2.35-.87,9.53-1.48,11.63-.74,2.72-1.73,2.72-5.82,2.72-8.17,0-14.73-.12-20.05-.37-5.32-.12-9.4-.25-12.62-.25-1.24,0-3.59.12-6.19.12-2.6.12-5.32.25-7.55.25-1.36,0-2.11-.37-2.11-1.11,0-.49.37-1.11,1.73-1.11,1.61,0,2.85-.12,3.83-.37,2.23-.49,2.85-2.48,3.22-5.57.5-4.46.5-12.75.5-22.4v-18.56Z"/><path d="M280.18,729.97c-.2-.27-.46-.4-.75-.4-.18,0-.37.07-.6.21-.97.72-1.97,1.27-2.98,1.63-1.01.36-2.11.54-3.26.54-1.78,0-3.44-.45-4.95-1.34-1.51-.89-2.72-2.12-3.61-3.66-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.11-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34,1.13,0,2.24.18,3.28.55,1.05.37,2.04.88,2.93,1.52.21.17.43.25.64.25.26,0,.49-.13.72-.4l1.06-1.39c.16-.24.24-.45.24-.63,0-.26-.13-.49-.4-.71-1.16-.91-2.48-1.62-3.9-2.12-1.43-.49-2.97-.74-4.57-.74-2.51,0-4.85.62-6.95,1.83-2.1,1.21-3.78,2.89-4.99,5-1.21,2.11-1.83,4.45-1.83,6.98s.62,4.87,1.83,6.98c1.21,2.11,2.89,3.79,4.99,5.01,2.1,1.22,4.44,1.84,6.95,1.84,1.6,0,3.15-.27,4.59-.79,1.44-.52,2.77-1.26,3.96-2.2.23-.18.34-.4.34-.64,0-.2-.08-.41-.25-.66l-1.05-1.39Z"/><path d="M328.24,709.84c-2.1-1.21-4.44-1.83-6.97-1.83s-4.85.62-6.95,1.83c-2.1,1.21-3.78,2.9-4.99,5-1.21,2.1-1.83,4.45-1.83,6.98s.62,4.87,1.83,6.98c1.21,2.1,2.89,3.79,4.99,5.01,2.1,1.22,4.43,1.84,6.95,1.84s4.87-.62,6.97-1.84c2.1-1.22,3.78-2.9,4.99-5.01,1.21-2.1,1.83-4.45,1.83-6.98s-.62-4.87-1.83-6.98c-1.21-2.1-2.89-3.79-4.99-5M321.27,731.94c-1.78,0-3.44-.45-4.95-1.34s-2.72-2.12-3.61-3.66c-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.1-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34s3.46.45,4.97,1.34c1.51.89,2.72,2.12,3.61,3.67.89,1.55,1.34,3.28,1.34,5.14s-.45,3.59-1.34,5.12c-.89,1.53-2.11,2.76-3.61,3.65-1.51.89-3.18,1.34-4.97,1.34"/><path d="M385.74,708.44h-1.87c-.62,0-.97.34-.97.97v19.39l-14.6-19.83c-.14-.19-.3-.33-.47-.41-.17-.08-.37-.13-.6-.13h-2.16c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.88c.62,0,.97-.34.97-.97v-19.62l14.79,20.05c.14.19.3.33.47.41.17.08.37.12.6.12h1.97c.62,0,.97-.34.97-.97v-24.83c0-.63-.34-.97-.97-.97"/><path d="M430.87,721.48c-1.22-.56-2.8-1.13-4.7-1.69-1.55-.42-2.74-.79-3.55-1.1-.78-.3-1.45-.71-1.97-1.23-.5-.5-.75-1.13-.75-1.94s.24-1.46.71-2.01c.49-.57,1.16-1.01,2-1.3.86-.3,1.82-.46,2.86-.46s2.17.18,3.24.55c1.07.37,2.02.88,2.83,1.52.21.17.43.25.64.25.27,0,.51-.13.71-.38l1.05-1.31c.18-.21.28-.44.28-.66,0-.27-.13-.51-.38-.69-1.14-.94-2.46-1.67-3.94-2.18-1.47-.51-3.01-.77-4.58-.77-1.81,0-3.43.32-4.82.94-1.4.63-2.49,1.5-3.26,2.61-.77,1.11-1.15,2.38-1.15,3.8,0,1.57.41,2.87,1.23,3.88.8.99,1.81,1.76,2.98,2.28,1.15.51,2.55.98,4.16,1.4,1.65.44,2.96.85,3.89,1.21.9.35,1.62.81,2.16,1.38.52.55.78,1.27.78,2.15s-.25,1.66-.73,2.28c-.49.63-1.18,1.1-2.04,1.42-.88.32-1.89.48-3.03.48-1.38,0-2.74-.26-4.05-.79-1.31-.52-2.46-1.28-3.42-2.23-.22-.23-.45-.35-.7-.35-.24,0-.46.11-.66.31l-1.14,1.19c-.23.23-.34.47-.34.72,0,.2.09.42.28.63,1.24,1.36,2.76,2.4,4.52,3.12,1.75.71,3.62,1.08,5.53,1.08,1.8,0,3.44-.31,4.88-.93,1.45-.62,2.62-1.54,3.47-2.74.85-1.2,1.28-2.64,1.28-4.27,0-1.53-.41-2.81-1.21-3.81-.79-.99-1.82-1.77-3.06-2.34"/><path d="M480.39,708.44h-18.7c-.62,0-.97.34-.97.97v1.59c0,.63.34.97.97.97h7.45v22.27c0,.62.34.97.97.97h1.87c.62,0,.97-.34.97-.97v-22.27h7.45c.62,0,.97-.34.97-.97v-1.59c0-.63-.34-.97-.97-.97"/><path d="M527.8,721.93c.85-1.3,1.28-2.91,1.28-4.77,0-1.73-.38-3.27-1.13-4.58-.75-1.31-1.82-2.34-3.18-3.06-1.36-.72-2.95-1.09-4.74-1.09h-9.6c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.87c.63,0,.97-.34.97-.97v-8.35h5.91c.49,0,1.02-.03,1.59-.08l3.98,8.71c.21.45.58.69,1.08.69h2.21c.25,0,.46-.06.61-.19.17-.13.26-.32.26-.54,0-.13-.04-.28-.11-.47l-4.37-9.19c1.41-.67,2.54-1.65,3.35-2.89M513.28,711.97h6.47c1.08,0,2.06.21,2.89.62.82.41,1.47,1.01,1.92,1.79.45.78.68,1.72.68,2.79s-.23,1.97-.68,2.75c-.45.78-1.1,1.39-1.92,1.81-.83.43-1.81.64-2.92.64h-6.45v-10.4Z"/><path d="M578.17,708.42h-1.88c-.62,0-.97.34-.97.97v14.23c0,1.66-.28,3.15-.84,4.42-.55,1.26-1.38,2.25-2.46,2.95-1.08.7-2.41,1.05-3.94,1.05s-2.86-.36-3.95-1.06c-1.08-.7-1.91-1.7-2.47-2.95-.56-1.26-.84-2.75-.84-4.41v-14.23c0-.62-.34-.97-.97-.97h-1.88c-.62,0-.97.34-.97.97v14.54c0,2.27.44,4.32,1.3,6.08.86,1.77,2.14,3.18,3.8,4.19,1.66,1,3.67,1.51,5.97,1.51s4.29-.51,5.95-1.51c1.66-1.01,2.94-2.41,3.8-4.19.86-1.76,1.3-3.81,1.3-6.08v-14.54c0-.62-.34-.97-.97-.97"/><path d="M628.81,729.97c-.21-.27-.46-.4-.75-.4-.18,0-.37.07-.6.21-.96.72-1.97,1.27-2.98,1.63-1.01.36-2.11.54-3.26.54-1.78,0-3.44-.45-4.95-1.34-1.51-.89-2.72-2.12-3.61-3.66-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.11-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34,1.13,0,2.24.18,3.28.55,1.05.37,2.04.88,2.93,1.52.21.17.43.25.64.25.26,0,.49-.13.72-.4l1.06-1.39c.16-.24.25-.44.25-.63,0-.25-.14-.49-.4-.71-1.16-.91-2.48-1.62-3.9-2.12-1.43-.49-2.97-.74-4.57-.74-2.51,0-4.85.62-6.95,1.83-2.1,1.21-3.78,2.9-4.99,5-1.22,2.1-1.83,4.45-1.83,6.98s.62,4.87,1.83,6.98c1.21,2.1,2.89,3.79,4.99,5.01,2.1,1.22,4.44,1.84,6.95,1.84,1.6,0,3.15-.27,4.59-.79,1.44-.52,2.77-1.26,3.96-2.2.23-.18.34-.4.34-.64,0-.2-.08-.41-.25-.66l-1.05-1.39Z"/><path d="M675.71,708.44h-18.7c-.62,0-.97.34-.97.97v1.59c0,.63.34.97.97.97h7.45v22.27c0,.62.34.97.97.97h1.87c.63,0,.97-.34.97-.97v-22.27h7.45c.62,0,.97-.34.97-.97v-1.59c0-.63-.34-.97-.97-.97"/><path d="M707.64,708.44h-1.88c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.88c.62,0,.97-.34.97-.97v-24.83c0-.63-.34-.97-.97-.97"/><path d="M758.38,709.84c-2.1-1.21-4.44-1.83-6.97-1.83s-4.85.62-6.95,1.83c-2.1,1.21-3.77,2.9-4.99,5s-1.83,4.45-1.83,6.98.62,4.87,1.83,6.98c1.21,2.1,2.89,3.79,4.99,5.01,2.1,1.22,4.44,1.84,6.95,1.84s4.87-.62,6.97-1.84c2.1-1.22,3.78-2.9,4.99-5.01,1.21-2.1,1.83-4.45,1.83-6.98s-.62-4.87-1.83-6.98c-1.21-2.1-2.89-3.79-4.99-5M751.41,731.94c-1.78,0-3.44-.45-4.95-1.34-1.51-.89-2.72-2.12-3.61-3.66-.89-1.54-1.34-3.26-1.34-5.11s.45-3.59,1.34-5.14c.89-1.55,2.1-2.78,3.61-3.67,1.51-.89,3.17-1.34,4.95-1.34s3.46.45,4.97,1.34c1.51.89,2.72,2.12,3.61,3.67.89,1.55,1.34,3.28,1.34,5.14s-.45,3.58-1.34,5.12c-.89,1.53-2.11,2.76-3.61,3.65-1.51.89-3.18,1.34-4.97,1.34"/><path d="M815.88,708.44h-1.88c-.62,0-.97.34-.97.97v19.39l-14.6-19.83c-.14-.19-.3-.33-.47-.41-.17-.08-.37-.13-.6-.13h-2.16c-.62,0-.97.34-.97.97v24.83c0,.62.34.97.97.97h1.88c.62,0,.97-.34.97-.97v-19.62l14.79,20.05c.14.19.3.33.47.41s.37.12.6.12h1.97c.62,0,.97-.34.97-.97v-24.83c0-.63-.34-.97-.97-.97"/><rect x="164.07" y="720.78" width="62.41" height="2.17"/><rect x="853.52" y="720.78" width="62.41" height="2.17"/><path d="M367.54,783.44h-8.58c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v13.16h7.04c.29,0,.44.15.44.44v.99c0,.29-.15.44-.44.44"/><path d="M385.32,782.63c-1.22-.71-2.18-1.67-2.88-2.9s-1.06-2.57-1.06-4.04.35-2.81,1.06-4.04c.7-1.22,1.67-2.19,2.88-2.89,1.22-.71,2.56-1.06,4.02-1.06s2.81.35,4.03,1.06c1.22.7,2.18,1.67,2.89,2.89.7,1.22,1.06,2.57,1.06,4.04s-.35,2.81-1.06,4.04c-.7,1.22-1.67,2.19-2.89,2.9-1.22.71-2.56,1.06-4.03,1.06s-2.8-.35-4.02-1.06M392.33,780.97c.91-.54,1.63-1.27,2.17-2.19.54-.93.8-1.95.8-3.07s-.27-2.15-.8-3.08c-.54-.93-1.26-1.67-2.17-2.2-.91-.54-1.9-.8-2.98-.8s-2.06.27-2.97.8c-.91.54-1.63,1.27-2.17,2.2-.54.93-.8,1.96-.8,3.08s.27,2.14.8,3.07c.54.93,1.26,1.66,2.17,2.2.91.54,1.9.8,2.97.8s2.07-.27,2.98-.8"/><path d="M414.54,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.27c.12,0,.22.02.3.06.08.04.16.11.23.2l8.81,11.96v-11.78c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44h-1.16c-.12,0-.22-.02-.3-.06-.08-.04-.16-.11-.23-.2l-8.92-12.09v11.91c0,.29-.15.44-.44.44"/><path d="M453.43,776.46h1.09c.29,0,.44.15.44.44v4.72c0,.23-.09.4-.26.53-.69.49-1.48.87-2.37,1.14-.89.27-1.78.41-2.66.41-1.46,0-2.8-.36-4.02-1.08-1.22-.71-2.18-1.68-2.89-2.91-.7-1.22-1.06-2.57-1.06-4.04s.35-2.8,1.06-4.03c.7-1.22,1.67-2.19,2.89-2.9,1.22-.71,2.56-1.06,4.02-1.06.9,0,1.76.15,2.59.44.83.29,1.59.7,2.26,1.22.12.1.19.21.19.32,0,.1-.04.19-.12.3l-.64.83c-.1.12-.21.19-.33.19-.1,0-.19-.03-.29-.11-.52-.4-1.09-.71-1.72-.93-.63-.22-1.28-.34-1.94-.34-1.07,0-2.06.27-2.98.81-.91.54-1.64,1.27-2.18,2.2-.54.93-.8,1.95-.8,3.07s.27,2.15.8,3.09c.54.94,1.26,1.68,2.18,2.23.91.55,1.91.82,2.98.82.55,0,1.12-.08,1.71-.23.59-.15,1.13-.37,1.62-.64v-4.06c0-.29.15-.44.44-.44"/><path d="M490.78,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44"/><path d="M509.32,783.03c-1.02-.41-1.89-1.01-2.61-1.8-.09-.1-.13-.2-.13-.28,0-.11.05-.22.17-.33l.67-.71c.1-.1.19-.14.3-.14.11,0,.22.06.32.17.58.58,1.26,1.03,2.05,1.34.79.32,1.6.48,2.43.48.68,0,1.29-.1,1.82-.29.53-.19.95-.48,1.26-.87.3-.39.46-.86.46-1.42s-.16-1-.49-1.35c-.33-.35-.77-.63-1.32-.84-.55-.21-1.31-.45-2.3-.72-.95-.24-1.75-.51-2.43-.81-.67-.3-1.24-.74-1.7-1.31-.46-.57-.69-1.3-.69-2.2,0-.81.22-1.52.65-2.16.44-.63,1.06-1.13,1.86-1.49.8-.36,1.73-.54,2.78-.54.91,0,1.79.15,2.65.45.86.3,1.61.72,2.27,1.26.12.09.18.19.18.31,0,.1-.04.2-.13.31l-.62.77c-.1.12-.2.18-.32.18-.1,0-.19-.04-.3-.12-.49-.39-1.06-.69-1.7-.91-.64-.22-1.29-.33-1.94-.33s-1.21.09-1.72.27c-.52.18-.93.45-1.23.8-.3.35-.45.78-.45,1.27s.16.92.48,1.23c.32.32.72.56,1.2.75.48.18,1.18.4,2.1.65,1.12.33,2.03.66,2.74.99s1.3.77,1.75,1.34.68,1.29.68,2.16c0,.94-.24,1.75-.73,2.44-.48.69-1.15,1.21-1.98,1.56-.84.36-1.78.54-2.82.54-1.12,0-2.18-.21-3.2-.62"/><path d="M542.63,783.44h-8.58c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v13.16h7.03c.29,0,.44.15.44.44v.99c0,.29-.15.44-.44.44"/><path d="M570.63,783.14c0,.1-.03.17-.1.22-.07.05-.16.08-.29.08h-1.13c-.25,0-.42-.11-.51-.34l-1.22-3.14h-7.38l-1.21,3.14c-.09.23-.26.34-.51.34h-1.13c-.12,0-.22-.03-.29-.08-.07-.05-.1-.13-.1-.22,0-.06,0-.13.03-.2l5.86-14.63c.09-.23.26-.34.52-.34h1.04c.26,0,.43.12.52.34l5.85,14.63c.03.06.04.13.04.21M566.69,778.14l-2.9-7.5-.1-.31-.1.31-2.91,7.5h6Z"/><path d="M587.11,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.27c.12,0,.22.02.3.06.08.04.16.11.23.2l8.81,11.96v-11.78c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44h-1.16c-.12,0-.22-.02-.3-.06-.08-.04-.16-.11-.23-.2l-8.92-12.09v11.91c0,.29-.15.44-.44.44"/><path d="M615.34,783v-14.59c0-.29.15-.44.44-.44h4.9c1.47,0,2.81.34,4.04,1.02,1.22.68,2.19,1.62,2.9,2.8.71,1.19,1.06,2.49,1.06,3.93s-.35,2.72-1.06,3.9c-.71,1.18-1.67,2.11-2.88,2.79-1.22.68-2.56,1.02-4.02,1.02h-4.93c-.29,0-.44-.15-.44-.44M623.74,780.79c.9-.52,1.61-1.22,2.13-2.11.52-.89.78-1.88.78-2.96s-.26-2.08-.79-2.98c-.52-.9-1.24-1.61-2.15-2.13-.91-.52-1.91-.78-3-.78h-3.4v11.73h3.45c1.09,0,2.08-.26,2.98-.78"/><path d="M644.1,786.09c-.1,0-.2-.04-.31-.13l-.14-.13c-.1-.1-.15-.2-.15-.31,0-.1.05-.2.15-.32.3-.32.53-.63.69-.94s.24-.56.24-.76v-.07h-.46c-.29,0-.44-.15-.44-.44v-1.32c0-.29.15-.44.44-.44h1.32c.29,0,.44.15.44.44v1.19c0,.56-.13,1.09-.4,1.6-.26.51-.62,1-1.06,1.48-.1.1-.21.15-.32.15"/><path d="M681.38,783.44h-1.1c-.29,0-.44-.15-.44-.44v-14.59c0-.29.15-.44.44-.44h1.27c.12,0,.22.02.3.06.08.04.16.11.23.2l8.81,11.96v-11.78c0-.29.15-.44.44-.44h1.1c.29,0,.44.15.44.44v14.59c0,.29-.15.44-.44.44h-1.16c-.12,0-.22-.02-.3-.06-.08-.04-.16-.11-.23-.2l-8.92-12.09v11.91c0,.29-.15.44-.44.44"/><path d="M714.42,783.44h-1.1c-.29,0-.44-.15-.44-.44v-6.07l-5.01-8.43c-.05-.08-.08-.17-.08-.25,0-.08.03-.15.1-.2.07-.05.16-.08.27-.08h1.34c.24,0,.41.1.53.31l3.84,6.77,3.81-6.77c.11-.21.29-.31.53-.31h1.35c.12,0,.21.03.27.08.07.05.1.12.1.2,0,.07-.03.16-.08.25l-5.01,8.42v6.08c0,.29-.15.44-.44.44"/><rect x="772.01" y="776.36" width="87.65" height="1.08"/><rect x="220.34" y="776.36" width="87.65" height="1.08"/><path d="M679.21,557.1h0c.02.85-.8,1.47-1.62,1.22l-25.05-7.83-5.14-1.88c-9.52-3.46-15.86-12.51-15.86-22.63v-58.25l3.97.62,17.03,2.69v49.47c0,16.39,10.83,30.92,25.77,35.43.52.16.88.62.89,1.16"/><polygon points="686.63 476.41 652.54 471.03 635.51 468.34 631.54 465.74 602.75 446.84 540 405.63 540 380.15 559.41 392.89 602.75 421.34 631.54 440.24 652.54 454.03 686.63 476.41"/><polygon points="540 380.15 540 405.63 491.7 437.35 474.4 448.71 457.94 459.51 444.49 468.34 427.59 471.01 427.46 471.03 393.37 476.41 427.46 454.03 448.46 440.24 477.25 421.34 520.59 392.89 540 380.15"/><path d="M631.55,329.91v102.11l-28.79-18.9v-78.56c0-.13,0-.26,0-.39s0-.26,0-.38c-.02-.98-.13-1.92-.34-2.84-1.29-5.94-5.99-10.99-12.03-12.05-.03,0-.08,0-.11-.01-.24-.05-.43-.27-.43-.53,0-.23.14-.42.34-.51.03-.01.06-.02.1-.03l4.67-1.41,36.59,13.51Z"/><polygon points="491.7 437.35 491.7 532.33 474.4 542.76 457.95 552.7 457.95 459.51 474.4 448.71 491.7 437.35"/><rect x="521.91" y="444.07" width="16.51" height="16.51"/><rect x="544.74" y="444.07" width="16.51" height="16.51"/><rect x="521.91" y="466.91" width="16.51" height="16.51"/><rect x="544.74" y="466.91" width="16.51" height="16.51"/><path d="M496.95,303.38c0,.42-.33.78-.75.85-1.55.22-3.06.57-4.5,1.06-2.18.73-4.24,1.74-6.13,2.98l-11.17,7.33-16.45,10.8v99.38l-30.36,19.92v-113.89h-.02c-.38-13.89-10.54-25.35-23.85-27.7-.42-.07-.71-.44-.68-.87.04-.42.39-.75.82-.75h92.22c.48,0,.87.39.87.87"/><path d="M485.57,308.28c-.35.23-.7.48-1.04.73-6.5,4.78-10.13,12.55-10.13,20.62v85.37l-16.45,10.8v-99.39l16.45-10.8,11.17-7.33Z"/><path d="M457.94,459.51v93.18l-30.36,3.39-24.37,2.73c-.61.07-1.14-.41-1.14-1.01,0-.44.28-.82.7-.96,14.42-4.8,24.81-18.39,24.81-34.43v-51.41l16.9-2.67,13.46-8.83Z"/><polygon points="631.55 305.7 631.55 329.91 594.96 316.4 602.75 314.04 631.55 305.7"/><path d="M673.27,294.7c0,.34-.21.62-.49.74-3.71,1.78-7.05,4.19-9.89,7.08-6.4,6.46-10.35,15.36-10.35,25.17v118.12l-21-13.78v-126.32l11-3.18,5.66-1.64,4.34-1.26,19.62-5.66s.09-.04.13-.04t0,0c.05,0,.11,0,.16,0,.39,0,.71.26.79.63,0,.05.01.11.01.16"/><path d="M647.4,548.61l-15.86-5.77-28.79-12.47v-83.53l28.79,18.9,3.97,2.6-3.97-.62v58.25c0,10.12,6.34,19.17,15.86,22.63"/></svg></h1>
+      <h1 class="hero-title"><img src="/images/brand/homecore-vertical-master.svg" alt="HomeCore Construction, Long Island, NY" class="hero-logo" width="760" height="504"></h1>
       <p class="hero-bar"><span>Interior &amp; Exterior</span><span>One Team, Every Project</span><span>Custom Homes &amp; Additions</span></p>
-      <p class="hero-cred"><strong>Over 40 Years of Experience</strong><span class="hero-cred-divider" aria-hidden="true"></span><span>Expert Professionals</span></p>
+      <div class="hero-cred">
+        <p class="hero-cred-title">Over 40 Years of Experience</p>
+        <ul class="hero-cred-list">
+          <li>In-House Custom Cabinetry</li>
+          <li>Cutting-Edge Joinery</li>
+          <li>In-House Carpentry &amp; Painting</li>
+        </ul>
+      </div>
+      <!-- Rating is typed in by hand: update it if the Google rating changes -->
+      <a class="hero-reviews" href="https://www.google.com/maps?cid=5534397451219072056" target="_blank" rel="noopener" aria-label="Rated 5.0 out of 5 stars on Google. Read our Google reviews.">
+        <svg class="hero-reviews-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        <span class="hero-reviews-stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
+        <strong>5.0</strong>
+        <span class="hero-reviews-divider" aria-hidden="true"></span>
+        <span>Google Reviews</span>
+      </a>
     </div>
 
     <div class="hero-right">
-      <form id="quoteForm" class="contact-form quote-form"
+      <form id="quoteForm" class="quote-form"
             action="https://docs.google.com/forms/d/e/1FAIpQLSdoXGSav1ASbBWrYu-qW9dwlUQilg2X8RRuIfe2GfrDxivaxg/formResponse"
             method="POST" target="hidden_iframe">
         <h2>Get a Free Quote</h2>
@@ -485,10 +617,10 @@
         <p class="form-note">Estimates are always free and always honest.</p>
       </form>
 
-      <div id="quoteThankYou" class="contact-form quote-form" style="display:none; text-align:center;">
+      <div id="quoteThankYou" class="quote-form" style="display:none; text-align:center;">
         <h2>Thank You! ✓</h2>
         <p>We got your message and will call you within <strong>1 business day</strong>.</p>
-        <p style="margin-top:14px;">Need us sooner? Call <strong><a href="tel:5165093289" style="color:var(--navy);">(516) 509-3289</a></strong>.</p>
+        <p style="margin-top:14px;">Need us sooner? Call <strong><a href="tel:5165093289">(516) 509-3289</a></strong>.</p>
       </div>
     </div>
   </div>
@@ -503,11 +635,11 @@
   </div>
   <div class="work-grid">
     <a class="work-card" href="/projects/past-projects" aria-label="View past projects">
-        <img class="work-img" src="/images/projects/all-past-projects/build-blue-home-exterior.jpg" alt="Finished blue sided home at dusk, from our past Long Island projects">
+        <img class="work-img" src="/images/projects/all-past-projects/bath-primary-slat-tub.jpg" alt="Primary bath with a freestanding tub, a wood slat shower wall, and mosaic tile floors">
         <h3>Past Projects</h3>
       </a>
       <a class="work-card" href="/projects/projects-in-progress" aria-label="View projects in progress">
-      <img class="work-img" src="/images/projects/all-past-projects/build-framing-02.jpg" alt="Two-story home under construction with the roof shingled and the front porch framed">
+      <img class="work-img" src="/images/projects/projects-in-progress/custom-home-framing-gables.jpg" alt="Two-story custom home in the framing stage, with the roof gables framed, the walls sheathed, and the crew working up top">
       <h3>Projects in Progress</h3>
     </a>
   </div>
@@ -517,139 +649,98 @@
   <div class="work-social">
     <p class="work-social-label">Follow our latest projects</p>
     <div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61590580745683" class="social-link" aria-label="HomeCore Construction on Facebook" target="_blank" rel="noopener">
+      <a href="https://www.facebook.com/profile.php?id=61590580745683" class="social-link social-facebook" aria-label="HomeCore Construction on Facebook" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
       </a>
-      <a href="https://www.instagram.com/homecoreconstruction/" class="social-link" aria-label="HomeCore Construction on Instagram" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/homecoreconstruction/" class="social-link social-instagram" aria-label="HomeCore Construction on Instagram" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.62c-3.15 0-3.52.01-4.76.07-.99.04-1.53.21-1.89.35-.47.18-.81.4-1.17.76-.36.36-.58.7-.76 1.17-.14.36-.31.9-.35 1.89-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.04.99.21 1.53.35 1.89.18.47.4.81.76 1.17.36.36.7.58 1.17.76.36.14.9.31 1.89.35 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.99-.04 1.53-.21 1.89-.35.47-.18.81-.4 1.17-.76.36-.36.58-.7.76-1.17.14-.36.31-.9.35-1.89.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.99-.21-1.53-.35-1.89a3.15 3.15 0 0 0-.76-1.17 3.15 3.15 0 0 0-1.17-.76c-.36-.14-.9-.31-1.89-.35-1.24-.06-1.61-.07-4.76-.07Zm0 2.76a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6Zm0 1.62a3.68 3.68 0 1 0 0 7.36 3.68 3.68 0 0 0 0-7.36Zm5.5-2.9a1.24 1.24 0 1 1 0 2.48 1.24 1.24 0 0 1 0-2.48Z"/></svg>
       </a>
-      <a href="https://www.linkedin.com/company/homecore-construction/" class="social-link" aria-label="HomeCore Construction on LinkedIn" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/company/homecore-construction/" class="social-link social-linkedin" aria-label="HomeCore Construction on LinkedIn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.71h.05a4.17 4.17 0 0 1 3.75-2.06c4.01 0 4.75 2.64 4.75 6.07V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4V9Z"/></svg>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+<!-- ABOUT -->
+<section class="about" id="about">
   <div class="section-head">
-    <p class="section-eyebrow">Get Started</p>
-    <h2>Contact Us</h2>
-    <p class="section-sub">Fill out the form and we'll call you to schedule your appointment. No pressure, no obligation, ever.</p>
+    <p class="section-eyebrow">About HomeCore</p>
+    <h2>The People Behind the Work</h2>
+    <p class="section-sub">Over 40 years of experience building custom homes, extensions, additions, kitchens and baths across Long Island.</p>
   </div>
-  <div class="contact-wrapper">
-    <div class="contact-info">
-      <div class="contact-detail">
-        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 3 5.1 1 1 0 0 1 4 4z"/></svg></span>
-        <div>
-          <span class="contact-detail-label">Phone</span>
-          <p><strong><a href="tel:5165093289">(516) 509-3289</a></strong></p>
-        </div>
+  <div class="about-stats">
+    <div class="about-stat"><strong>40+</strong><span>Years of experience</span></div>
+    <div class="about-stat"><strong>In-House</strong><span>Custom millwork</span></div>
+    <div class="about-stat"><strong>2</strong><span>Generations, one team</span></div>
+    <div class="about-stat"><strong>35+</strong><span>Years of tenure with in-house painting</span></div>
+  </div>
+  <div class="team">
+    <div class="team-head">
+      <h3>Our In-House Team</h3>
+      <p>Carpentry, custom millwork and painting, all handled in-house.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <span class="team-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="20" height="6" rx="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M8.5 9v6M15.5 9v6"/></svg></span>
+        <h4>Carpentry</h4>
+        <p class="team-role">Senior &amp; Engineering-Level Carpenters</p>
+        <p>Our carpenters bring decades of experience from projects all throughout Long Island, including more than 40 years in the trade covering roofing, framing, cabinetry, trim work, kitchens and baths.</p>
       </div>
-      <div class="contact-detail">
-        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-        <div>
-          <span class="contact-detail-label">Email</span>
-          <p><strong><a href="mailto:contact@homecoregc.com">contact@homecoregc.com</a></strong></p>
-        </div>
+      <div class="team-card">
+        <span class="team-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M4 12h16M10 7v2M14 7v2M10 15v2M14 15v2"/></svg></span>
+        <h4>Custom Millwork &amp; Cabinetry</h4>
+        <p class="team-role">Custom Cabinetmaker</p>
+        <p>Every custom piece is built in-house at our Long Island warehouse, not ordered from a catalog: inset and beaded face-frame cabinetry, raised- and recessed-panel doors, vanities, coffered ceilings, wainscoting, built-ins and butler's pantries, each one scribed to fit the room it lives in.</p>
       </div>
-      <div class="contact-detail">
-        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-        <div>
-          <span class="contact-detail-label">Service Area</span>
-          <p><strong>Long Island, New York</strong></p>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <span class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-        <div>
-          <span class="contact-detail-label">Hours</span>
-          <p><strong>Monday – Saturday, 8am – 6pm</strong></p>
-        </div>
+      <div class="team-card">
+        <span class="team-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h2.5v5.5H11V14"/><rect x="9.5" y="14" width="3" height="7" rx="1"/></svg></span>
+        <h4>Painting</h4>
+        <p class="team-role">Senior Painter</p>
+        <p>We've built a relationship and partnership with our senior painter over more than 35 years, and that continuity shows in every finish.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <form id="estimateForm" class="contact-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSdoXGSav1ASbBWrYu-qW9dwlUQilg2X8RRuIfe2GfrDxivaxg/formResponse"
-          method="POST" target="hidden_iframe">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="entry.1097474285" placeholder="John" required />
-        </div>
-        <div class="form-group">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="entry.516540207" placeholder="Smith" required />
-        </div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-wrapper">
+    <div class="contact-intro">
+      <img src="/images/brand/homecore-horizontal-master.svg" alt="HomeCore Construction" class="contact-logo">
+      <h2>Let's Talk About Your Project</h2>
+      <p>Call, email, or send us a quick message and we'll get back to you within 1 business day. No pressure, no obligation, ever.</p>
+      <div class="contact-actions">
+        <a href="#quote" class="btn-solid">Get a Free Quote</a>
+        <a href="tel:5165093289" class="btn-outline-navy">Call (516) 509-3289</a>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="entry.1037513235" placeholder="(516) 555-0000" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="entry.349721742" placeholder="john@email.com" />
-        </div>
+      <p class="contact-license">Home Improvement License HI-74242</p>
+    </div>
+    <div class="contact-cards">
+      <a class="contact-card" href="tel:5165093289">
+        <span class="contact-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 3 5.1 1 1 0 0 1 4 4z"/></svg></span>
+        <span class="contact-card-label">Phone</span>
+        <strong>(516) 509-3289</strong>
+        <small>Talk to us directly</small>
+      </a>
+      <a class="contact-card" href="mailto:contact@homecoregc.com">
+        <span class="contact-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <span class="contact-card-label">Email</span>
+        <strong>contact@homecoregc.com</strong>
+        <small>Send photos or plans anytime</small>
+      </a>
+      <div class="contact-card">
+        <span class="contact-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span class="contact-card-label">Service Area</span>
+        <strong>Long Island, New York</strong>
+        <small>Where we live and work</small>
       </div>
-      <div class="form-group">
-        <label for="address">Property Address</label>
-        <input type="text" id="address" name="entry.1932427099" placeholder="123 Main St" required />
+      <div class="contact-card">
+        <span class="contact-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+        <span class="contact-card-label">Hours</span>
+        <strong>Monday – Sunday</strong>
+        <small>8am – 6pm</small>
       </div>
-      <div class="form-group">
-        <label for="city">City</label>
-        <input type="text" id="city" name="entry.796476088" placeholder="Smithtown" required />
-      </div>
-      <div class="form-group">
-        <label for="service">Project Type</label>
-        <select id="service" name="entry.659984111" required>
-          <option value="" disabled selected>Select a project type…</option>
-          <option value="Kitchen / Bathroom Remodel">Kitchen / Bathroom Remodel</option>
-          <option value="Interior Renovation">Interior Renovation</option>
-          <option value="Roofing">Roofing</option>
-          <option value="Siding">Siding</option>
-          <option value="Windows">Windows</option>
-          <option value="Roofing / Siding / Windows">Roofing / Siding / Windows</option>
-          <option value="Addition / Structural Work">Addition / Structural Work</option>
-          <option value="Custom Home Build">Custom Home Build</option>
-          <option value="Spec / New Construction">Spec / New Construction</option>
-          <option value="Other / Multiple Projects">Other / Multiple Projects</option>
-          <option value="Not Sure / Need Assessment">Not Sure / Need Assessment</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="hear">How did you hear about us?</label>
-        <select id="hear" name="entry.1850244632">
-          <option value="" disabled selected>Select one…</option>
-          <option value="Referral">Referral</option>
-          <option value="Facebook">Facebook</option>
-          <option value="Instagram">Instagram</option>
-          <option value="Yard Sign">Yard Sign</option>
-          <option value="Flyer">Flyer</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="referrer">If referred, who referred you?</label>
-        <input type="text" id="referrer" name="entry.959680976" placeholder="Optional" />
-      </div>
-      <div class="form-group">
-        <label for="notes">Anything else we should know?</label>
-        <textarea id="notes" name="entry.1250583015" placeholder="Describe your project, timeline, or any other details…"></textarea>
-      </div>
-      <button type="submit" class="form-submit">Submit</button>
-      <p class="form-note">We'll call you within 1 business day to schedule your appointment.</p>
-    </form>
-
-    <div id="formThankYou" class="contact-form" style="display:none; text-align:center;">
-      <h3 style="margin-bottom:14px;">Thank You! ✓</h3>
-      <p style="color:var(--gray); line-height:1.75; font-size:0.95rem;">
-        We received your request and will call you within <strong>1 business day</strong>
-        to schedule your free, no-obligation estimate.
-      </p>
-      <p style="color:var(--gray); line-height:1.75; font-size:0.95rem; margin-top:14px;">
-        Need us sooner? Call <strong><a href="tel:5165093289" style="color:var(--navy);">(516) 509-3289</a></strong>.
-      </p>
     </div>
   </div>
 </section>
@@ -665,22 +756,30 @@
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 <script>
   (function () {
-    // Both forms post into the same hidden iframe; remember which one was sent
-    var submitted = null;
+    var submitted = false;
+    var form = document.getElementById('quoteForm');
     var iframe = document.getElementById('hidden_iframe');
-    [['quoteForm', 'quoteThankYou'], ['estimateForm', 'formThankYou']].forEach(function (pair) {
-      var form = document.getElementById(pair[0]);
-      if (form) form.addEventListener('submit', function () { submitted = pair; });
-    });
-    if (iframe) {
+    if (form && iframe) {
+      form.addEventListener('submit', function () { submitted = true; });
       iframe.addEventListener('load', function () {
         if (!submitted) return;
-        document.getElementById(submitted[0]).style.display = 'none';
-        var thanks = document.getElementById(submitted[1]);
+        form.style.display = 'none';
+        var thanks = document.getElementById('quoteThankYou');
         thanks.style.display = 'block';
         thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        submitted = null;
       });
+    }
+
+    var dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      var ddToggle = dropdown.querySelector('.nav-dropdown-toggle');
+      var setDropdown = function (open) {
+        dropdown.classList.toggle('open', open);
+        ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      ddToggle.addEventListener('click', function () { setDropdown(!dropdown.classList.contains('open')); });
+      document.addEventListener('click', function (e) { if (!dropdown.contains(e.target)) setDropdown(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDropdown(false); });
     }
 
     var toggle = document.getElementById('navToggle');

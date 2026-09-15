@@ -39,6 +39,19 @@
     .nav-menu a:not(.nav-cta):hover { color: var(--white); }
     .nav-cta { background: var(--white); color: var(--navy); padding: 9px 22px; border-radius: 3px; font-size: 0.875rem; font-weight: 700; transition: opacity 0.2s; }
     .nav-cta:hover { opacity: 0.88; }
+    /* services dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; color: rgba(255,255,255,0.65); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.2px; transition: color 0.2s; }
+    .nav-dropdown-toggle svg { width: 10px; height: 7px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-toggle, .nav-dropdown.open .nav-dropdown-toggle { color: var(--white); }
+    .nav-dropdown:hover .nav-dropdown-toggle svg, .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; margin-top: 25px; width: 560px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 14px; background: var(--white); border-top: 3px solid var(--accent); border-radius: 0 0 6px 6px; box-shadow: 0 18px 48px rgba(13,35,64,0.22); opacity: 0; visibility: hidden; transform: translate(-50%, 8px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -28px; height: 28px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+    .nav-menu .nav-dropdown-menu a { display: block; padding: 12px 14px; border-radius: 4px; color: var(--gray); font-size: 0.8rem; line-height: 1.45; transition: background 0.15s; }
+    .nav-menu .nav-dropdown-menu a:hover { background: var(--light); color: var(--gray); }
+    .nav-dropdown-menu strong { display: block; color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+    .nav-menu .nav-dropdown-menu a.nav-dropdown-all { grid-column: 1 / -1; text-align: center; margin-top: 4px; padding-top: 14px; border-top: 1px solid var(--rule); border-radius: 0; color: var(--accent); font-size: 0.85rem; font-weight: 700; }
     .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 30px; background: none; border: none; cursor: pointer; padding: 0; }
     .nav-toggle span { display: block; height: 2px; width: 24px; background: var(--white); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -71,11 +84,21 @@
     @media (max-width: 960px) { .masonry { column-count: 2; } }
     @media (max-width: 900px) {
       nav { flex-wrap: wrap; height: auto; padding: 16px 24px; }
+      .nav-logo { font-size: 1rem; }
       .nav-toggle { display: flex; }
       .nav-menu { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0; margin-top: 14px; }
       .nav-menu.open { display: flex; }
       .nav-menu a:not(.nav-cta) { padding: 14px 4px; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
       .nav-cta { margin-top: 14px; text-align: center; padding: 14px; font-size: 1rem; }
+      .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: 14px 4px; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-dropdown-menu { position: static; display: none; width: auto; margin: 0 0 8px; padding: 6px; grid-template-columns: 1fr; background: rgba(255,255,255,0.04); border-top: none; border-radius: 4px; box-shadow: none; opacity: 1; visibility: visible; transform: none; transition: none; }
+      .nav-dropdown-menu::before { display: none; }
+      .nav-dropdown:hover .nav-dropdown-menu { transform: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: grid; transform: none; }
+      .nav-menu .nav-dropdown-menu a { padding: 10px 12px; border-top: none; color: rgba(255,255,255,0.65); font-size: 0.85rem; }
+      .nav-menu .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+      .nav-dropdown-menu strong { color: var(--white); font-size: 0.95rem; }
+      .nav-menu .nav-dropdown-menu a.nav-dropdown-all { color: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); }
       section { padding: 56px 24px; }
       .page-hero { padding: 56px 24px 48px; }
     }
@@ -97,8 +120,21 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-menu" id="navMenu">
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">Services<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>
+      <div class="nav-dropdown-menu" id="servicesMenu">
+        <a href="/services#custom-millwork"><strong>Custom Millwork &amp; Cabinetry</strong><span>Cabinetry, doors and vanities built in-house</span></a>
+        <a href="/services#kitchens-baths"><strong>Kitchens &amp; Baths</strong><span>Full remodels of the rooms you use most</span></a>
+        <a href="/services#interiors"><strong>Interior Renovations</strong><span>Living spaces, basements and full interiors</span></a>
+        <a href="/services#additions"><strong>Additions &amp; Extensions</strong><span>More space, structural work and dormers</span></a>
+        <a href="/services#custom-homes"><strong>Custom Homes &amp; New Construction</strong><span>Ground-up custom and spec homes</span></a>
+        <a href="/services#exteriors"><strong>Roofing, Siding &amp; Windows</strong><span>Exterior essentials, installed clean</span></a>
+        <a href="/services" class="nav-dropdown-all">View all services &rarr;</a>
+      </div>
+    </div>
     <a href="/projects/">Our Work</a>
-    <a href="/#contact" class="nav-cta">Contact Us</a>
+    <a href="/#about">About</a>
+    <a href="/#quote" class="nav-cta">Contact Us</a>
   </div>
 </nav>
 <header class="page-hero">
@@ -219,7 +255,7 @@
   <div class="section-head" style="margin-bottom:0;">
     <h2>See Something You Like?</h2>
     <p style="margin-top:14px;">Tell us about your project and we'll come take a look. Estimates are always free and always honest.</p>
-    <a href="/#contact" class="btn-primary">Get Your Free Estimate</a>
+    <a href="/#quote" class="btn-primary">Get Your Free Estimate</a>
   </div>
 </section>
 <footer>
@@ -229,6 +265,18 @@
 </footer>
 <script>
   (function () {
+    var dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      var ddToggle = dropdown.querySelector('.nav-dropdown-toggle');
+      var setDropdown = function (open) {
+        dropdown.classList.toggle('open', open);
+        ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      ddToggle.addEventListener('click', function () { setDropdown(!dropdown.classList.contains('open')); });
+      document.addEventListener('click', function (e) { if (!dropdown.contains(e.target)) setDropdown(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDropdown(false); });
+    }
+
     var toggle = document.getElementById('navToggle');
     var menu = document.getElementById('navMenu');
     if (toggle && menu) {
