@@ -42,40 +42,31 @@
     a { color: inherit; text-decoration: none; }
 
     /* ── NAV ── */
-    nav {
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 52px;
-      height: 70px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .nav-logo { font-family: var(--display); color: var(--white); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; }
-    .nav-logo span { color: var(--white); font-weight: 700; }
-    .nav-links { display: flex; gap: 36px; }
-    .nav-links a {
-      color: rgba(255,255,255,0.65);
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a.active { color: var(--white); }
-    .nav-cta {
-      background: var(--white);
-      color: var(--navy);
-      padding: 9px 22px;
-      border-radius: 3px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      transition: opacity 0.2s;
-    }
+    nav { background: var(--navy); display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 70px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-logo { color: var(--white); font-family: var(--display); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; }
+    .nav-menu { display: flex; align-items: center; gap: 34px; }
+    .nav-menu a:not(.nav-cta) { color: rgba(255,255,255,0.65); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.2px; transition: color 0.2s; }
+    .nav-menu a:not(.nav-cta):hover { color: var(--white); }
+    .nav-cta { background: var(--white); color: var(--navy); padding: 9px 22px; border-radius: 3px; font-size: 0.875rem; font-weight: 700; transition: opacity 0.2s; }
     .nav-cta:hover { opacity: 0.88; }
+    /* services dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; color: rgba(255,255,255,0.65); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.2px; transition: color 0.2s; }
+    .nav-dropdown-toggle svg { width: 10px; height: 7px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-toggle, .nav-dropdown.open .nav-dropdown-toggle { color: var(--white); }
+    .nav-dropdown:hover .nav-dropdown-toggle svg, .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; margin-top: 25px; width: 560px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 14px; background: var(--white); border-top: 3px solid var(--accent); border-radius: 0 0 6px 6px; box-shadow: 0 18px 48px rgba(13,35,64,0.22); opacity: 0; visibility: hidden; transform: translate(-50%, 8px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -28px; height: 28px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+    .nav-menu .nav-dropdown-menu a { display: block; padding: 12px 14px; border-radius: 4px; color: var(--gray); font-size: 0.8rem; line-height: 1.45; transition: background 0.15s; }
+    .nav-menu .nav-dropdown-menu a:hover { background: var(--light); color: var(--gray); }
+    .nav-dropdown-menu strong { display: block; color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+    .nav-menu .nav-dropdown-menu a.nav-dropdown-all { grid-column: 1 / -1; text-align: center; margin-top: 4px; padding-top: 14px; border-top: 1px solid var(--rule); border-radius: 0; color: var(--accent); font-size: 0.85rem; font-weight: 700; }
+    .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 30px; background: none; border: none; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; height: 2px; width: 24px; background: var(--white); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── PAGE HEADER ── */
     .page-head { background: var(--navy); padding: 72px 52px 60px; text-align: center; }
@@ -125,8 +116,22 @@
     .footer-links a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 
     @media (max-width: 900px) {
-      nav { flex-direction: column; justify-content: center; padding: 14px 24px; height: auto; gap: 12px; }
-      .nav-links { display: none; }
+      nav { flex-wrap: wrap; height: auto; padding: 16px 24px; }
+      .nav-logo { font-size: 1rem; }
+      .nav-toggle { display: flex; }
+      .nav-menu { display: none; flex-direction: column; align-items: stretch; width: 100%; gap: 0; margin-top: 14px; }
+      .nav-menu.open { display: flex; }
+      .nav-menu a:not(.nav-cta) { padding: 14px 4px; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-cta { margin-top: 14px; text-align: center; padding: 14px; font-size: 1rem; }
+      .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: 14px 4px; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-dropdown-menu { position: static; display: none; width: auto; margin: 0 0 8px; padding: 6px; grid-template-columns: 1fr; background: rgba(255,255,255,0.04); border-top: none; border-radius: 4px; box-shadow: none; opacity: 1; visibility: visible; transform: none; transition: none; }
+      .nav-dropdown-menu::before { display: none; }
+      .nav-dropdown:hover .nav-dropdown-menu { transform: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: grid; transform: none; }
+      .nav-menu .nav-dropdown-menu a { padding: 10px 12px; border-top: none; color: rgba(255,255,255,0.65); font-size: 0.85rem; }
+      .nav-menu .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+      .nav-dropdown-menu strong { color: var(--white); font-size: 0.95rem; }
+      .nav-menu .nav-dropdown-menu a.nav-dropdown-all { color: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); }
       .page-head { padding: 56px 24px 48px; }
       .legal { padding: 56px 24px; }
       footer { padding: 28px 24px; }
@@ -139,14 +144,28 @@
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="205 210 670 660" width="30" height="30" fill="#ffffff" aria-hidden="true"><path d="M835.74,817.06c-31.94-9.64-55.1-40.71-55.1-75.76v-105.79l72.88,11.5-72.88-47.86-44.9-29.47-61.57-40.42-92.67-60.83-41.51-27.25-41.51,27.25-92.67,60.83-61.57,40.42-44.89,29.47-72.89,47.86,72.89-11.5.28-.04v109.91c0,34.28-22.22,63.35-53.05,73.61-.89.3-1.5,1.11-1.5,2.05,0,1.3,1.13,2.31,2.42,2.17l52.12-5.83,64.91-7.26,35.17-21.24,36.99-22.31v-203.09l103.28-67.8,134.18,88.1v178.6l61.57,26.67,33.9,12.34,10.99,4.01,53.55,16.75c1.74.54,3.5-.78,3.46-2.6-.02-1.16-.81-2.15-1.91-2.48"/><path d="M647.51,310.18c.07.02.16.02.23.02,12.92,2.27,22.96,13.06,25.72,25.76.44,1.97.67,3.99.72,6.07.02.25.02.53.02.81s0,.56-.02.83v167.98l61.57,40.42,44.9,29.47v-252.56c0-20.99,8.44-40,22.12-53.82,6.08-6.19,13.22-11.34,21.15-15.14.6-.25,1.04-.86,1.04-1.57,0-.12-.02-.24-.02-.35-.16-.79-.86-1.35-1.69-1.35-.12,0-.23,0-.35.02t-.02,0c-.09.02-.19.04-.28.09l-41.95,12.1-9.28,2.69-12.11,3.5-23.51,6.8-61.57,17.83-16.67,5.06-9.99,3.01c-.07.02-.14.04-.21.07-.42.19-.72.6-.72,1.09,0,.56.42,1.02.93,1.14"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M248.61,278.64c28.45,5.03,50.18,29.52,50.99,59.2l.04.02v243.51l64.91-42.6,35.18-23.1v-182.55c0-17.26,7.75-33.87,21.66-44.09.73-.53,1.47-1.05,2.23-1.55,4.03-2.67,8.44-4.82,13.1-6.38,3.08-1.04,6.31-1.81,9.63-2.27.9-.14,1.6-.91,1.6-1.81,0-1.02-.83-1.85-1.85-1.85h-197.18c-.93,0-1.67.7-1.76,1.6-.07.9.55,1.69,1.46,1.85"/><path d="M837.65,819.54h0c.04,1.82-1.72,3.14-3.46,2.6l-53.55-16.75-10.99-4.01c-20.36-7.4-33.9-26.76-33.9-48.4v-124.55l8.49,1.32,36.41,5.75v105.79c0,35.05,23.16,66.12,55.1,75.76,1.11.34,1.89,1.33,1.91,2.48"/><polygon points="853.52 647.01 780.64 635.51 744.23 629.76 735.74 624.19 674.17 583.77 540 495.67 540 441.18 581.51 468.43 674.17 529.25 735.74 569.67 780.64 599.15 853.52 647.01"/><polygon points="540 441.18 540 495.67 436.71 563.48 399.73 587.78 364.55 610.88 335.77 629.76 299.64 635.46 299.37 635.51 226.48 647.01 299.37 599.14 344.26 569.67 405.83 529.25 498.49 468.43 540 441.18"/><path d="M735.75,333.77v218.33l-61.57-40.42v-167.98c.02-.27.02-.55.02-.83s0-.56-.02-.81c-.04-2.08-.28-4.1-.72-6.07-2.76-12.71-12.8-23.49-25.72-25.76-.07,0-.16,0-.23-.02-.51-.12-.93-.58-.93-1.14,0-.48.3-.9.72-1.09.07-.02.14-.05.21-.07l9.99-3.02,78.24,28.9Z"/><polygon points="436.71 563.48 436.71 766.57 399.73 788.88 364.55 810.12 364.55 610.88 399.73 587.78 436.71 563.48"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M447.94,277.04c0,.9-.7,1.67-1.6,1.81-3.32.47-6.54,1.23-9.63,2.27-4.66,1.55-9.07,3.71-13.1,6.38l-23.88,15.67-35.18,23.1v212.51l-64.91,42.6v-243.51l-.04-.02c-.81-29.68-22.54-54.17-50.99-59.2-.91-.17-1.53-.96-1.46-1.86.09-.91.83-1.6,1.76-1.6h197.18c1.02,0,1.86.83,1.86,1.85"/><path d="M423.62,287.5c-.76.5-1.5,1.02-2.23,1.55-13.91,10.21-21.66,26.83-21.66,44.09v182.54l-35.18,23.1v-212.51l35.18-23.09,23.89-15.68Z"/><path d="M364.55,610.88v199.24l-64.91,7.26-52.11,5.83c-1.29.15-2.43-.87-2.43-2.17,0-.94.61-1.76,1.5-2.05,30.83-10.26,53.05-39.33,53.05-73.61v-109.92l36.13-5.7,28.78-18.88Z"/><polygon points="735.75 281.98 735.75 333.77 657.51 304.87 674.18 299.82 735.75 281.98"/><path d="M824.96,258.47c0,.72-.44,1.32-1.04,1.58-7.93,3.8-15.07,8.95-21.15,15.14-13.68,13.82-22.12,32.84-22.12,53.82v252.55l-44.9-29.47v-270.11l23.51-6.79,12.11-3.5,9.28-2.69,41.95-12.1c.09-.04.19-.07.28-.09t.02,0c.12-.02.23-.02.35-.02.83,0,1.53.55,1.69,1.34,0,.12.02.23.02.35"/><path d="M769.65,801.38l-33.9-12.34-61.57-26.67v-178.6l61.57,40.42,8.49,5.56-8.49-1.32v124.55c0,21.64,13.55,41,33.9,48.4"/></svg><span>HomeCore Construction</span></a>
-  <div class="nav-links">
-    <a href="/services">Services</a>
-    <a href="/#our-work">Our Work</a>
+<nav id="top">
+  <a href="/" class="nav-logo" aria-label="HomeCore Construction home" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="205 210 670 660" width="30" height="30" fill="#ffffff" aria-hidden="true"><path d="M835.74,817.06c-31.94-9.64-55.1-40.71-55.1-75.76v-105.79l72.88,11.5-72.88-47.86-44.9-29.47-61.57-40.42-92.67-60.83-41.51-27.25-41.51,27.25-92.67,60.83-61.57,40.42-44.89,29.47-72.89,47.86,72.89-11.5.28-.04v109.91c0,34.28-22.22,63.35-53.05,73.61-.89.3-1.5,1.11-1.5,2.05,0,1.3,1.13,2.31,2.42,2.17l52.12-5.83,64.91-7.26,35.17-21.24,36.99-22.31v-203.09l103.28-67.8,134.18,88.1v178.6l61.57,26.67,33.9,12.34,10.99,4.01,53.55,16.75c1.74.54,3.5-.78,3.46-2.6-.02-1.16-.81-2.15-1.91-2.48"/><path d="M647.51,310.18c.07.02.16.02.23.02,12.92,2.27,22.96,13.06,25.72,25.76.44,1.97.67,3.99.72,6.07.02.25.02.53.02.81s0,.56-.02.83v167.98l61.57,40.42,44.9,29.47v-252.56c0-20.99,8.44-40,22.12-53.82,6.08-6.19,13.22-11.34,21.15-15.14.6-.25,1.04-.86,1.04-1.57,0-.12-.02-.24-.02-.35-.16-.79-.86-1.35-1.69-1.35-.12,0-.23,0-.35.02t-.02,0c-.09.02-.19.04-.28.09l-41.95,12.1-9.28,2.69-12.11,3.5-23.51,6.8-61.57,17.83-16.67,5.06-9.99,3.01c-.07.02-.14.04-.21.07-.42.19-.72.6-.72,1.09,0,.56.42,1.02.93,1.14"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M248.61,278.64c28.45,5.03,50.18,29.52,50.99,59.2l.04.02v243.51l64.91-42.6,35.18-23.1v-182.55c0-17.26,7.75-33.87,21.66-44.09.73-.53,1.47-1.05,2.23-1.55,4.03-2.67,8.44-4.82,13.1-6.38,3.08-1.04,6.31-1.81,9.63-2.27.9-.14,1.6-.91,1.6-1.81,0-1.02-.83-1.85-1.85-1.85h-197.18c-.93,0-1.67.7-1.76,1.6-.07.9.55,1.69,1.46,1.85"/><path d="M837.65,819.54h0c.04,1.82-1.72,3.14-3.46,2.6l-53.55-16.75-10.99-4.01c-20.36-7.4-33.9-26.76-33.9-48.4v-124.55l8.49,1.32,36.41,5.75v105.79c0,35.05,23.16,66.12,55.1,75.76,1.11.34,1.89,1.33,1.91,2.48"/><polygon points="853.52 647.01 780.64 635.51 744.23 629.76 735.74 624.19 674.17 583.77 540 495.67 540 441.18 581.51 468.43 674.17 529.25 735.74 569.67 780.64 599.15 853.52 647.01"/><polygon points="540 441.18 540 495.67 436.71 563.48 399.73 587.78 364.55 610.88 335.77 629.76 299.64 635.46 299.37 635.51 226.48 647.01 299.37 599.14 344.26 569.67 405.83 529.25 498.49 468.43 540 441.18"/><path d="M735.75,333.77v218.33l-61.57-40.42v-167.98c.02-.27.02-.55.02-.83s0-.56-.02-.81c-.04-2.08-.28-4.1-.72-6.07-2.76-12.71-12.8-23.49-25.72-25.76-.07,0-.16,0-.23-.02-.51-.12-.93-.58-.93-1.14,0-.48.3-.9.72-1.09.07-.02.14-.05.21-.07l9.99-3.02,78.24,28.9Z"/><polygon points="436.71 563.48 436.71 766.57 399.73 788.88 364.55 810.12 364.55 610.88 399.73 587.78 436.71 563.48"/><rect x="501.32" y="577.86" width="35.31" height="35.31"/><rect x="550.15" y="577.86" width="35.31" height="35.31"/><rect x="501.32" y="626.69" width="35.31" height="35.31"/><rect x="550.15" y="626.69" width="35.31" height="35.31"/><path d="M447.94,277.04c0,.9-.7,1.67-1.6,1.81-3.32.47-6.54,1.23-9.63,2.27-4.66,1.55-9.07,3.71-13.1,6.38l-23.88,15.67-35.18,23.1v212.51l-64.91,42.6v-243.51l-.04-.02c-.81-29.68-22.54-54.17-50.99-59.2-.91-.17-1.53-.96-1.46-1.86.09-.91.83-1.6,1.76-1.6h197.18c1.02,0,1.86.83,1.86,1.85"/><path d="M423.62,287.5c-.76.5-1.5,1.02-2.23,1.55-13.91,10.21-21.66,26.83-21.66,44.09v182.54l-35.18,23.1v-212.51l35.18-23.09,23.89-15.68Z"/><path d="M364.55,610.88v199.24l-64.91,7.26-52.11,5.83c-1.29.15-2.43-.87-2.43-2.17,0-.94.61-1.76,1.5-2.05,30.83-10.26,53.05-39.33,53.05-73.61v-109.92l36.13-5.7,28.78-18.88Z"/><polygon points="735.75 281.98 735.75 333.77 657.51 304.87 674.18 299.82 735.75 281.98"/><path d="M824.96,258.47c0,.72-.44,1.32-1.04,1.58-7.93,3.8-15.07,8.95-21.15,15.14-13.68,13.82-22.12,32.84-22.12,53.82v252.55l-44.9-29.47v-270.11l23.51-6.79,12.11-3.5,9.28-2.69,41.95-12.1c.09-.04.19-.07.28-.09t.02,0c.12-.02.23-.02.35-.02.83,0,1.53.55,1.69,1.34,0,.12.02.23.02.35"/><path d="M769.65,801.38l-33.9-12.34-61.57-26.67v-178.6l61.57,40.42,8.49,5.56-8.49-1.32v124.55c0,21.64,13.55,41,33.9,48.4"/></svg><span>HomeCore Construction</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu">Services<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>
+      <div class="nav-dropdown-menu" id="servicesMenu">
+        <a href="/services#custom-millwork"><strong>Custom Millwork &amp; Cabinetry</strong><span>Cabinetry, doors and vanities built in-house</span></a>
+        <a href="/services#kitchens-baths"><strong>Kitchens &amp; Baths</strong><span>Full remodels of the rooms you use most</span></a>
+        <a href="/services#interiors"><strong>Interior Renovations</strong><span>Living spaces, basements and full interiors</span></a>
+        <a href="/services#additions"><strong>Additions &amp; Extensions</strong><span>More space, structural work and dormers</span></a>
+        <a href="/services#custom-homes"><strong>Custom Homes &amp; New Construction</strong><span>Ground-up custom and spec homes</span></a>
+        <a href="/services#exteriors"><strong>Roofing, Siding &amp; Windows</strong><span>Exterior essentials, installed clean</span></a>
+        <a href="/services" class="nav-dropdown-all">View all services &rarr;</a>
+      </div>
+    </div>
+    <a href="/projects/">Our Work</a>
     <a href="/#about">About</a>
+    <a href="/#quote" class="nav-cta">Contact Us</a>
   </div>
-  <a href="/#quote" class="nav-cta">Contact Us</a>
 </nav>
 
 <!-- PAGE HEADER -->
@@ -253,10 +272,43 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>HomeCore Construction</strong> &nbsp;&middot;&nbsp; Long Island, NY &nbsp;&middot;&nbsp; <a href="tel:5165093289">(516) 509-3289</a> &nbsp;&middot;&nbsp; <a href="mailto:contact@homecoregc.com">contact@homecoregc.com</a> &nbsp;&middot;&nbsp; License: HI-74242</p>
+  <p><strong>HomeCore Construction</strong>&nbsp;&middot;&nbsp;Long Island, NY&nbsp;&middot;&nbsp;<a href="tel:5165093289">(516) 509-3289</a>&nbsp;&middot;&nbsp;<a href="mailto:contact@homecoregc.com">contact@homecoregc.com</a>&nbsp;&middot;&nbsp;License: HI-74242</p>
   <p style="margin-top:6px">&copy; 2026 HomeCore Construction. All rights reserved.</p>
   <p class="footer-links"><a href="/">Home</a> &nbsp;|&nbsp; <a href="/privacy">Privacy Policy</a></p>
 </footer>
+
+<script>
+  (function () {
+    var dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      var ddToggle = dropdown.querySelector('.nav-dropdown-toggle');
+      var setDropdown = function (open) {
+        dropdown.classList.toggle('open', open);
+        ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      ddToggle.addEventListener('click', function () { setDropdown(!dropdown.classList.contains('open')); });
+      document.addEventListener('click', function (e) { if (!dropdown.contains(e.target)) setDropdown(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDropdown(false); });
+    }
+
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMenu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
+</script>
 
 </body>
 </html>
