@@ -127,7 +127,8 @@
 
     /* HERO */
     .hero {
-      background: var(--white);
+      /* White wash over the photo so the section still reads as a white page */
+      background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.93)), url('/images/hero/hero-cedar-wide.jpg') center / cover no-repeat var(--white);
       padding: 72px 52px 88px;
       position: relative;
     }
@@ -469,7 +470,7 @@
       .nav-dropdown-menu strong { color: var(--white); font-size: 0.95rem; }
       .nav-menu .nav-dropdown-menu a.nav-dropdown-all { color: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); }
       section { padding: 64px 24px; }
-      .hero { padding: 30px 24px 52px; }
+      .hero { padding: 30px 24px 52px; background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.94)), url('/images/hero/hero-cedar-tall.jpg'); }
       .hero-inner { grid-template-columns: 1fr; gap: 26px; }
       .about-stats { grid-template-columns: repeat(2, 1fr); }
       .about-stat:nth-child(3) { border-left: none; }
