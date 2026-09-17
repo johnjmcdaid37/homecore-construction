@@ -127,8 +127,8 @@
 
     /* HERO */
     .hero {
-      /* White wash over the photo so the section still reads as a white page */
-      background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.93)), url('/images/hero/hero-cedar-wide.jpg') center / cover no-repeat var(--white);
+      /* Navy wash over the photo: keeps the white logo and copy readable */
+      background: linear-gradient(rgba(13,35,64,0.55) 0%, rgba(13,35,64,0.72) 45%, rgba(13,35,64,0.88) 100%), url('/images/hero/hero-bath-wide.jpg') center / cover no-repeat var(--navy);
       padding: 72px 52px 88px;
       position: relative;
     }
@@ -153,6 +153,7 @@
       width: 100%;
       max-width: 580px;
       background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.22);
       border-bottom: 3px solid var(--accent);
       border-radius: 3px;
       padding: 16px 4px;
@@ -167,9 +168,9 @@
     .hero-bar span { display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px 14px; text-wrap: balance; }
     .hero-bar span + span { border-left: 1px solid rgba(255,255,255,0.2); }
     .hero-cred { margin-bottom: 22px; }
-    .hero-cred-title { color: var(--navy); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; margin-bottom: 12px; }
+    .hero-cred-title { color: var(--white); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; margin-bottom: 12px; }
     .hero-cred-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; }
-    .hero-cred-list li { display: inline-flex; align-items: center; gap: 8px; color: var(--gray); font-size: 0.92rem; font-weight: 700; }
+    .hero-cred-list li { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.92); font-size: 0.92rem; font-weight: 700; }
     .hero-cred-list li::before { content: ''; flex: 0 0 auto; width: 18px; height: 18px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 11px no-repeat; }
     .hero-reviews {
       display: inline-flex;
@@ -373,8 +374,9 @@
       background: var(--navy);
       padding: 40px;
       border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.16);
       border-top: 4px solid var(--accent);
-      box-shadow: 0 18px 48px rgba(13,35,64,0.28);
+      box-shadow: 0 18px 48px rgba(13,35,64,0.45);
     }
     .quote-form h2 {
       color: var(--white);
@@ -470,7 +472,7 @@
       .nav-dropdown-menu strong { color: var(--white); font-size: 0.95rem; }
       .nav-menu .nav-dropdown-menu a.nav-dropdown-all { color: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); }
       section { padding: 64px 24px; }
-      .hero { padding: 30px 24px 52px; background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.94)), url('/images/hero/hero-cedar-tall.jpg'); }
+      .hero { padding: 30px 24px 52px; background-image: linear-gradient(rgba(13,35,64,0.6) 0%, rgba(13,35,64,0.78) 45%, rgba(13,35,64,0.9) 100%), url('/images/hero/hero-bath-tall.jpg'); background-position: 30% center; }
       .hero-inner { grid-template-columns: 1fr; gap: 26px; }
       .about-stats { grid-template-columns: repeat(2, 1fr); }
       .about-stat:nth-child(3) { border-left: none; }
@@ -584,7 +586,7 @@
 <section class="hero" id="quote">
   <div class="hero-inner">
     <div class="hero-left">
-      <h1 class="hero-title"><img src="/images/brand/homecore-vertical-master.svg" alt="HomeCore Construction, Long Island, NY" class="hero-logo" width="760" height="504"></h1>
+      <h1 class="hero-title"><img src="/images/brand/homecore-vertical-white.svg" alt="HomeCore Construction, Long Island, NY" class="hero-logo" width="760" height="504"></h1>
       <p class="hero-bar"><span>Interior &amp; Exterior</span><span>One Team, Every Project</span><span>Custom Homes &amp; Additions</span></p>
       <div class="hero-cred">
         <p class="hero-cred-title">Over 40 Years of Experience</p>
