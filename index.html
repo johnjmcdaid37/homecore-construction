@@ -469,7 +469,9 @@
       .nav-dropdown-menu strong { color: var(--white); font-size: 0.95rem; }
       .nav-menu .nav-dropdown-menu a.nav-dropdown-all { color: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); }
       section { padding: 64px 24px; }
-      .hero { padding: 30px 24px 52px; }
+      .hero { padding: 24px 24px 52px; }
+      /* the smallest phones (320px) wrap the nav title onto two lines */
+      @media (max-width: 360px) { nav { padding: 16px 18px; } .nav-logo { font-size: 0.75rem; } }
       .hero-inner { grid-template-columns: 1fr; gap: 26px; }
       .about-stats { grid-template-columns: repeat(2, 1fr); }
       .about-stat:nth-child(3) { border-left: none; }
@@ -482,12 +484,13 @@
       .contact-actions { justify-content: center; }
     }
     @media (max-width: 560px) {
-      .hero-logo { width: 200px; }
-      .hero-title { margin-bottom: 18px; }
-      .hero-bar { grid-template-columns: 1fr; padding: 4px 0; margin-bottom: 16px; }
-      .hero-bar span { padding: 7px 14px; }
+      /* On a phone the logo leads and the bar plays support, not the other way round */
+      .hero-logo { width: 260px; }
+      .hero-title { margin-bottom: 16px; }
+      .hero-bar { grid-template-columns: 1fr; padding: 2px 0; margin-bottom: 16px; font-size: 0.68rem; letter-spacing: 0.6px; }
+      .hero-bar span { padding: 6px 14px; }
       .hero-bar span + span { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); }
-      .hero-cred { margin-bottom: 14px; }
+      .hero-cred { margin-bottom: 12px; }
       .hero-cred-title { font-size: 1.05rem; margin-bottom: 8px; }
       .hero-cred-list { flex-direction: column; align-items: center; gap: 6px; }
       .hero-reviews { padding: 12px 18px; }
