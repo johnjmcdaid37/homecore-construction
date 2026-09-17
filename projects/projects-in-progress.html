@@ -102,13 +102,19 @@
       section { padding: 56px 24px; }
       .page-hero { padding: 56px 24px 48px; }
     }
-    @media (max-width: 560px) { .masonry { column-count: 1; } }
+    @media (max-width: 560px) { .masonry { column-count: 2; column-gap: 12px; } .masonry figure { margin-bottom: 12px; } }
   
     .progress-group { max-width: 1120px; margin: 0 auto; }
     .progress-group + .progress-group { margin-top: 52px; }
     .group-title { font-family: var(--body); font-size: 1.5rem; font-weight: 700; color: var(--navy); text-align: center; letter-spacing: 0.3px; margin: 0 0 6px; }
     .group-sub { font-family: var(--body); font-size: 0.95rem; line-height: 1.5; color: var(--gray); text-align: center; max-width: 640px; margin: 0 auto 24px; }
+    .jump-chips { display: flex; gap: 8px; width: fit-content; max-width: 100%; margin: 0 auto 30px; padding-bottom: 6px; overflow-x: auto; scrollbar-width: none; }
+    .jump-chips::-webkit-scrollbar { display: none; }
+    .jump-chips a { flex: 0 0 auto; padding: 10px 16px; border: 1px solid var(--rule); border-radius: 999px; background: var(--white); color: var(--navy); font-size: 0.85rem; font-weight: 700; white-space: nowrap; transition: border-color 0.2s, color 0.2s; }
+    .jump-chips a:hover { border-color: var(--accent); color: var(--accent); }
+    .progress-group { scroll-margin-top: 80px; }
   </style>
+  <link rel="stylesheet" href="/assets/site.css">
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -150,7 +156,16 @@
     <h2>On the Job</h2>
     <p class="section-sub">Active jobs, documented as they move. Scroll each project to follow the work from demo to where it stands today.</p>
   </div>
-    <div class="progress-group">
+    <div class="jump-chips">
+      <a href="#kitchen">Kitchen</a>
+      <a href="#bed-bath">Bed &amp; Bath</a>
+      <a href="#whole-home">Whole-Home</a>
+      <a href="#addition">Addition</a>
+      <a href="#custom-homes">Custom Homes</a>
+      <a href="#millwork">Millwork</a>
+      <a href="#tenant">Tenant</a>
+    </div>
+    <div class="progress-group" id="kitchen">
       <h3 class="group-title">Kitchen Renovation</h3>
       <p class="group-sub">A dated kitchen taken down to the studs, then rebuilt with new rough-ins and custom two-tone cabinetry.</p>
       <div class="masonry">
@@ -170,7 +185,7 @@
       <figure><img src="/images/projects/projects-in-progress/kitchen-14-countertops-installed.jpg" alt="Kitchen with new quartz countertops, a center island, and appliances in place before final trim" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="progress-group">
+    <div class="progress-group" id="bed-bath">
       <h3 class="group-title">Bed &amp; Bath Renovation</h3>
       <p class="group-sub">Demo through finishes: framing, insulation, and plumbing roughed in, then drywall, paint, hardwood floors, marble tile, and finished rooms.</p>
       <div class="masonry">
@@ -198,7 +213,7 @@
       <figure><img src="/images/projects/projects-in-progress/bed-bath-22-hallway-hardwood.jpg" alt="Finished upstairs hallway with refinished hardwood floors and new doors" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="progress-group">
+    <div class="progress-group" id="whole-home">
       <h3 class="group-title">Whole-Home Renovation</h3>
       <p class="group-sub">A dated home taken back to the studs, then rebuilt with new plumbing, spray foam insulation, a new roof, tile, flooring, and a new kitchen.</p>
       <div class="masonry">
@@ -214,7 +229,7 @@
       <figure><img src="/images/projects/projects-in-progress/renovation-10-kitchen-cabinets.jpg" alt="New white shaker kitchen cabinets being installed in the renovated kitchen" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="progress-group">
+    <div class="progress-group" id="addition">
       <h3 class="group-title">Addition &amp; Extension</h3>
       <p class="group-sub">Gutting the existing house, setting new steel to carry the structure, then underpinning it, pouring the new foundation, and waterproofing the walls.</p>
       <div class="masonry">
@@ -246,7 +261,7 @@
       <figure><img src="/images/projects/projects-in-progress/addition-26-crew-at-house.jpg" alt="Crew at the back of the house with the siding stripped and the wall framing exposed" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="progress-group">
+    <div class="progress-group" id="custom-homes">
       <h3 class="group-title">Custom Homes</h3>
       <p class="group-sub">A ground-up custom home, from the first concrete pour through framing and sheathing.</p>
       <div class="masonry">
@@ -273,7 +288,7 @@
       <figure><img src="/images/projects/projects-in-progress/custom-home-08-sheathed.jpg" alt="The custom home sheathed and roofed with windows installed and the front porch framed" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="progress-group">
+    <div class="progress-group" id="millwork">
       <h3 class="group-title">Custom Millwork</h3>
       <p class="group-sub">Custom doors built in our own shop, from machined rails and stiles to finished raised-panel and French door units.</p>
       <div class="masonry">
@@ -284,7 +299,7 @@
       <figure><img src="/images/projects/projects-in-progress/millwork-05-french-door-unit.jpg" alt="Custom French door unit with sidelights and divided lites, built in our shop" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="progress-group">
+    <div class="progress-group" id="tenant">
       <h3 class="group-title">Tenant Improvement</h3>
       <p class="group-sub">A commercial build-out: stripping a tired retail and service space back to the shell, then rebuilding it into a clean showroom.</p>
       <div class="masonry">
@@ -347,5 +362,12 @@
     }
   })();
 </script>
+<!-- Call and quote buttons, pinned to the bottom on small screens -->
+<div class="action-bar">
+  <a class="action-call" href="tel:5165093289">Call (516) 509-3289</a>
+  <a class="action-quote" href="/#quote">Free Quote</a>
+</div>
+<script src="/assets/site.js" defer></script>
+
 </body>
 </html>

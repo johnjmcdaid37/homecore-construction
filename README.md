@@ -5,6 +5,7 @@ Marketing site for HomeCore Construction, a remodeling and construction company 
 ## How it works
 
 - Plain HTML and CSS with no build step. Each page carries its own styles and a small script for the menu.
+- `assets/site.css` and `assets/site.js` are shared by every page and load after the page's own styles. They hold the bottom Call and Free Quote bar for small screens, the full screen photo viewer used on the gallery pages, and the small screen tweaks (16px form text so iPhones do not zoom, a 44px menu button, tighter section padding).
 - Every push to `main` deploys automatically on Netlify.
 - `_redirects` sends the old homecore-construction.com domain and legacy paths to homecoregc.com.
 

@@ -102,8 +102,9 @@
       section { padding: 56px 24px; }
       .page-hero { padding: 56px 24px 48px; }
     }
-    @media (max-width: 560px) { .masonry { column-count: 1; } }
+    @media (max-width: 560px) { .masonry { column-count: 2; column-gap: 12px; } .masonry figure { margin-bottom: 12px; } }
   </style>
+  <link rel="stylesheet" href="/assets/site.css">
   <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -250,5 +251,12 @@
     }
   })();
 </script>
+<!-- Call and quote buttons, pinned to the bottom on small screens -->
+<div class="action-bar">
+  <a class="action-call" href="tel:5165093289">Call (516) 509-3289</a>
+  <a class="action-quote" href="/#quote">Free Quote</a>
+</div>
+<script src="/assets/site.js" defer></script>
+
 </body>
 </html>
