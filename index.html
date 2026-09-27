@@ -385,6 +385,8 @@
     .quote-form p { color: rgba(255,255,255,0.75); line-height: 1.75; font-size: 0.95rem; }
     .quote-form p strong, .quote-form p a { color: var(--white); }
     .form-group { margin-bottom: 16px; }
+    /* Honeypot wrapper: off-screen for people, still fillable by bots. Not display:none, which some bots skip. */
+    .hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
     .form-group label { display: block; font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 7px; letter-spacing: 0.5px; text-transform: uppercase; }
     .form-group input,
     .form-group textarea {
@@ -623,11 +625,11 @@
           <label for="q-message">Short message about your needs</label>
           <textarea id="q-message" name="entry.1250583015" placeholder="Tell us a little about your project" required></textarea>
         </div>
-        <!-- The Google Form requires these answers; the quick form doesn't ask for them, so they're marked for the CRM -->
-        <input type="hidden" name="entry.516540207" value="(quick quote form)" />
-        <input type="hidden" name="entry.1932427099" value="(quick quote form)" />
-        <input type="hidden" name="entry.796476088" value="(quick quote form)" />
-        <input type="hidden" name="entry.659984111" value="Not Sure / Need Assessment" />
+        <!-- Honeypot: people never see this, bots fill it in. A filled one is dropped, never sent to the Form. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="q-website">Website</label>
+          <input type="text" id="q-website" name="hc_website" tabindex="-1" autocomplete="off" />
+        </div>
         <button type="submit" class="form-submit">Send</button>
         <p class="form-note">Estimates are always free and always honest.</p>
       </form>
@@ -775,13 +777,25 @@
     var form = document.getElementById('quoteForm');
     var iframe = document.getElementById('hidden_iframe');
     if (form && iframe) {
-      form.addEventListener('submit', function () { submitted = true; });
-      iframe.addEventListener('load', function () {
-        if (!submitted) return;
+      var showThanks = function () {
         form.style.display = 'none';
         var thanks = document.getElementById('quoteThankYou');
         thanks.style.display = 'block';
         thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      };
+      form.addEventListener('submit', function (e) {
+        var honeypot = document.getElementById('q-website');
+        if (honeypot && honeypot.value !== '') {
+          // A bot. Don't send it to the Form, but show the same thank-you so it can't tell.
+          e.preventDefault();
+          showThanks();
+          return;
+        }
+        submitted = true;
+      });
+      iframe.addEventListener('load', function () {
+        if (!submitted) return;
+        showThanks();
       });
     }
 
