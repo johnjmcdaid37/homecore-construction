@@ -314,7 +314,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       max-width: 1020px;
-      margin: 0 auto 48px;
+      margin: 0 auto;
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
     }
@@ -333,6 +333,19 @@
     .team-card h4 { color: var(--white); font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
     .team-card p { color: rgba(255,255,255,0.78); font-size: 0.95rem; line-height: 1.75; }
     .team-card .team-role { color: var(--slate); font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+
+    /* SERVICES (home page summary of /services) */
+    .services-home { background: var(--light); }
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto 48px; }
+    .svc-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06); transition: box-shadow 0.2s, transform 0.2s; }
+    .svc-card:hover { box-shadow: 0 12px 32px rgba(13,35,64,0.16); transform: translateY(-2px); }
+    .svc-card img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .svc-card-body { flex: 1; display: flex; flex-direction: column; padding: 22px 26px 26px; border-top: 3px solid var(--accent); }
+    .svc-card-eyebrow { color: var(--accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .svc-card h3 { color: var(--navy); font-size: 1.1rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+    .svc-card p { color: var(--gray); font-size: 0.93rem; line-height: 1.7; margin-bottom: 16px; }
+    .svc-card-link { margin-top: auto; color: var(--accent); font-size: 0.88rem; font-weight: 700; }
+    .svc-more { text-align: center; }
 
     /* CONTACT */
     .contact { background: var(--white); }
@@ -479,6 +492,7 @@
       .about-stat:nth-child(3) { border-left: none; }
       .about-stat:nth-child(n+3) { border-top: 1px solid var(--rule); }
       .team-grid { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-wrapper { grid-template-columns: 1fr; gap: 44px; }
       .contact-intro { text-align: center; }
       .contact-intro h2 { text-align: center; }
@@ -498,6 +512,8 @@
       .hero-reviews { padding: 12px 18px; }
       .quote-form { padding: 24px 18px; }
       .team-card { padding: 24px 20px; }
+      .svc-grid { grid-template-columns: 1fr; gap: 18px; }
+      .svc-card-body { padding: 20px 20px 22px; }
       .contact-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
       .contact-card { padding: 18px 14px; }
       .contact-card-icon { width: 38px; height: 38px; margin-bottom: 10px; }
@@ -692,6 +708,78 @@
     <div class="about-stat"><strong>2</strong><span>Generations, one team</span></div>
     <div class="about-stat"><strong>35+</strong><span>Years of tenure with in-house painting</span></div>
   </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-home" id="services">
+  <div class="section-head">
+    <p class="section-eyebrow">What We Do</p>
+    <h2>Our Services</h2>
+    <p class="section-sub">Interior and exterior, one team for every project, from custom millwork built in our own shop to ground-up custom homes.</p>
+  </div>
+  <div class="svc-grid">
+    <a class="svc-card" href="/services#custom-millwork">
+      <img src="/images/projects/all-past-projects/interior-dining-coffered.jpg" alt="Dining room with a coffered ceiling, French doors to the yard, and a brass chandelier" loading="lazy">
+      <div class="svc-card-body">
+        <p class="svc-card-eyebrow">Built In-House</p>
+        <h3>Custom Millwork &amp; Cabinetry</h3>
+        <p>Cabinetry, doors, vanities, coffered ceilings and built-ins, made at our own Long Island warehouse and installed by the same team.</p>
+        <span class="svc-card-link">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a class="svc-card" href="/services#kitchens-baths">
+      <img src="/images/projects/all-past-projects/bath-primary-slat-tub.jpg" alt="Primary bath with a freestanding tub, a wood slat shower wall, and mosaic tile floors" loading="lazy">
+      <div class="svc-card-body">
+        <p class="svc-card-eyebrow">Interior</p>
+        <h3>Kitchens &amp; Baths</h3>
+        <p>Full remodels of the rooms you use most: cabinetry, counters, tile, plumbing and lighting.</p>
+        <span class="svc-card-link">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a class="svc-card" href="/services#interiors">
+      <img src="/images/projects/all-past-projects/kitchen-two-tone-walnut.jpg" alt="Kitchen with white perimeter cabinets, a walnut island, and a marble backsplash" loading="lazy">
+      <div class="svc-card-body">
+        <p class="svc-card-eyebrow">Living Spaces</p>
+        <h3>Interior Renovations</h3>
+        <p>Basements, bedrooms, living spaces and open floor plans, from flooring and trim to new layouts.</p>
+        <span class="svc-card-link">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a class="svc-card" href="/services#additions">
+      <img src="/images/projects/projects-in-progress/addition-27-framed-opening.jpg" alt="Two-story home opened to the studs with new framing across the rear wall and a new foundation alongside" loading="lazy">
+      <div class="svc-card-body">
+        <p class="svc-card-eyebrow">Structural</p>
+        <h3>Additions &amp; Extensions</h3>
+        <p>Room additions, dormers, load-bearing changes and foundations for the space your family needs.</p>
+        <span class="svc-card-link">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a class="svc-card" href="/services#custom-homes">
+      <img src="/images/projects/all-past-projects/build-cedar-shake-exterior.jpg" alt="Cedar shake shingled custom home with white trim, a paver walkway, and a detached garage" loading="lazy">
+      <div class="svc-card-body">
+        <p class="svc-card-eyebrow">New Construction</p>
+        <h3>Custom Homes &amp; New Construction</h3>
+        <p>Ground-up custom and spec homes, with one accountable team from plans to final walkthrough.</p>
+        <span class="svc-card-link">Learn more &rarr;</span>
+      </div>
+    </a>
+    <a class="svc-card" href="/services#exteriors">
+      <img src="/images/projects/all-past-projects/build-blue-home-exterior.jpg" alt="Finished blue shingle-sided home at dusk with a covered front porch and attached garage" loading="lazy">
+      <div class="svc-card-body">
+        <p class="svc-card-eyebrow">Exterior</p>
+        <h3>Roofing, Siding &amp; Windows</h3>
+        <p>Roof replacements, vinyl and fiber cement siding, and energy-efficient windows, installed clean.</p>
+        <span class="svc-card-link">Learn more &rarr;</span>
+      </div>
+    </a>
+  </div>
+  <div class="svc-more">
+    <a href="/services" class="btn-solid">See All Services</a>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="about" id="team">
   <div class="team">
     <div class="team-head">
       <h3>Our In-House Team</h3>
