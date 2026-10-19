@@ -1,7 +1,7 @@
 /* Full screen photo viewer for the gallery pages: tap a photo to open it,
    swipe or use the arrows to move, Escape or the X to close. */
 (function () {
-  var photos = [].slice.call(document.querySelectorAll('.masonry img'));
+  var photos = [].slice.call(document.querySelectorAll('.masonry img, .story-carousel .stage-frame img'));
   if (!photos.length) return;
 
   var box = document.createElement('div');
