@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://homecoregc.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://homecoregc.com/services</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/areas-we-serve/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://homecoregc.com/kitchen-remodeling</loc>
@@ -16,23 +21,133 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://homecoregc.com/privacy</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://homecoregc.com/bathroom-remodeling</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/home-additions</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/custom-homes</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/custom-millwork</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/whole-home-renovation</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/decks-porches</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/roofing-siding-windows</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/garage-conversions</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/areas-we-serve/garden-city</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/areas-we-serve/rockville-centre</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/areas-we-serve/bay-shore</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/areas-we-serve/huntington</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/areas-we-serve/hamptons</loc>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://homecoregc.com/projects/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://homecoregc.com/projects/past-projects</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://homecoregc.com/projects/projects-in-progress</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/custom-home-1</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/custom-home-2</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/whole-home-1</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/whole-home-2</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/kitchen-1</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/bathroom-1</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/driveway-1</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/projects/progress-stories/garage-opening-1</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/privacy</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.3</priority>
   </url>
 </urlset>
