@@ -82,6 +82,15 @@
     .masonry img { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 18px rgba(13,31,60,0.10); transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .masonry img:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(13,31,60,0.16); }
     @media (max-width: 960px) { .masonry { column-count: 2; } }
+    .three-step { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1120px; margin: 0 auto 56px; }
+    .three-step figure { margin: 0; }
+    .three-step img { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 18px rgba(13,31,60,0.10); }
+    .three-step figcaption { font-family: var(--body); font-size: 0.95rem; color: var(--gray); text-align: center; margin-top: 10px; line-height: 1.45; }
+    .three-step figcaption strong { display: block; color: var(--navy); font-size: 1.05rem; letter-spacing: 0.3px; }
+    .step-head { text-align: center; max-width: 720px; margin: 0 auto 24px; }
+    .step-head h3 { font-family: var(--body); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 0 0 6px; }
+    .step-head p { font-family: var(--body); font-size: 0.95rem; line-height: 1.5; color: var(--gray); margin: 0; }
+    @media (max-width: 700px) { .three-step { grid-template-columns: 1fr; max-width: 420px; } }
     @media (max-width: 900px) {
       nav { flex-wrap: wrap; height: auto; padding: 16px 24px; }
       .nav-logo { font-size: 1rem; }
@@ -146,6 +155,15 @@
     <h2>Finished Work</h2>
     <p class="section-sub">A running gallery of completed projects, added to as jobs wrap.</p>
   </div>
+  <div class="step-head" id="custom-home-bay-shore">
+    <h3>Custom Home, Bay Shore</h3>
+    <p>A ground-up custom home built by HomeCore Construction in Bay Shore, shown in three steps from open framing to the finished house.</p>
+  </div>
+  <div class="three-step">
+    <figure><img src="/images/projects/all-past-projects/bayshore-custom-home-01-framed.jpg" alt="Custom home in Bay Shore at full framing, with the double front gables and roof rafters set on the new foundation" width="1050" height="1400" loading="lazy" decoding="async"><figcaption><strong>Framed</strong>Walls, floor, and roof framing up on the new foundation.</figcaption></figure>
+    <figure><img src="/images/projects/all-past-projects/bayshore-custom-home-02-sheathed.jpg" alt="The same Bay Shore custom home sheathed and shingled, with windows installed, the front porch deck framed, and the garage opening ready" width="1050" height="1400" loading="lazy" decoding="async"><figcaption><strong>Sheathed</strong>Sheathing, roof shingles, and windows in, with the front porch deck framed.</figcaption></figure>
+    <figure><img src="/images/projects/all-past-projects/build-blue-home-exterior.jpg" alt="The finished Bay Shore custom home with blue siding, white trim, a covered front porch, an attached garage, and a new driveway at dusk" width="810" height="1080" loading="lazy" decoding="async"><figcaption><strong>Finished</strong>Blue siding, white trim, a covered front porch, and a new driveway.</figcaption></figure>
+  </div>
   <div class="masonry">
     <figure><img src="/images/projects/all-past-projects/build-cedar-shake-exterior.jpg" alt="Cedar shake shingled custom home with white trim, a paver walkway, and a detached garage" width="1200" height="900" loading="lazy" decoding="async"></figure>
     <figure><img src="/images/projects/all-past-projects/kitchen-oak-island-pendants.jpg" alt="White shaker kitchen with a white oak island, twin pendant lights, and stainless appliances" width="810" height="1080" loading="lazy" decoding="async"></figure>
@@ -158,7 +176,6 @@
     <figure><img src="/images/projects/all-past-projects/kitchen-oak-lattice-wine-rack.jpg" alt="White oak upper cabinets with a built-in lattice wine rack and an open mug shelf" width="810" height="1080" loading="lazy" decoding="async"></figure>
     <figure><img src="/images/projects/all-past-projects/kitchen-black-open-living.jpg" alt="Black kitchen with brass pulls and quartz counters, open to the living area" width="1080" height="1440" loading="lazy" decoding="async"></figure>
     <figure><img src="/images/projects/all-past-projects/interior-herringbone-inlay-floor.jpg" alt="White oak herringbone floor inlay framed by a border of straight boards" width="1080" height="720" loading="lazy" decoding="async"></figure>
-    <figure><img src="/images/projects/all-past-projects/build-blue-home-exterior.jpg" alt="Finished blue shingle-sided home at dusk with a covered front porch and attached garage"></figure>
     <figure><img src="/images/projects/all-past-projects/bath-marble-double-vanity.jpg" alt="Bathroom with a floating marble double vanity, brass fixtures, and marble mosaic walls" width="720" height="960" loading="lazy" decoding="async"></figure>
     <figure><img src="/images/projects/all-past-projects/bath-freestanding-tub.jpg" alt="Primary bathroom with a freestanding soaking tub beneath a wall of windows"></figure>
     <figure><img src="/images/projects/all-past-projects/bath-soaking-tub-pencil-tile.jpg" alt="Freestanding soaking tub with a wall-mounted filler, white tile wainscot, and a marble mosaic floor" width="810" height="1080" loading="lazy" decoding="async"></figure>
