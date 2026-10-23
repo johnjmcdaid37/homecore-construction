@@ -9,3 +9,11 @@ http://www.homecore-construction.com/*   https://homecoregc.com/:splat  301!
 # Legacy paths
 /McDaid_Sons_Website.html    /    301
 /projects/all-past-projects    /projects/past-projects    301
+
+# Town pages taken offline Oct 23 2026. Restore: branch nassau-restore.
+/areas-we-serve/garden-city    /areas-we-serve/    301
+/areas-we-serve/garden-city.html    /areas-we-serve/    301
+/areas-we-serve/rockville-centre    /areas-we-serve/    301
+/areas-we-serve/rockville-centre.html    /areas-we-serve/    301
+/areas-we-serve/wantagh    /areas-we-serve/    301
+/areas-we-serve/wantagh.html    /areas-we-serve/    301
