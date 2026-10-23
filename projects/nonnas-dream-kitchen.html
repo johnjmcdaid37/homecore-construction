@@ -20,9 +20,9 @@
   <meta name="twitter:title" content="Nonna's Dream Kitchen | Kitchen Remodel | HomeCore Construction | Long Island, NY" />
   <meta name="twitter:description" content="A full kitchen remodel on Long Island by HomeCore Construction: custom cabinetry, quartz counters, a center island, a corner carousel, and a built-in white oak wine rack." />
   <meta name="twitter:image" content="https://homecoregc.com/images/og-homecore.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/cinzel-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <style>@font-face{font-family:'Cinzel';font-style:normal;font-weight:600 700;font-display:swap;src:url(/assets/fonts/cinzel-var-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}@font-face{font-family:'Cinzel';font-style:normal;font-weight:600 700;font-display:swap;src:url(/assets/fonts/cinzel-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/lato-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}@font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/lato-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}@font-face{font-family:'Lato';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/lato-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}@font-face{font-family:'Lato';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/lato-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -217,8 +217,8 @@
 <section class="story" style="padding-top:72px;">
   <div class="ba-card">
     <div class="ba-wrap" id="ba">
-      <img src="/images/projects/nonnas-dream-kitchen/after.jpg" alt="Finished kitchen remodel with white shaker cabinets, quartz counters, and center island">
-      <img class="ba-before" src="/images/projects/nonnas-dream-kitchen/before.jpg" alt="The kitchen before the remodel, with dated cabinets and laminate counters">
+      <img src="/images/projects/nonnas-dream-kitchen/after.webp" alt="Finished kitchen remodel with white shaker cabinets, quartz counters, and center island" srcset="/images/projects/nonnas-dream-kitchen/after-640w.webp 640w, /images/projects/nonnas-dream-kitchen/after.webp 960w" sizes="(max-width: 940px) 100vw, 900px" loading="lazy" decoding="async">
+      <img class="ba-before" src="/images/projects/nonnas-dream-kitchen/before.webp" alt="The kitchen before the remodel, with dated cabinets and laminate counters" srcset="/images/projects/nonnas-dream-kitchen/before-640w.webp 640w, /images/projects/nonnas-dream-kitchen/before.webp 960w" sizes="(max-width: 940px) 100vw, 900px" loading="lazy" decoding="async">
       <div class="ba-handle"></div>
       <span class="ba-tag tag-b">BEFORE</span>
       <span class="ba-tag tag-a">AFTER</span>
@@ -247,15 +247,15 @@
   </div>
   <div class="process-grid">
     <div class="process-card">
-      <img src="/images/projects/nonnas-dream-kitchen/process-demo.jpg" alt="HomeCore Construction crew removing the old kitchen cabinets on demo day">
+      <img src="/images/projects/nonnas-dream-kitchen/process-demo.webp" alt="HomeCore Construction crew removing the old kitchen cabinets on demo day" srcset="/images/projects/nonnas-dream-kitchen/process-demo-640w.webp 640w, /images/projects/nonnas-dream-kitchen/process-demo.webp 900w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <p><strong>Day One</strong>The old kitchen comes out: cabinets, counters, and appliances, cleared and hauled away.</p>
     </div>
     <div class="process-card">
-      <img src="/images/projects/nonnas-dream-kitchen/process-studs.jpg" alt="Kitchen gutted down to the studs during the remodel">
+      <img src="/images/projects/nonnas-dream-kitchen/process-studs.webp" alt="Kitchen gutted down to the studs during the remodel" srcset="/images/projects/nonnas-dream-kitchen/process-studs-640w.webp 640w, /images/projects/nonnas-dream-kitchen/process-studs.webp 900w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <p><strong>Down to the Studs</strong>We open it up completely so the new kitchen starts from a clean, solid frame. No shortcuts hiding behind new cabinets.</p>
     </div>
     <div class="process-card">
-      <img src="/images/projects/nonnas-dream-kitchen/process-crew.jpg" alt="The HomeCore Construction crew working inside the gutted kitchen">
+      <img src="/images/projects/nonnas-dream-kitchen/process-crew.webp" alt="The HomeCore Construction crew working inside the gutted kitchen" srcset="/images/projects/nonnas-dream-kitchen/process-crew-640w.webp 640w, /images/projects/nonnas-dream-kitchen/process-crew.webp 900w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <p><strong>The Crew</strong>The same team sees it through from demo day to the final walkthrough. That's how the details stay right.</p>
     </div>
   </div>
@@ -269,12 +269,12 @@
   </div>
   <div class="details-grid">
     <div class="detail-card">
-      <img class="detail-photo" src="/images/projects/nonnas-dream-kitchen/wine-rack.jpg" alt="Custom built-in white oak wine rack with lattice bottle storage">
+      <img class="detail-photo" src="/images/projects/nonnas-dream-kitchen/wine-rack.webp" alt="Custom built-in white oak wine rack with lattice bottle storage" srcset="/images/projects/nonnas-dream-kitchen/wine-rack-640w.webp 640w, /images/projects/nonnas-dream-kitchen/wine-rack.webp 800w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <h3>Built-In Wine Rack</h3>
       <p>A custom white oak wine bottle holder built right into the cabinetry, keeping her favorite bottles close at hand. A detail you won't find in an off-the-shelf kitchen.</p>
     </div>
     <div class="detail-card">
-      <img class="detail-photo" src="/images/projects/nonnas-dream-kitchen/corner-carousel.jpg" alt="Corner cabinet carousel swung open, showing the rotating shelves and cookware inside">
+      <img class="detail-photo" src="/images/projects/nonnas-dream-kitchen/corner-carousel.webp" alt="Corner cabinet carousel swung open, showing the rotating shelves and cookware inside" srcset="/images/projects/nonnas-dream-kitchen/corner-carousel-640w.webp 640w, /images/projects/nonnas-dream-kitchen/corner-carousel.webp 800w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <h3>Corner Carousel</h3>
       <p>Instead of a standard lazy Susan, the corner cabinet holds a carousel where the doors swing in with the shelves. The whole corner opens up to her: no reaching, no digging, no pots lost in the back.</p>
     </div>
@@ -288,11 +288,11 @@
   </div>
   <div class="gallery-grid">
     <figure>
-      <img src="/images/projects/nonnas-dream-kitchen/after-sink.jpg" alt="Farmhouse sink and quartz counters under the window, with the corner open shelving and range">
+      <img src="/images/projects/nonnas-dream-kitchen/after-sink.webp" alt="Farmhouse sink and quartz counters under the window, with the corner open shelving and range" srcset="/images/projects/nonnas-dream-kitchen/after-sink-640w.webp 640w, /images/projects/nonnas-dream-kitchen/after-sink.webp 960w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <figcaption>The main run: farmhouse sink, quartz counters, and the corner open shelving.</figcaption>
     </figure>
     <figure>
-      <img src="/images/projects/nonnas-dream-kitchen/after-island.jpg" alt="Center island with built-in microwave and white oak buffet with wine rack">
+      <img src="/images/projects/nonnas-dream-kitchen/after-island.webp" alt="Center island with built-in microwave and white oak buffet with wine rack" srcset="/images/projects/nonnas-dream-kitchen/after-island-640w.webp 640w, /images/projects/nonnas-dream-kitchen/after-island.webp 960w" sizes="(max-width: 700px) 100vw, 530px" loading="lazy" decoding="async">
       <figcaption>The island and the white oak buffet wall, with the built-in wine rack.</figcaption>
     </figure>
   </div>

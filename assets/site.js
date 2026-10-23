@@ -22,7 +22,7 @@
 
   function show(n) {
     current = (n + photos.length) % photos.length;
-    full.src = photos[current].currentSrc || photos[current].src;
+    full.src = photos[current].getAttribute('data-full') || photos[current].currentSrc || photos[current].src;
     full.alt = photos[current].alt || '';
     caption.textContent = photos[current].alt || '';
   }

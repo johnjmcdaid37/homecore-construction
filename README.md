@@ -28,7 +28,9 @@ Marketing site for HomeCore Construction, a remodeling and construction company 
 - `images/projects/projects-in-progress/`: progress photos, named `<group>-NN-<description>.jpg`
 - `images/projects/nonnas-dream-kitchen/`: kitchen story photos
 
-Keep each photo under about 200KB. Never add `width` or `height` attributes to the Projects in Progress gallery images; that gallery's CSS stretches them.
+Keep each photo under about 200KB.
+
+Page speed: pages serve WebP copies of the photos. After adding or changing photos, run `python3 /workspace/seo/gen/make_webp.py` and then `python3 /workspace/seo/gen/optimize.py`. That makes `name.webp` (long edge up to 1600px, only when it is smaller than the original), `name-640w.webp` for grids and `name-320w.webp` for carousel thumbnails, then points each page at them with srcset, lazy loading and width and height where safe. The original JPGs stay in place as the source files. Fonts (Cinzel and Lato) are self hosted in `assets/fonts/`; `_headers` sets browser caching for images and fonts. Never add `width` or `height` attributes to the Projects in Progress gallery images; that gallery's CSS stretches them.
 
 ## Quote form
 
