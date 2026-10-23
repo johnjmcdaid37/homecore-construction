@@ -87,6 +87,14 @@
     {
      "@type": "Place",
      "name": "Bridgehampton, NY"
+    },
+    {
+     "@type": "Place",
+     "name": "Sayville, NY"
+    },
+    {
+     "@type": "Place",
+     "name": "Cold Spring Harbor, NY"
     }
    ],
    "hasCredential": {
@@ -331,6 +339,21 @@
     .feature figcaption strong { display: block; color: var(--navy); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
     .feature h2 { text-align: left; }
     .feature .section-eyebrow::after { left: 0; transform: none; }
+    .job { margin: 0 auto 56px; max-width: 1180px; }
+    .job:last-child { margin-bottom: 0; }
+    .job h3 { color: var(--navy); font-size: 1.25rem; text-align: center; margin-bottom: 6px; }
+    .job .job-sub { text-align: center; font-size: 0.95rem; line-height: 1.6; max-width: 640px; margin: 0 auto 20px; }
+    .job .job-sub a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .jobgrid { display: grid; gap: 22px; margin: 0 auto; }
+    .jobgrid.n1 { grid-template-columns: 1fr; max-width: 420px; }
+    .jobgrid.n2 { grid-template-columns: repeat(2, 1fr); max-width: 800px; }
+    .jobgrid.n3 { grid-template-columns: repeat(3, 1fr); }
+    .jobgrid figure { margin: 0; }
+    .jobgrid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+    .jobgrid figcaption { margin-top: 10px; font-size: 0.9rem; line-height: 1.55; }
+    .jobgrid figcaption strong { display: block; color: var(--navy); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+    @media (max-width: 900px) { .jobgrid.n3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .jobgrid.n2, .jobgrid.n3 { grid-template-columns: 1fr; } }
     @media (max-width: 900px) { .stages.four { grid-template-columns: 1fr 1fr; } .feature { grid-template-columns: 1fr; gap: 28px; } }
     @media (max-width: 520px) { .stages.four { grid-template-columns: 1fr; } }
   </style>
@@ -382,7 +405,7 @@
   <div class="wrap prose" style="max-width:820px">
     <div class="center"><p class="section-eyebrow">Bay Shore</p><h2>Our Work in Bay Shore</h2></div>
     <p>HomeCore Construction has built in Bay Shore from the ground up. We built a new <a href="/custom-homes">custom home</a> on one lot, and right next door we added a full <a href="/home-additions">second story</a> to a home, with three bedrooms, a kitchen, a living room, a bath and laundry, plus a new <a href="/decks-porches">front porch and deck</a>.</p>
-    <p>HomeCore Construction guides homeowners through permits and inspections, from filing to final sign off. We also serve nearby West Islip, Islip and West Babylon.</p>
+    <p>HomeCore Construction guides homeowners through permits and inspections, from filing to final sign off. We also serve nearby West Islip, Islip, West Babylon and <a href="/areas-we-serve/sayville">Sayville</a>.</p>
   </div>
 </section>
 <section class="alt-bg">
