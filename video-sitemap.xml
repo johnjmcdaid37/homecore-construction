@@ -91,4 +91,69 @@
       <video:live>no</video:live>
     </video:video>
   </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/BmvOiEVt0BU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Custom Millwork Craftsmanship</video:title>
+      <video:description>Good craftsmanship starts long before the finished product. This HomeCore Construction Reel shows precision cutting and custom millwork that become cabinetry and interior details built to last.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=BmvOiEVt0BU</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/BmvOiEVt0BU</video:player_loc>
+      <video:publication_date>2026-10-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/LOGj733UBp8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Bridgehampton Bedrooms and Ensuite Baths</video:title>
+      <video:description>A walkthrough of bedrooms and ensuite bathrooms in our Bridgehampton custom home.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=LOGj733UBp8</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/LOGj733UBp8</video:player_loc>
+      <video:publication_date>2026-10-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/2VNS4jAtADs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Bridgehampton Master Suite Design Walkthrough</video:title>
+      <video:description>A master suite designed with comfort, space, and natural light in mind in our Bridgehampton custom home.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=2VNS4jAtADs</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/2VNS4jAtADs</video:player_loc>
+      <video:publication_date>2026-10-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/bFpEXoFxC-c/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Custom Home Framing and Structure</video:title>
+      <video:description>Every great home starts long before the finishing touches. From steel reinforcement beneath the structure to the timber framing that shapes each space.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=bFpEXoFxC-c</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/bFpEXoFxC-c</video:player_loc>
+      <video:publication_date>2026-10-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/H1gzONNbSVY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Bridgehampton Build Walkthrough On Site</video:title>
+      <video:description>On site at our Bridgehampton custom home. A HomeCore Construction partner walks the framed interiors and talks through the scale of the build.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=H1gzONNbSVY</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/H1gzONNbSVY</video:player_loc>
+      <video:publication_date>2026-10-30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 </urlset>
