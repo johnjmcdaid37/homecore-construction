@@ -172,6 +172,45 @@
   <url>
     <loc>https://homecoregc.com/videos/</loc>
     <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/7kMU3xtDOH4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>A Great Finish Starts with Preparation</video:title>
+      <video:description>A great finish starts with preparation. This HomeCore Construction Reel shows careful interior prep under a window and wainscot work before the finished look comes together.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=7kMU3xtDOH4</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/7kMU3xtDOH4</video:player_loc>
+      <video:publication_date>2026-11-04</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/wMlXM75idFg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Long Island Custom Home Build Story</video:title>
+      <video:description>Long Island homeowners, this is what a full transformation looks like. HomeCore Construction reframed, underpinned, and added on to build a lasting custom home.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=wMlXM75idFg</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/wMlXM75idFg</video:player_loc>
+      <video:publication_date>2026-11-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/hCvpE9NxXgI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Fresh Navy Shutters Long Island Curb Appeal</video:title>
+      <video:description>Fresh paint, navy shutters. Prep comes first, then our crew brushes the shutters by hand for a clean, crisp finish against the white siding.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hCvpE9NxXgI</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/hCvpE9NxXgI</video:player_loc>
+      <video:publication_date>2026-11-06</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/axFGOj__jiw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Radiant Floor Heat Before the Slab Pour</video:title>
       <video:description>Radiant floor heat starts with careful layout. On this HomeCore Construction custom home build on Long Island, we tie the tubing to the mesh over the slab before the pour, keeping even spacing so the finished floor delivers comfortable, even heat room to room.</video:description>
