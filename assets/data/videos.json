@@ -1,7 +1,7 @@
 {
   "channel_url": "https://www.youtube.com/@HomeCoreConstruction",
   "channel_handle": "@HomeCoreConstruction",
-  "updated": "2026-11-06",
+  "updated": "2026-11-10",
   "notes": "Source of truth for the Videos page. Only visibility=public entries render. To add a scheduled video on its date: set visibility to public, fill youtube_id and upload_date, then run python3 scripts/build_videos.py. Leave publish_at as documentation of the original schedule.",
   "videos": [
     {
@@ -349,9 +349,9 @@
       "title": "Inside the HomeCore Construction Mill Shop",
       "blurb": "Custom cabinets, bookshelves and solid mahogany doors built in house.",
       "description": "Step inside the HomeCore Construction mill shop. Every custom cabinet, bookshelf and door we install is built right here in house, including solid mahogany doors made to last a hundred years.",
-      "upload_date": null,
+      "upload_date": "2026-11-09",
       "duration": "PT34S",
-      "visibility": "scheduled",
+      "visibility": "public",
       "publish_at": "2026-11-09T09:00:00-05:00",
       "shorts": true,
       "featured": false,
@@ -363,7 +363,7 @@
         "cabinetry",
         "Long Island"
       ],
-      "hook": "On 2026-11-09: set visibility public and upload_date, rebuild. Then the custom millwork page embed lights up."
+      "hook": null
     },
     {
       "id": "BeaconRadiantFloor",
@@ -393,9 +393,9 @@
       "title": "Oakdale Ranch Remodel Walkthrough",
       "blurb": "A large ranch going from dark and commercial to warm and contemporary.",
       "description": "Out in Oakdale, New York, HomeCore Construction is turning a large ranch from a dark, commercial feel into something warm and contemporary, with new flooring, paint, baseboards, doors, and lighting throughout.",
-      "upload_date": null,
+      "upload_date": "2026-11-07",
       "duration": "PT2M40S",
-      "visibility": "scheduled",
+      "visibility": "public",
       "publish_at": "2026-11-07T09:00:00-05:00",
       "shorts": false,
       "featured": false,
@@ -408,7 +408,7 @@
         "whole home",
         "floating floor"
       ],
-      "hook": "On 2026-11-07: set visibility public and upload_date, rebuild."
+      "hook": null
     },
     {
       "id": "BeaconMasterSuite",
@@ -416,9 +416,9 @@
       "title": "Custom Home Master Suite Walkthrough on Long Island",
       "blurb": "Master bath, walk in closet and a framed tray ceiling on the new addition.",
       "description": "Upstairs in the master suite of this HomeCore Construction custom home build on Long Island: an 11x12 master bath, a 10 by 10 walk in closet, and a framed tray ceiling, on the addition we built after underpinning the basement.",
-      "upload_date": null,
+      "upload_date": "2026-11-10",
       "duration": "PT55S",
-      "visibility": "scheduled",
+      "visibility": "public",
       "publish_at": "2026-11-10T09:00:00-05:00",
       "shorts": false,
       "featured": false,
@@ -431,7 +431,7 @@
         "custom home",
         "Long Island"
       ],
-      "hook": "On 2026-11-10: set visibility public and upload_date, rebuild."
+      "hook": null
     }
   ]
 }

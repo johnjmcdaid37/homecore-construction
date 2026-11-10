@@ -211,12 +211,51 @@
   <url>
     <loc>https://homecoregc.com/videos/</loc>
     <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/neOeHIqH8lo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Inside the HomeCore Construction Mill Shop</video:title>
+      <video:description>Step inside the HomeCore Construction mill shop. Every custom cabinet, bookshelf and door we install is built right here in house, including solid mahogany doors made to last a hundred years.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=neOeHIqH8lo</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/neOeHIqH8lo</video:player_loc>
+      <video:publication_date>2026-11-09</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/axFGOj__jiw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Radiant Floor Heat Before the Slab Pour</video:title>
       <video:description>Radiant floor heat starts with careful layout. On this HomeCore Construction custom home build on Long Island, we tie the tubing to the mesh over the slab before the pour, keeping even spacing so the finished floor delivers comfortable, even heat room to room.</video:description>
       <video:content_loc>https://www.youtube.com/watch?v=axFGOj__jiw</video:content_loc>
       <video:player_loc>https://www.youtube-nocookie.com/embed/axFGOj__jiw</video:player_loc>
       <video:publication_date>2026-11-03</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/QKBFHczNoS0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Oakdale Ranch Remodel Walkthrough</video:title>
+      <video:description>Out in Oakdale, New York, HomeCore Construction is turning a large ranch from a dark, commercial feel into something warm and contemporary, with new flooring, paint, baseboards, doors, and lighting throughout.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=QKBFHczNoS0</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/QKBFHczNoS0</video:player_loc>
+      <video:publication_date>2026-11-07</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Ehem1kcjUV4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Custom Home Master Suite Walkthrough on Long Island</video:title>
+      <video:description>Upstairs in the master suite of this HomeCore Construction custom home build on Long Island: an 11x12 master bath, a 10 by 10 walk in closet, and a framed tray ceiling, on the addition we built after underpinning the basement.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Ehem1kcjUV4</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/Ehem1kcjUV4</video:player_loc>
+      <video:publication_date>2026-11-10</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
     </video:video>
