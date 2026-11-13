@@ -408,7 +408,8 @@
         "whole home",
         "floating floor"
       ],
-      "hook": null
+      "hook": null,
+      "blurb_html": "A large ranch in <a href=\"/areas-we-serve/oakdale\">Oakdale</a> going from dark and commercial to warm and contemporary."
     },
     {
       "id": "BeaconMasterSuite",
@@ -432,6 +433,28 @@
         "Long Island"
       ],
       "hook": null
+    },
+    {
+      "id": "Nov12",
+      "youtube_id": "s-7M6c5aEzs",
+      "title": "5 Things Years in Construction Teach You",
+      "blurb": "Five lessons from the job site, from prep to reputation.",
+      "description": "The longer you're in construction, the more you realize quality starts long before the finishing touches. This HomeCore Construction Short walks through framing, window flashing and house wrap with five lessons from years on the job.",
+      "upload_date": "2026-11-10",
+      "duration": "PT16S",
+      "visibility": "public",
+      "publish_at": "2026-11-12T09:00:00-05:00",
+      "shorts": true,
+      "featured": false,
+      "pages": [
+        "custom-homes"
+      ],
+      "tags": [
+        "construction tips",
+        "framing",
+        "house wrap",
+        "Long Island"
+      ]
     }
   ]
 }

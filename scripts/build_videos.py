@@ -208,7 +208,7 @@ def card_html(v: dict) -> str:
         '<article class="video-card">\n'
         f"  {facade_html(v)}\n"
         f"  <h3>{html_esc(v['title'])}</h3>\n"
-        f'  <p class="video-blurb">{html_esc(v["blurb"])}</p>\n'
+        f'  <p class="video-blurb">{v.get("blurb_html") or html_esc(v["blurb"])}</p>\n'
         "</article>\n"
     )
 
@@ -546,7 +546,7 @@ def patch_home_strip(public: list[dict]) -> None:
             '<article class="home-videos-card">\n'
             f"  {facade_html(v)}\n"
             f"  <h3>{html_esc(v['title'])}</h3>\n"
-            f"  <p>{html_esc(v['blurb'])}</p>\n"
+            f"  <p>{v.get("blurb_html") or html_esc(v["blurb"])}</p>\n"
             "</article>"
         )
     section = f"""
@@ -673,7 +673,7 @@ def embed_section_for(page_key: str, videos: list[dict]) -> str:
         '<article class="video-card">\n'
         f"  {facade_html(v)}\n"
         f"  <h3>{html_esc(v['title'])}</h3>\n"
-        f'  <p class="video-blurb">{html_esc(v["blurb"])}</p>\n'
+        f'  <p class="video-blurb">{v.get("blurb_html") or html_esc(v["blurb"])}</p>\n'
         "</article>"
         for v in matched
     )
