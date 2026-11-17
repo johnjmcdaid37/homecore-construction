@@ -273,4 +273,43 @@
       <video:live>no</video:live>
     </video:video>
   </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/oH3O_Q6bZfU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Inside Our Custom Millwork Shop</video:title>
+      <video:description>JJ McDaid takes you inside the HomeCore Construction millwork shop, where the custom cabinets you see on our social pages are built in house. This solid mahogany door is headed to a custom home in the Hamptons, built to last over 100 years.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=oH3O_Q6bZfU</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/oH3O_Q6bZfU</video:player_loc>
+      <video:publication_date>2026-11-10</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/oEZZU4L-924/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Bridgehampton Custom Home Progress Update</video:title>
+      <video:description>Progress on an 8,500 square foot custom home HomeCore Construction is building from the ground up in Bridgehampton. The main roof is done, cedar siding is about ninety five percent complete, every window is Marvin, rough in HVAC and plumbing are wrapping up, the basement slab is poured, and our in house carpenters are framing the covered back patio.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=oEZZU4L-924</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/oEZZU4L-924</video:player_loc>
+      <video:publication_date>2026-11-10</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/2_Vu2XPz7EE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>A Bridgehampton Custom Home Taking Shape</video:title>
+      <video:description>Progress on a HomeCore Construction custom home in Bridgehampton: foundation waterproofing, concrete work, framing, house wrap, windows, cedar shingle siding and the roof coming together.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=2_Vu2XPz7EE</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/2_Vu2XPz7EE</video:player_loc>
+      <video:publication_date>2026-11-13</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 </urlset>
