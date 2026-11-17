@@ -636,8 +636,8 @@ def patch_projects_index() -> None:
     text = path.read_text()
     card = """
     <a href="/videos/" class="project-card">
-      <div class="project-cover" style="background:#0D2340;display:flex;align-items:center;justify-content:center;min-height:220px;">
-        <span style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:0.4px;">Watch on YouTube</span>
+      <div class="project-cover">
+        <img src="/images/projects/videos/cover.webp" alt="HomeCore Construction YouTube channel page, showing the channel banner, logo, and recent job site videos" srcset="/images/projects/videos/cover-640w.webp 640w, /images/projects/videos/cover.webp 1200w" sizes="(max-width: 700px) 100vw, 530px" width="1200" height="800" loading="lazy" decoding="async">
         <span class="project-cat">Videos</span>
       </div>
       <div class="project-body">
