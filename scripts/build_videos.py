@@ -222,13 +222,18 @@ def html_esc(s: str) -> str:
     )
 
 
+def iso_dt(d: str) -> str:
+    """Full ISO 8601 datetime with timezone, as Google requires."""
+    return d if "T" in d else f"{d}T09:00:00-05:00"
+
+
 def video_object_ld(v: dict) -> dict:
     return {
         "@type": "VideoObject",
         "name": v["title"],
         "description": v["description"],
         "thumbnailUrl": [thumb_url(v["youtube_id"]), f"https://i.ytimg.com/vi/{v['youtube_id']}/maxresdefault.jpg"],
-        "uploadDate": v["upload_date"],
+        "uploadDate": iso_dt(v["upload_date"]),
         "duration": v.get("duration"),
         "embedUrl": embed_url(v["youtube_id"]),
         "contentUrl": content_url(v["youtube_id"]),
@@ -798,7 +803,7 @@ def patch_sitemap(public: list[dict]) -> None:
       <video:description>{html_esc(v['description'][:2048])}</video:description>
       <video:content_loc>{content_url(v['youtube_id'])}</video:content_loc>
       <video:player_loc>{embed_url(v['youtube_id'])}</video:player_loc>
-      <video:publication_date>{v['upload_date']}</video:publication_date>
+      <video:publication_date>{iso_dt(v['upload_date'])}</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
     </video:video>
