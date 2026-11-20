@@ -312,4 +312,30 @@
       <video:live>no</video:live>
     </video:video>
   </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/wn6eQSQbMHM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Heated Floors Start From the Ground Up</video:title>
+      <video:description>On this HomeCore Construction custom home on Long Island, radiant floor heating tubing is laid out across the basement before the concrete goes in, then the slab is poured right over it. Every layer beneath the finished floor has a purpose.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=wn6eQSQbMHM</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/wn6eQSQbMHM</video:player_loc>
+      <video:publication_date>2026-11-17T09:00:00-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/MV2Ol9F-Ddw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>We Don't Work From Home, We Work On Them</video:title>
+      <video:description>A look at life on HomeCore Construction job sites across Long Island: framing, footings, steel, siding cuts, radiant tubing, roof underlayment and house wrap. From the groundwork to the finishing touches, our crews are hands on every step of the way.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=MV2Ol9F-Ddw</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/MV2Ol9F-Ddw</video:player_loc>
+      <video:publication_date>2026-11-17T09:00:00-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 </urlset>

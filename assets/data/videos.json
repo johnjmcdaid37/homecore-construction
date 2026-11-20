@@ -1,7 +1,7 @@
 {
   "channel_url": "https://www.youtube.com/@HomeCoreConstruction",
   "channel_handle": "@HomeCoreConstruction",
-  "updated": "2026-11-17",
+  "updated": "2026-11-20",
   "notes": "Source of truth for the Videos page. Only visibility=public entries render. To add a scheduled video on its date: set visibility to public, fill youtube_id and upload_date, then run python3 scripts/build_videos.py. Leave publish_at as documentation of the original schedule.",
   "videos": [
     {
@@ -523,6 +523,51 @@
         "custom home",
         "framing",
         "cedar shingles"
+      ]
+    },
+    {
+      "id": "Nov18",
+      "youtube_id": "wn6eQSQbMHM",
+      "title": "Heated Floors Start From the Ground Up",
+      "blurb": "Radiant tubing laid across the basement, then the slab poured right over it.",
+      "description": "On this HomeCore Construction custom home on Long Island, radiant floor heating tubing is laid out across the basement before the concrete goes in, then the slab is poured right over it. Every layer beneath the finished floor has a purpose.",
+      "upload_date": "2026-11-17",
+      "duration": "PT22S",
+      "visibility": "public",
+      "publish_at": "2026-11-18T09:00:00-05:00",
+      "shorts": true,
+      "featured": false,
+      "pages": [
+        "custom-homes",
+        "projects/progress-stories/custom-home-1"
+      ],
+      "tags": [
+        "radiant floor heating",
+        "heated floors",
+        "basement slab",
+        "Long Island"
+      ]
+    },
+    {
+      "id": "Nov20",
+      "youtube_id": "MV2Ol9F-Ddw",
+      "title": "We Don't Work From Home, We Work On Them",
+      "blurb": "Framing, footings, steel, siding and house wrap across our job sites.",
+      "description": "A look at life on HomeCore Construction job sites across Long Island: framing, footings, steel, siding cuts, radiant tubing, roof underlayment and house wrap. From the groundwork to the finishing touches, our crews are hands on every step of the way.",
+      "upload_date": "2026-11-17",
+      "duration": "PT20S",
+      "visibility": "public",
+      "publish_at": "2026-11-20T09:00:00-05:00",
+      "shorts": true,
+      "featured": false,
+      "pages": [
+        "custom-homes"
+      ],
+      "tags": [
+        "job site",
+        "framing",
+        "new construction",
+        "Long Island"
       ]
     }
   ]
