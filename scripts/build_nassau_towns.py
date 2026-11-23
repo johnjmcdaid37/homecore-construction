@@ -289,6 +289,11 @@ def jsonld(t):
     m = re.search(r'<script type="application/ld\+json">\s*(\{.*?\})\s*</script>', TEMPLATE, re.S)
     data = json.loads(m.group(1))
     biz = data["@graph"][0]
+    # Keep every Nassau town page in the company areaServed list, matching the rest of the site.
+    names = {a.get("name") for a in biz.get("areaServed", [])}
+    for town in TOWNS:
+        if f"{town['name']}, NY" not in names:
+            biz["areaServed"].append({"@type": "Place", "name": f"{town['name']}, NY"})
     title_plain = html.unescape(t["title"])
     graph = [biz,
      {"@type": "WebPage", "@id": url, "url": url, "name": title_plain, "description": t["desc"],
