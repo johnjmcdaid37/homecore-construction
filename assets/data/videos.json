@@ -1,7 +1,7 @@
 {
   "channel_url": "https://www.youtube.com/@HomeCoreConstruction",
   "channel_handle": "@HomeCoreConstruction",
-  "updated": "2026-11-20",
+  "updated": "2026-11-24",
   "notes": "Source of truth for the Videos page. Only visibility=public entries render. To add a scheduled video on its date: set visibility to public, fill youtube_id and upload_date, then run python3 scripts/build_videos.py. Leave publish_at as documentation of the original schedule.",
   "videos": [
     {
@@ -567,6 +567,30 @@
         "job site",
         "framing",
         "new construction",
+        "Long Island"
+      ]
+    },
+    {
+      "id": "Nov22",
+      "youtube_id": "SEpwInZ5f8M",
+      "title": "What You See vs What We See",
+      "blurb": "Framing, a finished kitchen, tile work and the decisions behind them.",
+      "description": "What you see: wooden frames taking shape, a kitchen ready for everyday living, beautiful tile work, a beautiful home. What we see: the structure behind every room, the measurements, craftsmanship and experience, the planning and coordination, and countless decisions that bring it all together. A well built home starts long before the final reveal.",
+      "upload_date": "2026-11-17",
+      "duration": "PT22S",
+      "visibility": "public",
+      "publish_at": "2026-11-22T09:00:00-05:00",
+      "shorts": true,
+      "featured": false,
+      "pages": [
+        "custom-homes",
+        "whole-home-renovation"
+      ],
+      "tags": [
+        "custom home",
+        "kitchen renovation",
+        "tile work",
+        "framing",
         "Long Island"
       ]
     }

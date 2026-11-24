@@ -338,4 +338,17 @@
       <video:live>no</video:live>
     </video:video>
   </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/SEpwInZ5f8M/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>What You See vs What We See</video:title>
+      <video:description>What you see: wooden frames taking shape, a kitchen ready for everyday living, beautiful tile work, a beautiful home. What we see: the structure behind every room, the measurements, craftsmanship and experience, the planning and coordination, and countless decisions that bring it all together. A well built home starts long before the final reveal.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=SEpwInZ5f8M</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/SEpwInZ5f8M</video:player_loc>
+      <video:publication_date>2026-11-17T09:00:00-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 </urlset>
