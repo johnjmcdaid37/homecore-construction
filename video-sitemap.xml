@@ -351,4 +351,30 @@
       <video:live>no</video:live>
     </video:video>
   </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/R-sJoX33zYg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>POV Your Home Is Finally Taking Shape</video:title>
+      <video:description>POV: your home is finally starting to take shape. A walk through the framing on a HomeCore Construction custom home build on Long Island. Before the finished walls and final details, there's a structure that makes it all possible, built with careful planning and precise measurements.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=R-sJoX33zYg</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/R-sJoX33zYg</video:player_loc>
+      <video:publication_date>2026-11-17T09:00:00-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://homecoregc.com/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/bBBRfzcWRRc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>So, What Kind of Work Do You Do? This.</video:title>
+      <video:description>&quot;So, what kind of work do you do?&quot; This. A look at finished HomeCore Construction work on Long Island: chevron hardwood floors, an open kitchen with a marble island and custom cabinetry, a navy bath vanity with a marble top and brass fixtures, a new stair railing, and a mudroom built-in with cubbies and a bench.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=bBBRfzcWRRc</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/bBBRfzcWRRc</video:player_loc>
+      <video:publication_date>2026-11-24T09:00:00-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 </urlset>

@@ -593,6 +593,52 @@
         "framing",
         "Long Island"
       ]
+    },
+    {
+      "blurb": "A walk through the fresh framing of a custom home.",
+      "description": "POV: your home is finally starting to take shape. A walk through the framing on a HomeCore Construction custom home build on Long Island. Before the finished walls and final details, there's a structure that makes it all possible, built with careful planning and precise measurements.",
+      "duration": "PT21S",
+      "featured": false,
+      "id": "Nov25",
+      "pages": [
+        "custom-homes"
+      ],
+      "publish_at": "2026-11-25T09:00:00-05:00",
+      "shorts": true,
+      "tags": [
+        "framing",
+        "custom home",
+        "new construction",
+        "Long Island"
+      ],
+      "title": "POV Your Home Is Finally Taking Shape",
+      "upload_date": "2026-11-17",
+      "visibility": "public",
+      "youtube_id": "R-sJoX33zYg"
+    },
+    {
+      "blurb": "Kitchens, baths, floors and built-ins. This is the work we do.",
+      "description": "\"So, what kind of work do you do?\" This. A look at finished HomeCore Construction work on Long Island: chevron hardwood floors, an open kitchen with a marble island and custom cabinetry, a navy bath vanity with a marble top and brass fixtures, a new stair railing, and a mudroom built-in with cubbies and a bench.",
+      "duration": "PT22S",
+      "featured": false,
+      "id": "Nov26",
+      "pages": [
+        "whole-home-renovation",
+        "kitchen-remodeling"
+      ],
+      "publish_at": "2026-11-26T09:00:00-05:00",
+      "shorts": true,
+      "tags": [
+        "home renovation",
+        "kitchen renovation",
+        "custom cabinetry",
+        "hardwood floors",
+        "Long Island"
+      ],
+      "title": "So, What Kind of Work Do You Do? This.",
+      "upload_date": "2026-11-24",
+      "visibility": "public",
+      "youtube_id": "bBBRfzcWRRc"
     }
   ]
 }
